@@ -1,0 +1,51 @@
+/* Card sản phẩm */
+.product-card {
+    background: #fff;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.2s;
+  }
+  
+  .product-card:hover {
+    transform: scale(1.05);
+  }
+  
+  /* Ảnh sản phẩm */
+  .product-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+  
+  /* Tên sản phẩm */
+  .product-name {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 10px 0;
+  }
+  
+  /* Giá sản phẩm */
+  .product-price {
+    color: red;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  /* Nút thêm vào giỏ hàng */
+  .add-to-cart {
+    background: black;
+    color: white;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-top: 10px;
+  }
+  
+  .add-to-cart:hover {
+    background: #333;
+  }
+  

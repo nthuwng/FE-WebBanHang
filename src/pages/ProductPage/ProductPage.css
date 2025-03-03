@@ -1,0 +1,24 @@
+/* Container chính */
+.container {
+    width: 90%;
+    margin: auto;
+    text-align: center;
+  }
+  
+  /* Tiêu đề trang */
+  .title {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  /* Hiển thị sản phẩm theo hàng ngang (grid) */
+  .product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* 3-4 sản phẩm trên mỗi hàng */
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+  }
+  
