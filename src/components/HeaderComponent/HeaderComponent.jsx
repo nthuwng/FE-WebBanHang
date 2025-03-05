@@ -59,7 +59,7 @@ const HeaderComponent = () => {
           size={20}
           className="icon"
           onClick={() => {
-            navigate("/login");
+            navigate("/sign-in");
           }}
         />
       </div>

@@ -6,7 +6,7 @@ const fetchProductAPI = async (page, limit) => {
 };
 
 const loginApi = async (email, password) => {
-  const URL_BACKEND = "/user/login";
+  const URL_BACKEND = "/user/sign-in";
 
   const data = {
     email: email,
@@ -15,4 +15,17 @@ const loginApi = async (email, password) => {
   return axios.post(URL_BACKEND, data);
 };
 
-export { fetchProductAPI, loginApi };
+const registerAPI = (full_name, email, password, phone, address) => {
+  const URL_BACKEND = "/user/sign-up";
+
+  const data = {
+    full_name: full_name,
+    email: email,
+    password: password,
+    phone: phone,
+    address: address,
+  };
+  return axios.post(URL_BACKEND, data);
+};
+
+export { fetchProductAPI, loginApi, registerAPI };

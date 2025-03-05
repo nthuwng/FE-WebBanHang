@@ -3,7 +3,9 @@ import App from "../App.jsx";
 import UserPage from "../pages/user.jsx";
 import ProductPage from "../pages/ProductPage/ProductPage.jsx";
 import HomePage from "../pages/HomePage/HomePage.jsx";
-import LoginForm from "../pages/SignInPage/SignInPage.jsx";
+import SignInPage from "../pages/SignInPage/SignInPage.jsx";
+import Register from "../pages/RegisterPage/RegisterPage.jsx";
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -17,9 +19,18 @@ const router = createBrowserRouter([
   },
 
   {
-    path: "/login",
-    element: <LoginForm />,
+    path: "/sign-in",
+    element: <SignInPage />,
   },
+
+  {
+    path: "/sign-up",
+    element: <Register />,
+  },
+  
+  
 ]);
+
+
 
 export default router;

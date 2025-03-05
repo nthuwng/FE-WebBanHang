@@ -14,7 +14,7 @@ import { ArrowRightOutlined } from "@ant-design/icons";
 import { useState } from "react";
 import { loginApi } from "../../services/api.service";
 
-const LoginForm = () => {
+const SignInPage = () => {
   const [form] = Form.useForm();
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
@@ -29,8 +29,8 @@ const LoginForm = () => {
         description: JSON.stringify(res.message),
       });
 
-      navigate("/login");
-      
+      navigate("/sign-in");
+
     } else {
       message.success("Đăng nhập thành công");
       navigate("/");
@@ -105,13 +105,15 @@ const LoginForm = () => {
           </Form>
           <Divider />
           <div style={{ textAlign: "center" }}>
-            Chưa có tài khoản <Link to={"registers"}>Đăng ký tại đây </Link>
+            Chưa có tài khoản ? <Link to={"/sign-up"}>Đăng ký tại đây </Link>
           </div>
         </fieldset>
       </Col>
+
     </Row>
+    
   );
 };
 //test hihi
 
-export default LoginForm;
+export default SignInPage;
