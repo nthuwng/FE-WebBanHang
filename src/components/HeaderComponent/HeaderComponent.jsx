@@ -1,9 +1,11 @@
 import React from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import { Search, Heart, ShoppingCart } from "lucide-react";
 import "./HeaderComponent.css";
 import { UserOutlined } from "@ant-design/icons";
 const HeaderComponent = () => {
+  const navigate = useNavigate();
+
   return (
     <header className="header">
       {/* Logo */}
@@ -53,7 +55,13 @@ const HeaderComponent = () => {
         </div>
         <Heart size={20} className="icon" />
         <ShoppingCart size={20} className="icon" />
-        <UserOutlined size={20} className="icon" />
+        <UserOutlined
+          size={20}
+          className="icon"
+          onClick={() => {
+            navigate("/login");
+          }}
+        />
       </div>
     </header>
   );

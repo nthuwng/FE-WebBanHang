@@ -5,4 +5,14 @@ const fetchProductAPI = async (page, limit) => {
   return axios.get(URL_BACKEND);
 };
 
-export { fetchProductAPI };
+const loginApi = async (email, password) => {
+  const URL_BACKEND = "/user/login";
+
+  const data = {
+    email: email,
+    password: password,
+  };
+  return axios.post(URL_BACKEND, data);
+};
+
+export { fetchProductAPI, loginApi };

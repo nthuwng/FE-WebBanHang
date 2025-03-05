@@ -5,13 +5,7 @@ import './App.css'
 
 function App() {
 
-  return (
-    <>
-     <HeaderComponent />
-      <Outlet />
-      <FooterComponent />
-    </>
-  )
+  
 }
 
 export default App
