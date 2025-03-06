@@ -33,6 +33,7 @@ const SignInPage = () => {
 
       navigate("/sign-in");
     } else {
+      localStorage.setItem("accessToken", res.data.access_token);
       api.success({
         message: "Đăng nhập thành công",
         description: "Bạn sẽ được chuyển hướng đến trang chính",

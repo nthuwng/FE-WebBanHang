@@ -1,17 +1,25 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { Search, Heart, ShoppingCart } from "lucide-react";
-import "./HeaderComponent.css";
 import { LogoutOutlined, UserOutlined } from "@ant-design/icons";
-import { Tooltip } from "antd";
+import { Tooltip, message } from "antd";
+import "./HeaderComponent.css";
+
 const HeaderComponent = () => {
   const navigate = useNavigate();
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
+  useEffect(() => {
+    const token = localStorage.getItem("accessToken");
+    setIsLoggedIn(!!token);
+  }, []);
+
   const handleLogout = () => {
+    localStorage.removeItem("accessToken");
+    localStorage.removeItem("user");
     setIsLoggedIn(false);
     message.success("Đăng xuất thành công!");
-    navigate("/sign-in"); // Điều hướng về trang đăng nhập
+    navigate("/sign-in");
   };
 
   return (
@@ -23,33 +31,27 @@ const HeaderComponent = () => {
       <nav>
         <ul className="nav-links">
           <li>
-            <NavLink
-              to="/"
-              className={({ isActive }) => (isActive ? "active" : "")}>
+            <NavLink to="/" className={({ isActive }) => (isActive ? "active" : "")}>
               Home
             </NavLink>
           </li>
           <li>
-            <NavLink
-              to="/products"
-              className={({ isActive }) => (isActive ? "active" : "")}>
+            <NavLink to="/products" className={({ isActive }) => (isActive ? "active" : "")}>
               Products
             </NavLink>
           </li>
           <li>
-            <NavLink
-              to="/about"
-              className={({ isActive }) => (isActive ? "active" : "")}>
+            <NavLink to="/about" className={({ isActive }) => (isActive ? "active" : "")}>
               About
             </NavLink>
           </li>
-          <li>
-            <NavLink
-              to="/signup"
-              className={({ isActive }) => (isActive ? "active" : "")}>
-              Sign Up
-            </NavLink>
-          </li>
+          {!isLoggedIn && (
+            <li>
+              <NavLink to="/signup" className={({ isActive }) => (isActive ? "active" : "")}>
+                Sign Up
+              </NavLink>
+            </li>
+          )}
         </ul>
       </nav>
 
@@ -66,24 +68,17 @@ const HeaderComponent = () => {
           <ShoppingCart size={20} className="icon" />
         </Tooltip>
 
+        {/* Nếu đăng nhập, hiển thị icon Logout */}
         {isLoggedIn ? (
           <Tooltip title="Đăng xuất">
-            <LogoutOutlined
-              size={20}
-              className="icon"
-              onClick={() => {
-                navigate("/");
-              }}
-            />
+            <LogoutOutlined size={20} className="icon" onClick={handleLogout} />
           </Tooltip>
         ) : (
           <Tooltip title="Đăng nhập">
             <UserOutlined
               size={20}
               className="icon"
-              onClick={() => {
-                navigate("/sign-in");
-              }}
+              onClick={() => navigate("/sign-in")}
             />
           </Tooltip>
         )}
