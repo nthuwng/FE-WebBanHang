@@ -1,10 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { Search, Heart, ShoppingCart } from "lucide-react";
 import "./HeaderComponent.css";
-import { UserOutlined } from "@ant-design/icons";
+import { LogoutOutlined, UserOutlined } from "@ant-design/icons";
+import { Tooltip } from "antd";
 const HeaderComponent = () => {
   const navigate = useNavigate();
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  const handleLogout = () => {
+    setIsLoggedIn(false);
+    message.success("Đăng xuất thành công!");
+    navigate("/sign-in"); // Điều hướng về trang đăng nhập
+  };
 
   return (
     <header className="header">
@@ -54,14 +62,31 @@ const HeaderComponent = () => {
           </button>
         </div>
         <Heart size={20} className="icon" />
-        <ShoppingCart size={20} className="icon" />
-        <UserOutlined
-          size={20}
-          className="icon"
-          onClick={() => {
-            navigate("/sign-in");
-          }}
-        />
+        <Tooltip title="Giỏ hàng">
+          <ShoppingCart size={20} className="icon" />
+        </Tooltip>
+
+        {isLoggedIn ? (
+          <Tooltip title="Đăng xuất">
+            <LogoutOutlined
+              size={20}
+              className="icon"
+              onClick={() => {
+                navigate("/");
+              }}
+            />
+          </Tooltip>
+        ) : (
+          <Tooltip title="Đăng nhập">
+            <UserOutlined
+              size={20}
+              className="icon"
+              onClick={() => {
+                navigate("/sign-in");
+              }}
+            />
+          </Tooltip>
+        )}
       </div>
     </header>
   );
