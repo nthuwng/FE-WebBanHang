@@ -2,7 +2,8 @@ import React from "react";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { Search, Heart, ShoppingCart } from "lucide-react";
 import "./HeaderComponent.css";
-import { UserOutlined } from "@ant-design/icons";
+import { AndroidOutlined, UserOutlined } from "@ant-design/icons";
+import { Tooltip } from "antd";
 const HeaderComponent = () => {
   const navigate = useNavigate();
 
@@ -54,14 +55,28 @@ const HeaderComponent = () => {
           </button>
         </div>
         <Heart size={20} className="icon" />
+        <Tooltip placement="top" title="Giỏ Hàng" >
         <ShoppingCart size={20} className="icon" />
+        </Tooltip>
+        <Tooltip placement="top" title="Đăng Nhập" >
         <UserOutlined
           size={20}
-          className="icon"
+          className="iconLogin"
           onClick={() => {
             navigate("/sign-in");
           }}
         />
+          </Tooltip>
+          <Tooltip placement="top" title="Admin" >
+        <AndroidOutlined 
+          size={20}
+          className="iconLogin"
+          onClick={() => {
+            navigate("/login-admin");
+          }}
+        />
+          </Tooltip>
+     
       </div>
     </header>
   );

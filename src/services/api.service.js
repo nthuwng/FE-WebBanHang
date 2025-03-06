@@ -4,6 +4,11 @@ const fetchProductAPI = async (page, limit) => {
   const URL_BACKEND = `/product/getProduct/?page=${page}&limit=${limit}`;
   return axios.get(URL_BACKEND);
 };
+const fetchUsertAPI = async () => {
+  const URL_BACKEND = "/user/allUser";
+
+  return axios.get(URL_BACKEND);
+};
 
 const loginApi = async (email, password) => {
   const URL_BACKEND = "/user/sign-in";
@@ -28,4 +33,6 @@ const registerAPI = (full_name, email, password, phone, address) => {
   return axios.post(URL_BACKEND, data);
 };
 
-export { fetchProductAPI, loginApi, registerAPI };
+export { fetchProductAPI, loginApi, registerAPI,fetchUsertAPI
+
+ };

@@ -1,10 +1,14 @@
 import { createBrowserRouter } from "react-router-dom";
-import App from "../App.jsx";
-import UserPage from "../pages/user.jsx";
+
+
 import ProductPage from "../pages/ProductPage/ProductPage.jsx";
 import HomePage from "../pages/HomePage/HomePage.jsx";
 import SignInPage from "../pages/SignInPage/SignInPage.jsx";
-import Register from "../pages/RegisterPage/RegisterPage.jsx";
+
+import RegisterPage from "../pages/RegisterPage/RegisterPage.jsx";
+import AdminPage from "../pages/AdminPage/AdminPage.jsx";
+import LoginAdminPage from "../pages/LoginAdminPage/LoginAdminPage.jsx";
+import AdminUser from "../components/AdminUser/AdminUser.jsx";
 
 const router = createBrowserRouter([
   {
@@ -25,8 +29,28 @@ const router = createBrowserRouter([
 
   {
     path: "/sign-up",
-    element: <Register />,
+    element: <RegisterPage />,
   },
+
+  {
+    path: "/admin",
+    element: <AdminPage />,
+    
+
+  
+       
+    
+  }, 
+  {
+    path: "/login-admin",
+    element: <LoginAdminPage />,
+  },
+  {
+    path: "/admin-user",
+    element: <AdminUser/>,
+  },
+
+ 
   
   
 ]);

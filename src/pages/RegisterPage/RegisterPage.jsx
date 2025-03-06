@@ -106,6 +106,11 @@ const RegisterPage = () => {
                 pattern: new RegExp(/\d+/g),
                 message: "Chỉ nhập số!",
               },
+              {
+                required: true,
+                pattern: new RegExp(/^\d{10}$/),
+                message: "Nhập đủ 10 chữ số!",
+              },
             ]}>
             <Input />
           </Form.Item>

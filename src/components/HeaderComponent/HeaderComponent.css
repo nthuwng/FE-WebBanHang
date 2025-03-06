@@ -93,3 +93,12 @@
 .icon:hover {
   color: black;
 }
+
+.iconLogin{
+    
+    cursor: pointer;
+    color: #555;
+    transition: color 0.3s;
+    font-size: 18px; /* Giảm kích thước icon */
+ 
+}
