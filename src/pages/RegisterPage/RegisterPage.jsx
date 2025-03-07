@@ -11,6 +11,7 @@ import {
 } from "antd";
 import { Link, useNavigate } from "react-router-dom";
 import { registerAPI } from "../../services/api.service";
+import "./RegisterPage.css";
 
 const RegisterPage = () => {
   const [form] = Form.useForm();
@@ -21,7 +22,7 @@ const RegisterPage = () => {
     try {
       const { full_name, email, password, phone, address } = values;
       const res = await registerAPI(full_name, email, password, phone, address);
-
+      console.log(res);
       if (res.data && res.data.Error) {
         api.error({
           message: "Lỗi đăng ký",
@@ -50,7 +51,7 @@ const RegisterPage = () => {
   };
 
   return (
-    <>
+    <div className="register">
       {contextHolder}
       <Form
         form={form}
@@ -157,7 +158,7 @@ const RegisterPage = () => {
           <Link to={"/sign-in"}>Đăng nhập tại đây </Link>
         </div>
       </Form>
-    </>
+    </div>
   );
 };
 export default RegisterPage;

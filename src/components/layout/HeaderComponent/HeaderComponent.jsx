@@ -45,13 +45,6 @@ const HeaderComponent = () => {
               About
             </NavLink>
           </li>
-          {!isLoggedIn && (
-            <li>
-              <NavLink to="/signup" className={({ isActive }) => (isActive ? "active" : "")}>
-                Sign Up
-              </NavLink>
-            </li>
-          )}
         </ul>
       </nav>
 

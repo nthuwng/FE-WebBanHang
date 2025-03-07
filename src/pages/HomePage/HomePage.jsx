@@ -1,13 +1,13 @@
-import { Outlet } from "react-router-dom";
-import HeaderComponent from "../../components/HeaderComponent/HeaderComponent.jsx";
-import FooterComponent from "../../components/FooterComponent/FooterComponent.jsx";
+import slider1 from "../../assets/images/Sliders/slider1.png";
+import slider2 from "../../assets/images/Sliders/slider2.png";
+import slider3 from "../../assets/images/Sliders/slider3.png";
+
+import { SliderComponent } from "../../components/SliderComponent/SliderComponent.jsx";
 
 const HomePage = () => {
   return (
     <>
-      <HeaderComponent />
-      <Outlet />
-      <FooterComponent />
+      <SliderComponent arrImages={[slider1, slider2, slider3]} />
     </>
   );
 };

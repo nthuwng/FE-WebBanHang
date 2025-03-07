@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { fetchProductAPI } from "../../services/api.service";
-import ProductComponent from "../../components/ProductComponent/ProductComponent";// Import component mới
+import ProductComponent from "../../components/common/ProductComponent/ProductComponent";// Import component mới
 import "./ProductPage.css"; // CSS cho ProductPage
 
 const ProductPage = () => {

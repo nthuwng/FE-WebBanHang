@@ -1,11 +1,15 @@
 import { Outlet } from "react-router-dom";
-import HeaderComponent from './components/HeaderComponent/HeaderComponent.jsx'
-import FooterComponent from './components/FooterComponent/FooterComponent.jsx'
-import './App.css'
+import HeaderComponent from "./components/layout/HeaderComponent/HeaderComponent.jsx";
+import FooterComponent from "./components/layout/FooterComponent/FooterComponent.jsx";
 
 function App() {
-
-  
+  return (
+    <>
+      <HeaderComponent />
+      <Outlet />
+      <FooterComponent />
+    </>
+  );
 }
 
-export default App
+export default App;

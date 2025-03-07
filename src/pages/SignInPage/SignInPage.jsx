@@ -13,6 +13,8 @@ import { Link, useNavigate } from "react-router-dom";
 import { ArrowRightOutlined } from "@ant-design/icons";
 import { useState } from "react";
 import { loginApi } from "../../services/api.service";
+// import "../../styles/auth.css"
+import "./SignInPage.css";
 
 const SignInPage = () => {
   const [form] = Form.useForm();
@@ -45,7 +47,7 @@ const SignInPage = () => {
     setLoading(false);
   };
   return (
-    <>
+    <div className="sign-in">
       {contextHolder}
       <Row justify={"center"} style={{ marginTop: "30px" }}>
         <Col xs={24} md={8}>
@@ -119,7 +121,7 @@ const SignInPage = () => {
           </fieldset>
         </Col>
       </Row>
-    </>
+    </div>
   );
 };
 //test hihi
