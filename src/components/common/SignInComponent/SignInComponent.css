@@ -1,0 +1,10 @@
+.sign-in-container-form {
+  width: 300px;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.sign-in-input {
+  width: 300px;
+}

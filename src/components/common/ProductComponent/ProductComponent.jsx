@@ -4,11 +4,11 @@ const backendURL = "http://localhost:8081";
 const ProductCard = ({ product }) => {
   console.log("hihi=>> ",product.image);
   return (
-    <div className="product-card">
-      <img src={`${backendURL}${product.image}`} alt={product.name} className="product-image" />
-      <h3 className="product-name">{product.name}</h3>
-      <p className="product-price">${product.price}</p>
-      <button className="add-to-cart">Add To Cart</button>
+    <div className="product-card-component">
+      <img src={`${backendURL}${product.image}`} alt={product.name} className="product-image-component" />
+      <h3 className="product-name-component">{product.name}</h3>
+      <p className="product-price-component">${product.price}</p>
+      <button className="product-add-to-cart">Add To Cart</button>
     </div>
   );
 };

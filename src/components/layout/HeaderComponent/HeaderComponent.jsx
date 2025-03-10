@@ -19,7 +19,7 @@ const HeaderComponent = () => {
     localStorage.removeItem("user");
     setIsLoggedIn(false);
     message.success("Đăng xuất thành công!");
-    navigate("/sign-in");
+    navigate("/login");
   };
 
   return (
@@ -71,7 +71,7 @@ const HeaderComponent = () => {
             <UserOutlined
               size={20}
               className="icon"
-              onClick={() => navigate("/sign-in")}
+              onClick={() => navigate("/login")}
             />
           </Tooltip>
         )}

@@ -34,12 +34,12 @@ const ProductPage = () => {
   }, [page, limit]);
 
   return (
-    <div className="container">
-      <h1 className="title">Product List</h1>
+    <div className="product-container-page">
+      <h1 className="product-title-page">Product List</h1>
       {loading ? (
         <p>Loading products...</p>
       ) : (
-        <div className="product-grid">
+        <div className="product-grid-page">
           {dataProduct.map((product) => (
             <ProductComponent key={product._id} product={product} />
           ))}
