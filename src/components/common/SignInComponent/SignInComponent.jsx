@@ -84,7 +84,7 @@ const SignInComponent = () => {
                 message: "Passwd không đc để trống",
               },
             ]}>
-            <Input.Password placeholder="Password"/>
+            <Input.Password placeholder="Password" className="sign-in-input"/>
           </Form.Item>
           <div
             style={{
@@ -95,7 +95,7 @@ const SignInComponent = () => {
             <Button
               loading={loading}
               onClick={() => form.submit()}
-              type="primary">
+              type="primary" style={{width: "360px", fontSize: "20px", height: "auto"}}>
               {" "}
               Login{" "}
             </Button>

@@ -8,19 +8,18 @@
   font-family: Arial, sans-serif;
   height: 50px;
 
-  max-width: 1280px;
+  /* max-width: 1280px; */
   margin: 0 auto;
-  padding: 3rem;
+  padding: 5rem;
   text-align: center;
 }
 
 /* Logo */
 .logo {
-  font-size: 20px; /* Giảm kích thước chữ */
+  font-size: 25px;
   font-weight: bold;
   height: 3em;
 
-  /* padding: 1.5em; */
   will-change: filter;
   transition: filter 300ms;
 }
@@ -49,8 +48,8 @@
 /* Navigation */
 .nav-links {
   display: flex;
-  gap: 20px;
-  font-size: 14px; /* Giảm font size để menu gọn hơn */
+  gap: 35px;
+  font-size: 25px; /* Giảm font size để menu gọn hơn */
   list-style: none;
 }
 
@@ -85,7 +84,7 @@
 .search-icons {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 14px;
 }
 
 .search-box {
@@ -96,10 +95,10 @@
   padding: 6px 10px; /* Giảm padding để hộp tìm kiếm nhỏ hơn */
   border: 1px solid #ccc;
   border-radius: 4px;
-  width: 180px; /* Giảm chiều rộng */
+  width: 250px; /* Giảm chiều rộng */
   outline: none;
   background-color: #f8f8f8;
-  font-size: 12px;
+  font-size: 17px;
 }
 
 .search-btn {
@@ -113,13 +112,16 @@
   color: #555;
 }
 
-.icon {
+.icon-login {
   cursor: pointer;
   color: #555;
   transition: color 0.3s;
-  font-size: 18px; /* Giảm kích thước icon */
+  font-size: 30px; /* Giảm kích thước icon */
 }
 
 .icon:hover {
   color: black;
+}
+.nav-container-login{
+  margin-left: 200px;
 }

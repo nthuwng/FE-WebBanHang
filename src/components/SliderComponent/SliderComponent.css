@@ -2,9 +2,9 @@
 @import "slick-carousel/slick/slick-theme.css";
 
 .slider-container {
-  width: 80%; /* Điều chỉnh độ rộng của slider */
-  max-width: 1200px; /* Giới hạn chiều rộng tối đa */
-  margin: 0 auto; /* Căn giữa slider */
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
   position: relative;
   padding: 1rem;
   text-align: center;
@@ -12,19 +12,19 @@
 
 .slider-item {
   display: flex;
-  justify-content: center; /* Căn giữa ảnh */
+  justify-content: center;
   align-items: center;
 }
 
 .slick-slide img {
-  width: 100%; /* Đảm bảo ảnh co giãn theo slider */
-  max-height: 400px; /* Chiều cao tối đa để ảnh không quá nhỏ */
-  object-fit: cover; /* Giữ tỷ lệ ảnh, lấp đầy slider */
-  border-radius: 10px; /* Bo góc ảnh */
+  width: 100%;
+  max-height: 600px;
+  object-fit: cover;
+  border-radius: 10px;
 }
 
 .slick-prev::before,
 .slick-next::before {
-  font-size: 24px;
-  color: #8e8e8f !important; /* Màu biểu tượng */
+  font-size: 35px;
+  color: #8e8e8f !important;
 }

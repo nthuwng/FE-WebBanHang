@@ -35,7 +35,7 @@ const ProductPage = () => {
 
   return (
     <div className="product-container-page">
-      <h1 className="product-title-page">Product List</h1>
+      <h1 className="product-title-page" style={{marginTop: "10px",fontSize: "50px"}}>Product List</h1>
       {loading ? (
         <p>Loading products...</p>
       ) : (

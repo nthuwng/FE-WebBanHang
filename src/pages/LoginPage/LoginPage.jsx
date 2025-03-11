@@ -40,7 +40,7 @@ const Login = () => {
   };
 
   return (
-    <div className="Login-Page-body">
+    <div className="Login-Page-body" style={{backgroundColor: "#DDDDDD"}}>
       <div
         className={`container ${isRegistering ? "right-panel-active" : ""}`}
         id="container">
@@ -49,7 +49,7 @@ const Login = () => {
         {/* Form Đăng nhập */}
         <SignInComponent />
         {/* Overlay */}
-        <div className="overlay-container">
+        <div className="overlay-container" style={{fontSize: "30px"}}>
           <div className="overlay">
             <div className="overlay-panel overlay-left">
               <h1 classname="login-page-h1">Welcome!</h1>
@@ -57,7 +57,7 @@ const Login = () => {
                 Do you have an account? Then log in and join us now.
               </p>
               <button
-                style={{ backgroundColor: "transparent", borderColor: "#fff" }}
+                style={{ backgroundColor: "transparent", borderColor: "#fff"}}
                 className="login-page-ghost"
                 onClick={() => setIsRegistering(false)}>
                 Sign In

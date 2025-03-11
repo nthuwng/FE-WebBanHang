@@ -25,10 +25,10 @@ const HeaderComponent = () => {
   return (
     <header className="header">
       {/* Logo */}
-      <div className="logo">Exclusive</div>
+      <div className="logo">Chó (Phúc Nhung Đạt)</div>
 
       {/* Navigation */}
-      <nav>
+      <nav className="nav-container-login">
         <ul className="nav-links">
           <li>
             <NavLink to="/" className={({ isActive }) => (isActive ? "active" : "")}>
@@ -53,24 +53,23 @@ const HeaderComponent = () => {
         <div className="search-box">
           <input type="text" placeholder="What are you looking for?" />
           <button className="search-btn">
-            <Search size={18} />
+            <Search size={25} />
           </button>
         </div>
-        <Heart size={20} className="icon" />
+        <Heart size={30} className="icon" />
         <Tooltip title="Giỏ hàng">
-          <ShoppingCart size={20} className="icon" />
+          <ShoppingCart size={30} className="icon" />
         </Tooltip>
 
         {/* Nếu đăng nhập, hiển thị icon Logout */}
         {isLoggedIn ? (
           <Tooltip title="Đăng xuất">
-            <LogoutOutlined size={20} className="icon" onClick={handleLogout} />
+            <LogoutOutlined size={30} className="icon-login" onClick={handleLogout} />
           </Tooltip>
         ) : (
           <Tooltip title="Đăng nhập">
             <UserOutlined
-              size={20}
-              className="icon"
+              className="icon-login"
               onClick={() => navigate("/login")}
             />
           </Tooltip>

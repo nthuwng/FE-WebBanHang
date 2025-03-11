@@ -43,7 +43,7 @@ export const SignOutComponent = () => {
   };
   return (
     <div className="form-container sign-up-container">
-      <form action="#">
+      <form action="#" class="sign-out-container-form">
         <h1 classname="login-page-h1">Create Account</h1>
         <div className="social-container">
           <a href="#" className="login-page-social">
@@ -73,7 +73,7 @@ export const SignOutComponent = () => {
                 message: "Full Name Không đc để trống",
               },
             ]}>
-            <Input placeholder="Full Name" />
+            <Input placeholder="Full Name" className="sign-in-input"/>
           </Form.Item>
           <Form.Item
             name="email"
@@ -83,7 +83,7 @@ export const SignOutComponent = () => {
                 message: "Email không đc để trống",
               },
             ]}>
-            <Input placeholder="Email" />
+            <Input placeholder="Email" className="sign-in-input"/>
           </Form.Item>
           <Form.Item
             name="password"
@@ -93,10 +93,10 @@ export const SignOutComponent = () => {
                 message: "Password không đc để trống",
               },
             ]}>
-            <Input.Password placeholder="Password" />
+            <Input.Password placeholder="Password" className="sign-in-input"/>
           </Form.Item>
           <div>
-            <Button onClick={() => form.submit()} type="primary">
+            <Button onClick={() => form.submit()} type="primary" style={{width: "360px" ,fontSize: "20px", height: "auto"}}>
               Register
             </Button>
           </div>

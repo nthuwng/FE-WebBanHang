@@ -8,7 +8,7 @@ const CustomPrevArrow = (props) => {
   return (
     <div
       className={className}
-      style={{ ...style, left: "100px", zIndex: 2, color: "white" }}
+      style={{ ...style, left: "420px", zIndex: 2, color: "white" }}
       onClick={onClick}>
       <LeftOutlined className="custom-arrow"  />
     </div>
@@ -20,7 +20,7 @@ const CustomNextArrow = (props) => {
   return (
     <div
       className={className}
-      style={{ ...style, right: "100px", zIndex: 2, color: "white" }}
+      style={{ ...style, right: "420px", zIndex: 2, color: "white" }}
       onClick={onClick}>
       <RightOutlined className="custom-arrow" />
     </div>
@@ -42,7 +42,7 @@ export const SliderComponent = ({ arrImages }) => {
     <div className="slider-container">
       <Slider {...settings}>
         {arrImages.map((image) => {
-          return <Image key={image} src={image} alt="slider" preview={false} />;
+          return <Image key={image} src={image} alt="slider" preview={false}style={{width: "65%"}}/>;
         })}
       </Slider>
       

@@ -1,10 +1,13 @@
 .sign-in-container-form {
-  width: 300px;
+  width: 360px;
   height: 300px;
   display: flex;
   justify-content: center;
   flex-direction: column;
+  font-size: 25px;
 }
 .sign-in-input {
-  width: 300px;
+  width: 360px;
+  padding: 10px 10px 10px 10px;
+  font-size: 20px;
 }
