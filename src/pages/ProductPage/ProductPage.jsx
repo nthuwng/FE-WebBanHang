@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { fetchProductAPI } from "../../services/api.service";
-import ProductComponent from "../../components/common/ProductComponent/ProductComponent";// Import component mới
+import ProductCard from "../../components/common/ProductCard/ProductCard";// Import component mới
 import "./ProductPage.css"; // CSS cho ProductPage
 
 const ProductPage = () => {
@@ -41,7 +41,7 @@ const ProductPage = () => {
       ) : (
         <div className="product-grid-page">
           {dataProduct.map((product) => (
-            <ProductComponent key={product._id} product={product} />
+            <ProductCard key={product._id} product={product} />
           ))}
         </div>
       )}

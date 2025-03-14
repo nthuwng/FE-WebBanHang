@@ -17,6 +17,7 @@
     width: 100%;
     height: auto;
     border-radius: 8px;
+    max-width: 200px;
   }
   
   /* Tên sản phẩm */

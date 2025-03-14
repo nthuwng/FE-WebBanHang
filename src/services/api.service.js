@@ -28,4 +28,10 @@ const registerAPI = (full_name, email, password, phone, address) => {
   return axios.post(URL_BACKEND, data);
 };
 
-export { fetchProductAPI, loginApi, registerAPI };
+const fetchProduct_Name_API = async (category, page, limit) => {
+  const URL_BACKEND = `product/getProductByName/${category}?page=${page}&limit=${limit}`;
+
+  return axios.get(URL_BACKEND);
+};
+
+export { fetchProductAPI, loginApi, registerAPI, fetchProduct_Name_API };
