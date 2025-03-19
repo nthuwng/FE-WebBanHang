@@ -24,6 +24,18 @@ const HomePage = () => {
           fetchProduct_Name_API("samsung", page, limit)
         }
       />
+      <ProductListComponent
+        categoryName="Xiaomi"
+        apiFunction={(page, limit) =>
+          fetchProduct_Name_API("xiaomi", page, limit)
+        }
+      />
+      <ProductListComponent
+        categoryName="Oppo"
+        apiFunction={(page, limit) =>
+          fetchProduct_Name_API("oppo", page, limit)
+        }
+      />
     </>
   );
 };

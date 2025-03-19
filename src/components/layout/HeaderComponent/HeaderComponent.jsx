@@ -25,7 +25,7 @@ const HeaderComponent = () => {
   return (
     <header className="header">
       {/* Logo */}
-      <div className="logo">Chó (Phúc Nhung Đạt)</div>
+      <div className="logo">Logo...</div>
 
       {/* Navigation */}
       <nav className="nav-container-login">
@@ -58,7 +58,7 @@ const HeaderComponent = () => {
         </div>
         <Heart size={30} className="icon" />
         <Tooltip title="Giỏ hàng">
-          <ShoppingCart size={30} className="icon" />
+          <ShoppingCart size={30} className="icon" style={{cursor: "pointer"}}/>
         </Tooltip>
 
         {/* Nếu đăng nhập, hiển thị icon Logout */}

@@ -6,7 +6,7 @@ import "./ProductPage.css"; // CSS cho ProductPage
 const ProductPage = () => {
   const [dataProduct, setDataProduct] = useState([]);
   const [page, setPage] = useState(1);
-  const [limit, setLimit] = useState(8);
+  const [limit, setLimit] = useState(10);
   const [loading, setLoading] = useState(true);
 
   const loadProduct = async () => {

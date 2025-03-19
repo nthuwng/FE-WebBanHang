@@ -2,7 +2,7 @@ import { Button, Form, Input, notification } from "antd";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { loginApi } from "../../../services/api.service";
-import { ArrowRightOutlined } from "@ant-design/icons";
+import { ArrowRightOutlined, FacebookOutlined, GooglePlusOutlined } from "@ant-design/icons";
 import "./SignInComponent.css";
 
 const SignInComponent = () => {
@@ -40,14 +40,11 @@ const SignInComponent = () => {
       <form action="#" onSubmit={onFinish} class="sign-in-container-form">
         <h1 classname="login-page-h1">Sign in</h1>
         <div className="social-container">
-          <a href="#" className="login-page-social">
-            <i className="fab fa-facebook-f"></i>
+          <a href="#" className="">
+          <FacebookOutlined />
           </a>
-          <a href="#" className="login-page-social">
-            <i className="fab fa-google-plus-g"></i>
-          </a>
-          <a href="#" className="login-page-social">
-            <i className="fab fa-linkedin-in"></i>
+          <a href="#" className="">
+          <GooglePlusOutlined />
           </a>
         </div>
         <span classname="login-page-span" style={{marginBottom: "10px"}}>or use your account</span>
