@@ -58,7 +58,9 @@ const HeaderComponent = () => {
         </div>
         <Heart size={30} className="icon" />
         <Tooltip title="Giỏ hàng">
-          <ShoppingCart size={30} className="icon" style={{cursor: "pointer"}}/>
+          <ShoppingCart size={30} className="icon" style={{cursor: "pointer"}} onClick={()=>{
+            navigate("/carts");
+          }}/>
         </Tooltip>
 
         {/* Nếu đăng nhập, hiển thị icon Logout */}

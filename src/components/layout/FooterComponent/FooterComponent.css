@@ -5,6 +5,7 @@
   background-color: #000000;
   line-height: normal;
   font-weight: bold;
+  margin-top: auto;
 }
 
 .footer-column {
@@ -62,26 +63,3 @@
   margin-top: 30px;
   line-height: 2;
 }
-/* .footer-p {
-  color: aliceblue;
-  display: flex;
-}
-
-.footer-column-1 {
-  color: aliceblue;
-}
-
-.footer-column-2 {
-  margin-left: 300px;
-  margin-top: -90px;
-}
-
-.footer-column-3 {
-  margin-left: 600px;
-  margin-top: -90px;
-}
-
-.footer-column-4 {
-  margin-left: 900px;
-  margin-top: -140px;
-}*/

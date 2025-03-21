@@ -6,7 +6,9 @@ function App() {
   return (
     <>
       <HeaderComponent />
-      <Outlet />
+      <div className="content-outlet">
+        <Outlet />
+      </div>
       <FooterComponent />
     </>
   );
