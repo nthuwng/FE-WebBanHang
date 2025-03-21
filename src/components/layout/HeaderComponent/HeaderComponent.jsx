@@ -25,7 +25,7 @@ const HeaderComponent = () => {
   return (
     <header className="header">
       {/* Logo */}
-      <div className="logo">Logo...</div>
+      <div className="logo">Shop</div>
 
       {/* Navigation */}
       <nav className="nav-container-login">
