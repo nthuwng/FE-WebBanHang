@@ -1,5 +1,8 @@
 import { useEffect, useState } from "react";
 import ProductCard from "../ProductCard/ProductCard";
+import "./ProductListComponent.css";
+import { DiApple } from "react-icons/di";
+import { ArrowRightOutlined } from "@ant-design/icons";
 
 const ProductComponent = ({ apiFunction, categoryName }) => {
   const [dataProduct, setDataProduct] = useState([]);
@@ -11,7 +14,7 @@ const ProductComponent = ({ apiFunction, categoryName }) => {
     try {
       setLoading(true);
       const res = await apiFunction(page, limit);
-        console.log(res);
+      console.log(res);
       if (Array.isArray(res.data)) {
         setDataProduct(res.data);
       } else if (res.data && res.data.data && Array.isArray(res.data.data)) {
@@ -31,13 +34,12 @@ const ProductComponent = ({ apiFunction, categoryName }) => {
     fetchProduct();
   }, [apiFunction, page, limit]);
   return (
-    <div className="home-page-iphone-card-container">
-      <h2 className="home-page-iphone-card-h2">{categoryName}</h2>
-      <div className="home-page-iphone-card">
+    <div className="product-list-component-card-container">
+      <div className="product-list-component-card">
         {loading ? (
           <p>Loading products...</p>
         ) : (
-          <div className="home-page-product-grid-page">
+          <div className="product-list-component-card-grid-page">
             {dataProduct.map((product) => (
               <div className="product-card" key={product._id}>
                 <ProductCard product={product} />

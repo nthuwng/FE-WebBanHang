@@ -6,25 +6,34 @@ import ProductListComponent from "../../components/common/ProductListComponent/P
 import { fetchProduct_Name_API } from "../../services/api.service";
 
 import "./HomePage.css";
+import {
+  ProductCategoryIphoneComponent,
+  ProductCategorySamsungComponent,
+} from "../../components/common/ProductCategoryComponent/ProductCategoryComponent.jsx";
 const HomePage = () => {
   return (
     <>
       <SliderComponent arrImages={[slider1, slider2, slider3]} />
 
-      <ProductListComponent
-        categoryName="Iphone"
-        apiFunction={(page, limit) =>
-          fetchProduct_Name_API("apple", page, limit)
-        }
-      />
-        
-      <ProductListComponent
-        categoryName="Samsung"
-        apiFunction={(page, limit) =>
-          fetchProduct_Name_API("samsung", page, limit)
-        }
-      />
-      <ProductListComponent
+      <div className="Iphone-home_page_card">
+        <ProductCategoryIphoneComponent />
+        <ProductListComponent
+          categoryName="Iphone"
+          apiFunction={(page, limit) =>
+            fetchProduct_Name_API("apple", page, limit)
+          }
+        />
+      </div>
+      <div className="Samsung-home_page_card">
+        <ProductCategorySamsungComponent />
+        <ProductListComponent
+          categoryName="Samsung"
+          apiFunction={(page, limit) =>
+            fetchProduct_Name_API("samsung", page, limit)
+          }
+        />
+      </div>
+      {/* <ProductListComponent
         categoryName="Xiaomi"
         apiFunction={(page, limit) =>
           fetchProduct_Name_API("xiaomi", page, limit)
@@ -35,7 +44,7 @@ const HomePage = () => {
         apiFunction={(page, limit) =>
           fetchProduct_Name_API("oppo", page, limit)
         }
-      />
+      /> */}
     </>
   );
 };
