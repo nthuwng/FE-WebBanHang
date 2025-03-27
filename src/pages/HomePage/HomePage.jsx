@@ -9,42 +9,56 @@ import "./HomePage.css";
 import {
   ProductCategoryIphoneComponent,
   ProductCategorySamsungComponent,
+  ProductCategoryXiaomiComponent,
+  ProductCategoryOppoComponent,
 } from "../../components/common/ProductCategoryComponent/ProductCategoryComponent.jsx";
 const HomePage = () => {
   return (
     <>
-      <SliderComponent arrImages={[slider1, slider2, slider3]} />
-
-      <div className="Iphone-home_page_card">
-        <ProductCategoryIphoneComponent />
-        <ProductListComponent
-          categoryName="Iphone"
-          apiFunction={(page, limit) =>
-            fetchProduct_Name_API("apple", page, limit)
-          }
-        />
-      </div>
-      <div className="Samsung-home_page_card">
-        <ProductCategorySamsungComponent />
-        <ProductListComponent
-          categoryName="Samsung"
-          apiFunction={(page, limit) =>
-            fetchProduct_Name_API("samsung", page, limit)
-          }
-        />
-      </div>
-      {/* <ProductListComponent
-        categoryName="Xiaomi"
-        apiFunction={(page, limit) =>
-          fetchProduct_Name_API("xiaomi", page, limit)
-        }
+      <SliderComponent
+        arrImages={[slider1, slider2, slider3]}
+        customClass="home-slider"
       />
-      <ProductListComponent
-        categoryName="Oppo"
-        apiFunction={(page, limit) =>
-          fetchProduct_Name_API("oppo", page, limit)
-        }
-      /> */}
+
+      <div className="Dienthoai-home_page_card">
+        <div className="Iphone-home_page_card">
+          <ProductCategoryIphoneComponent />
+          <ProductListComponent
+            categoryName="Iphone"
+            apiFunction={(page, limit) =>
+              fetchProduct_Name_API("apple", page, limit)
+            }
+          />
+        </div>
+
+        <div className="Samsung-home_page_card">
+          <ProductCategorySamsungComponent />
+          <ProductListComponent
+            categoryName="Samsung"
+            apiFunction={(page, limit) =>
+              fetchProduct_Name_API("samsung", page, limit)
+            }
+          />
+        </div>
+        <div className="Samsung-home_page_card">
+          <ProductCategoryXiaomiComponent />
+          <ProductListComponent
+            categoryName="Xiaomi"
+            apiFunction={(page, limit) =>
+              fetchProduct_Name_API("xiaomi", page, limit)
+            }
+          />
+        </div>
+        <div className="Samsung-home_page_card">
+          <ProductCategoryOppoComponent />
+          <ProductListComponent
+            categoryName="Oppo"
+            apiFunction={(page, limit) =>
+              fetchProduct_Name_API("oppo", page, limit)
+            }
+          />
+        </div>
+      </div>
     </>
   );
 };

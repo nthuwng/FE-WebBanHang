@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import ProductCard from "../ProductCard/ProductCard";
 import "./ProductListComponent.css";
-import { DiApple } from "react-icons/di";
 import { ArrowRightOutlined } from "@ant-design/icons";
+import SVGDefs from "../../../assets/svg/common-defs";
 
 const ProductComponent = ({ apiFunction, categoryName }) => {
   const [dataProduct, setDataProduct] = useState([]);
@@ -35,6 +35,7 @@ const ProductComponent = ({ apiFunction, categoryName }) => {
   }, [apiFunction, page, limit]);
   return (
     <div className="product-list-component-card-container">
+      <SVGDefs/>
       <div className="product-list-component-card">
         {loading ? (
           <p>Loading products...</p>

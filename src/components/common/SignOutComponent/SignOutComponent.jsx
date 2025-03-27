@@ -3,7 +3,11 @@ import { Button, Input, Form, notification, Divider } from "antd";
 import { Link, useNavigate } from "react-router-dom";
 import { registerAPI } from "../../../services/api.service";
 import "./SignOutComponent.css";
-import { ArrowRightOutlined, FacebookOutlined, GooglePlusOutlined } from "@ant-design/icons";
+import {
+  ArrowRightOutlined,
+  FacebookOutlined,
+  GooglePlusOutlined,
+} from "@ant-design/icons";
 
 export const SignOutComponent = () => {
   const [form] = Form.useForm();
@@ -46,11 +50,11 @@ export const SignOutComponent = () => {
       <form action="#" class="sign-out-container-form">
         <h1 classname="login-page-h1">Create Account</h1>
         <div className="social-container">
-        <a href="#" className="">
-          <FacebookOutlined />
+          <a href="#" className="">
+            <FacebookOutlined />
           </a>
           <a href="#" className="">
-          <GooglePlusOutlined />
+            <GooglePlusOutlined />
           </a>
         </div>
         <span classname="login-page-span" style={{ marginBottom: "10px" }}>
@@ -70,7 +74,7 @@ export const SignOutComponent = () => {
                 message: "Full Name Không đc để trống",
               },
             ]}>
-            <Input placeholder="Full Name" className="sign-in-input"/>
+            <Input placeholder="Full Name" className="sign-in-input" />
           </Form.Item>
           <Form.Item
             name="email"
@@ -80,7 +84,7 @@ export const SignOutComponent = () => {
                 message: "Email không đc để trống",
               },
             ]}>
-            <Input placeholder="Email" className="sign-in-input"/>
+            <Input placeholder="Email" className="sign-in-input" />
           </Form.Item>
           <Form.Item
             name="password"
@@ -90,10 +94,21 @@ export const SignOutComponent = () => {
                 message: "Password không đc để trống",
               },
             ]}>
-            <Input.Password placeholder="Password" className="sign-in-input"/>
+            <Input.Password
+              placeholder="Password"
+              className="sign-in-input"
+              onKeyDown={(event) => {
+                if (event.key === "Enter") {
+                  form.submit();
+                }
+              }}
+            />
           </Form.Item>
           <div>
-            <Button onClick={() => form.submit()} type="primary" style={{width: "360px" ,fontSize: "20px", height: "auto"}}>
+            <Button
+              onClick={() => form.submit()}
+              type="primary"
+              style={{ width: "360px", fontSize: "20px", height: "auto" }}>
               Register
             </Button>
           </div>

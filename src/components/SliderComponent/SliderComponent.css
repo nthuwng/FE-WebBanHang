@@ -28,3 +28,29 @@
   font-size: 35px;
   color: #8e8e8f !important;
 }
+
+/* product_page */
+.product-slider .slick-prev {
+  left: 250px;
+  z-index: 2;
+  color: white;
+}
+
+.product-slider .slick-next {
+  right: 270px;
+  z-index: 2;
+  color: white;
+}
+
+/* home_page */
+.home-slider .slick-prev {
+  left: 220px;
+  z-index: 2;
+  color: white;
+}
+
+.home-slider .slick-next {
+  right: 240px;
+  z-index: 2;
+  color: white;
+}

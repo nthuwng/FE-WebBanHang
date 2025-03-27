@@ -8,9 +8,9 @@ const CustomPrevArrow = (props) => {
   return (
     <div
       className={className}
-      style={{ ...style, left: "420px", zIndex: 2, color: "white" }}
+      style={{ ...style }}
       onClick={onClick}>
-      <LeftOutlined className="custom-arrow"  />
+      {/* <LeftOutlined className="custom-arrow" /> */}
     </div>
   );
 };
@@ -20,13 +20,13 @@ const CustomNextArrow = (props) => {
   return (
     <div
       className={className}
-      style={{ ...style, right: "420px", zIndex: 2, color: "white" }}
+      style={{ ...style }}
       onClick={onClick}>
-      <RightOutlined className="custom-arrow" />
+      {/* <RightOutlined className="custom-arrow" /> */}
     </div>
   );
 };
-export const SliderComponent = ({ arrImages }) => {
+export const SliderComponent = ({ arrImages, customClass }) => {
   const settings = {
     dots: true,
     infinite: true,
@@ -39,13 +39,20 @@ export const SliderComponent = ({ arrImages }) => {
     nextArrow: <CustomNextArrow />,
   };
   return (
-    <div className="slider-container">
+    <div className={`slider-container ${customClass}`}>
       <Slider {...settings}>
         {arrImages.map((image) => {
-          return <Image key={image} src={image} alt="slider" preview={false}style={{width: "65%"}}/>;
+          return (
+            <Image
+              key={image}
+              src={image}
+              alt="slider"
+              preview={false}
+              style={{ width: "65%" }}
+            />
+          );
         })}
       </Slider>
-      
     </div>
   );
 };

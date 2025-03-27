@@ -3,6 +3,7 @@
   width: 90%;
   margin: auto;
   text-align: center;
+  background-color: #ffffff;
 }
 
 /* Tiêu đề trang */
@@ -24,3 +25,28 @@
   align-items: center;
   padding: 20px 0;
 }
+.icon-container {
+  display: flex;
+  gap: 50px;
+  justify-content: center;
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+.icon-box {
+  width: 130px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid black;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.icon-box:hover {
+  transform: scale(1.1);
+  background: rgb(207, 207, 207);
+}
+

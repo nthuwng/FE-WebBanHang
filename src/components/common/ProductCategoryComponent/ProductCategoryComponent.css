@@ -5,7 +5,7 @@
   background: linear-gradient(white, white) padding-box,
     linear-gradient(to right, #ff00cc, #6633ff) border-box;
   border-radius: 20px;
-  margin-left: 100px;
+  margin-left: 50px;
 }
 
 .Iphone-Product-Category-Component_card-h2-name {
@@ -35,7 +35,7 @@
   background: linear-gradient(white, white) padding-box,
     linear-gradient(to right, #ff00cc, #6633ff) border-box;
   border-radius: 20px;
-  margin-left: 100px;
+  margin-left: 50px;
 }
 
 .Samsung-Product-Category-Component_card-h2-name {
@@ -53,6 +53,66 @@
   display: flex;
 }
 .Samsung-Product-Category-Component_card-h3-text {
+  font-size: 23px;
+  margin-bottom: 5px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Xiaomi */
+.Xiaomi-Product-Category-Component_card-tieude-decription {
+  width: 230px;
+  border: 3px solid transparent;
+  background: linear-gradient(white, white) padding-box,
+    linear-gradient(to right, #ff00cc, #6633ff) border-box;
+  border-radius: 20px;
+  margin-left: 50px;
+}
+
+.Xiaomi-Product-Category-Component_card-h2-name {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 5px;
+  font-size: 30px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.Xiaomi-Product-Category-Component_card-h2-name-tieude {
+  display: flex;
+}
+.Xiaomi-Product-Category-Component_card-h3-text {
+  font-size: 23px;
+  margin-bottom: 5px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Oppo */
+.Oppo-Product-Category-Component_card-tieude-decription {
+  width: 230px;
+  border: 3px solid transparent;
+  background: linear-gradient(white, white) padding-box,
+    linear-gradient(to right, #ff00cc, #6633ff) border-box;
+  border-radius: 20px;
+  margin-left: 50px;
+}
+
+.Oppo-Product-Category-Component_card-h2-name {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 5px;
+  font-size: 30px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.Oppo-Product-Category-Component_card-h2-name-tieude {
+  display: flex;
+}
+.Oppo-Product-Category-Component_card-h3-text {
   font-size: 23px;
   margin-bottom: 5px;
   font-family: Arial, Helvetica, sans-serif;

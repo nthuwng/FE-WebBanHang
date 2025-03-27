@@ -2,7 +2,11 @@ import { Button, Form, Input, notification } from "antd";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { loginApi } from "../../../services/api.service";
-import { ArrowRightOutlined, FacebookOutlined, GooglePlusOutlined } from "@ant-design/icons";
+import {
+  ArrowRightOutlined,
+  FacebookOutlined,
+  GooglePlusOutlined,
+} from "@ant-design/icons";
 import "./SignInComponent.css";
 
 const SignInComponent = () => {
@@ -41,24 +45,26 @@ const SignInComponent = () => {
         <h1 classname="login-page-h1">Sign in</h1>
         <div className="social-container">
           <a href="#" className="">
-          <FacebookOutlined />
+            <FacebookOutlined />
           </a>
           <a href="#" className="">
-          <GooglePlusOutlined />
+            <GooglePlusOutlined />
           </a>
         </div>
-        <span classname="login-page-span" style={{marginBottom: "10px"}}>or use your account</span>
+        <span classname="login-page-span" style={{ marginBottom: "10px" }}>
+          or use your account
+        </span>
         {contextHolder}
 
         <Form
-        className="sign-in-form"
+          className="sign-in-form"
           form={form}
           layout="vertical"
           onFinish={onFinish}
           //   onFinishFailed={onFinishFailed}
         >
           <Form.Item
-          className="sign-in-item-input"
+            className="sign-in-item-input"
             name="email"
             rules={[
               {
@@ -70,10 +76,10 @@ const SignInComponent = () => {
                 message: "Email không đúng định dạng",
               },
             ]}>
-            <Input placeholder="Email" className="sign-in-input"/>
+            <Input placeholder="Email" className="sign-in-input" />
           </Form.Item>
           <Form.Item
-          className="sign-in-item-input"
+            className="sign-in-item-input"
             name="password"
             rules={[
               {
@@ -81,7 +87,15 @@ const SignInComponent = () => {
                 message: "Passwd không đc để trống",
               },
             ]}>
-            <Input.Password placeholder="Password" className="sign-in-input"/>
+            <Input.Password
+              placeholder="Password"
+              className="sign-in-input"
+              onKeyDown={(event) => {
+                if (event.key === "Enter") {
+                  form.submit();
+                }
+              }}
+            />
           </Form.Item>
           <div
             style={{
@@ -92,7 +106,8 @@ const SignInComponent = () => {
             <Button
               loading={loading}
               onClick={() => form.submit()}
-              type="primary" style={{width: "360px", fontSize: "20px", height: "auto"}}>
+              type="primary"
+              style={{ width: "360px", fontSize: "20px", height: "auto" }}>
               {" "}
               Login{" "}
             </Button>

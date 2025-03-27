@@ -1,70 +1,190 @@
 .cart-page {
-    padding: 20px;
-    margin: 20px;
-  }
-  
-  .cart-page-breadcrumb {
-    font-size: 14px;
-    margin-bottom: 20px;
-  }
-  
-  .cart-page-breadcrumb a {
-    color: #000;
-    text-decoration: none;
-  }
-  
-  .cart-page-items {
-    margin-bottom: 20px;
-    display: flex;
-    justify-content: center;
+  padding: 20px;
+  margin: 20px;
+}
 
-  }
-  
-  .cart-page-items table {
-    width: 80%;
-    border-collapse: collapse;
-  }
-  
-  .cart-page-items th, .cart-page-items td {
-    padding: 12px;
-    border: 1px solid #ddd;
-    text-align: center;
-  }
-  
-  .cart-summary {
-    display: flex;
-    justify-content: space-between;
-  }
-  
-  .coupon-section {
-    flex: 1;
-    display: flex;
-    align-items: center;
-  }
-  
-  .coupon-section input {
-    padding: 8px;
-    margin-right: 10px;
-  }
-  
-  .apply-coupon {
-    background-color: #ff4747;
-    color: #fff;
-    padding: 8px 16px;
-    border: none;
-    cursor: pointer;
-  }
-  
-  .total {
-    flex: 1;
-    text-align: right;
-  }
-  
-  .checkout-button {
-    background-color: #ff4747;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    cursor: pointer;
-  }
-  
+.cart-page-breadcrumb {
+  font-size: 30px;
+  margin-bottom: 20px;
+  font-weight: bolder;
+}
+
+.cart-page-breadcrumb a {
+  color: #000;
+  text-decoration: none;
+}
+
+.cart-page-items table {
+  width: 100%;
+  max-width: 1500px;
+  border-collapse: separate;
+  border-spacing: 0 10px;
+}
+
+.cart-page-items th,
+.cart-page-items td {
+  padding: 15px;
+  text-align: center;
+  border: 1px solid rgba(186, 182, 182, 0.5);
+  border-radius: 2px;
+}
+
+.cart-page-items td + td,
+.cart-page-items th + th {
+  border-left: none !important;
+}
+
+.cart-summary {
+  margin-top: -30px;
+  margin-left: 1130px;
+}
+
+.cart-page-items th:nth-child(1),
+.cart-page-items td:nth-child(1) {
+  width: 30%;
+  text-align: left;
+  padding-left: 20px;
+  border-right: none;
+}
+
+.cart-page-items th:nth-child(2),
+.cart-page-items td:nth-child(2) {
+  width: 25%;
+  text-align: left;
+  padding-left: 20px;
+  border-right: none;
+}
+
+.cart-page-items th:nth-child(3),
+.cart-page-items td:nth-child(3) {
+  width: 20%;
+  text-align: left;
+  padding-left: 20px;
+  border-right: none;
+}
+
+.cart-page-items th:nth-child(4),
+.cart-page-items td:nth-child(4) {
+  width: 25%;
+  text-align: left;
+  padding-left: 20px;
+}
+
+/*soluong*/
+.Quantity-number {
+  width: 50px;
+  height: 25px;
+  font-size: 14px;
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 2px;
+}
+
+/*cái trả về*/
+.Home-and-Update {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1500px;
+  margin: auto;
+  margin-top: 20px;
+}
+.Return-To-Home:hover > .Return-To-Home-text {
+  color: white;
+  transition: all 0.2s ease-in-out;
+}
+.Return-To-Home,
+.Update-Cart {
+  padding: 15px 30px;
+  border: 2px solid black;
+  background-color: white;
+  color: black;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  border-radius: 10px;
+}
+.Return-To-Home-text {
+  text-decoration: none;
+  color: black;
+}
+.Return-To-Home-text:hover {
+  color: white;
+}
+.Return-To-Home:hover,
+.Update-Cart:hover {
+  background: linear-gradient(to right, #d62976 22%, #962fbf 62%, #4f5bd5 97%);
+  color: white;
+}
+
+.coupon-section {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.coupon-section input {
+  padding: 8px;
+  margin-right: 10px;
+}
+
+.apply-coupon {
+  background-color: #ff4747;
+  color: #fff;
+  padding: 8px 16px;
+  border: none;
+  cursor: pointer;
+}
+
+/*cái bảng dưới*/
+.total {
+  width: 350px;
+  border: 1px solid black;
+  padding: 25px;
+  border-radius: 5px;
+  background-color: white;
+  font-family: Arial, sans-serif;
+  margin-left: 1090px;
+  margin-top: 30px;
+}
+
+.Cart-Total {
+  font-weight: bold;
+  font-size: 25px;
+  margin-bottom: 30px;
+  text-align: center;
+  border-radius: 10px;
+  background: linear-gradient(to right, #d62976 22%, #962fbf 62%, #4f5bd5 97%);
+}
+
+.total p {
+  display: flex;
+  justify-content: space-between;
+  font-size: 16px;
+  margin: 15px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  padding-bottom: 5px;
+}
+
+.checkout-button {
+  width: 100%;
+  padding: 10px;
+  background-color: #e63946;
+  color: white;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+.checkout-button:hover {
+  background-color: #f60515;
+}
+
+.total-Totalmoney {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  font-weight: bold;
+}

@@ -4,6 +4,7 @@ import ProductPage from "../pages/ProductPage/ProductPage.jsx";
 import HomePage from "../pages/HomePage/HomePage.jsx";
 import LoginPage from "../pages/LoginPage/LoginPage.jsx";
 import CartPage from "../pages/CartPage/CartPage.jsx";
+import Iphone_information_product from "../components/common/Information_product/Iphone_information_product.jsx";
 
 
 const router = createBrowserRouter([
@@ -28,6 +29,10 @@ const router = createBrowserRouter([
   {
     path: "/login",
     element: <LoginPage />,
+  },
+  {
+    path: "/test",
+    element: <Iphone_information_product />,
   },
 ]);
 
