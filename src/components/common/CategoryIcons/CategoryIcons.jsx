@@ -2,35 +2,48 @@ import { FaApple } from "react-icons/fa";
 import { SiSamsung } from "react-icons/si";
 import { SiOppo } from "react-icons/si";
 import { SiXiaomi } from "react-icons/si";
+import "./CategoryIcons.css";
 
 const CategoryIcons = (props) => {
-  const { setCategory } = props;
+  const { category, setCategory } = props;
 
   return (
     <>
-      <div className="icon-container">
-        <div className="icon-box">
+      <div className="icon-container-categoryIcons">
+        <div
+          className={`icon-box-categoryIcons ${
+            category === "Apple" ? "selected" : ""
+          }`}>
           <FaApple
             color="black"
             size={40}
-            onClick={() => setCategory("apple")}
+            onClick={() => setCategory("Apple")}
           />
         </div>
-        <div className="icon-box">
+        <div
+          className={`icon-box-categoryIcons ${
+            category === "Samsung" ? "selected" : ""
+          }`}>
           <SiSamsung
             color="blue"
             size={70}
-            onClick={() => setCategory("samsung")}
+            onClick={() => setCategory("Samsung")}
           />
         </div>
-        <div className="icon-box">
-          <SiOppo color="green" size={60} onClick={() => setCategory("oppo")} />
+        <div
+          className={`icon-box-categoryIcons ${
+            category === "Oppo" ? "selected" : ""
+          }`}>
+          <SiOppo color="green" size={60} onClick={() => setCategory("Oppo")} />
         </div>
-        <div className="icon-box">
+        <div
+          className={`icon-box-categoryIcons ${
+            category === "Xiaomi" ? "selected" : ""
+          }`}>
           <SiXiaomi
             color="orange"
             size={40}
-            onClick={() => setCategory("xiaomi")}
+            onClick={() => setCategory("Xiaomi")}
           />
         </div>
       </div>

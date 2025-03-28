@@ -7,10 +7,13 @@
   border-bottom: 1px solid #ddd;
   font-family: Arial, sans-serif;
   height: 50px;
-  width: 90%;
+  width: 100%;
   margin: 0 auto;
   padding: 5rem;
   text-align: center;
+  /* background: linear-gradient(to right, #d62976 22%, #962fbf 62%, #4f5bd5 97%); */
+  background-color: #FFDAB9;
+  color: white;
 }
 
 /* Logo */
@@ -50,6 +53,7 @@
   gap: 35px;
   font-size: 25px; /* Giảm font size để menu gọn hơn */
   list-style: none;
+  
 }
 
 .nav-links a {
@@ -58,6 +62,7 @@
   font-weight: 500;
   padding-bottom: 4px;
   position: relative;
+  color: white;
 }
 
 .nav-links a:hover {

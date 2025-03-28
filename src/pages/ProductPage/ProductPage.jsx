@@ -10,9 +10,11 @@ import {
 } from "../../services/api.service";
 import ProductCard from "../../components/common/ProductCard/ProductCard"; // Import component mới
 import "./ProductPage.css"; // CSS cho ProductPage
-import { SliderComponent } from "../../components/SliderComponent/SliderComponent";
+import { SliderComponent } from "../../components/common/SliderComponent/SliderComponent";
 
 import CategoryIcons from "../../components/common/CategoryIcons/CategoryIcons";
+import { Link } from "react-router-dom";
+import { FaArrowRight } from "react-icons/fa";
 
 const ProductPage = () => {
   const [dataProduct, setDataProduct] = useState([]);
@@ -35,18 +37,26 @@ const ProductPage = () => {
         } else {
           setDataProduct([]);
         }
-        setLoading(false); // Ẩn spinner khi dữ liệu đã được cập nhật
-      }, 200); // Độ trễ 2 giây (bạn có thể thay đổi giá trị này)
+        setLoading(false);
+      }, 200);
     } catch (error) {
       console.error("Lỗi khi gọi API", error);
       setDataProduct([]);
-      setLoading(false); // Ẩn spinner nếu có lỗi
+      setLoading(false);
     }
   };
 
   useEffect(() => {
     loadProduct();
   }, [category, page, limit]);
+
+  const handleProductCategoryClick = (category) => {
+    if (category === "Điện thoại") {
+      setCategory("all");
+    } else {
+      setCategory(category);
+    }
+  };
 
   return (
     <div className="product-container-page">
@@ -59,19 +69,52 @@ const ProductPage = () => {
         ]}
         customClass="product-slider"
       />
+      {/* menu chon danh muc */}
+      <CategoryIcons
+        setCategory={handleProductCategoryClick}
+        category={category}
+      />
 
-      <CategoryIcons setCategory={setCategory}/>
+      <div className="navigate-link-product-page">
+        <Link to="/" className="link-product-page">
+          Trang chủ
+        </Link>{" "}
+        /
+        <Link
+          to="/products"
+          className={`link-product-page ${
+            category === "all"
+              ? "link-product-page-selected"
+              : "link-product-page-Unselected"
+          }`}
+          onClick={() => {
+            setCategory("all");
+          }}>
+          Điện thoại
+        </Link>
+        {category !== "all" && (
+          <>
+            /{" "}
+            <Link
+              className={`link-product-page ${
+                category !== "all"
+                  ? "link-product-page-selected"
+                  : "link-product-page-Unselected"
+              }`}>
+              {category}
+            </Link>
+          </>
+        )}
+      </div>
 
       {loading ? (
-        <div style={{ height: "1000px" }}>Loading Product.....</div>
+        <div className="Loading_Product_product_page">Loading Product.....</div>
       ) : (
         <div className="product-grid-page">
           {dataProduct.map((product) => (
             <ProductCard key={product._id} product={product} />
           ))}
         </div>
-
-        
       )}
     </div>
   );

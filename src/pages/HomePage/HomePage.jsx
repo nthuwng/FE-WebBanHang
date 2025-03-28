@@ -1,7 +1,7 @@
 import slider1 from "../../assets/images/Sliders/slider1.png";
 import slider2 from "../../assets/images/Sliders/slider2.png";
 import slider3 from "../../assets/images/Sliders/slider3.png";
-import { SliderComponent } from "../../components/SliderComponent/SliderComponent.jsx";
+import { SliderComponent } from "../../components/common/SliderComponent/SliderComponent.jsx";
 import ProductListComponent from "../../components/common/ProductListComponent/ProductListComponent.jsx";
 import { fetchProduct_Name_API } from "../../services/api.service";
 
