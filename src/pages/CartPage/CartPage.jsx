@@ -20,6 +20,8 @@ const CartPage = () => {
     0
   );
 
+  
+
   return (
     <div className="cart-page">
       <div className="cart-page-breadcrumb">
@@ -65,7 +67,9 @@ const CartPage = () => {
       </div>
       <div className="Home-and-Update">
         <button className="Return-To-Home">
-          <Link to="/" className="Return-To-Home-text">Return To Home</Link>
+          <Link to="/" className="Return-To-Home-text">
+            Return To Home
+          </Link>
         </button>
         <button className="Update-Cart">Update Cart</button>
       </div>

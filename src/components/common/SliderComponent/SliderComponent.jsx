@@ -1,15 +1,14 @@
 import React from "react";
 import Slider from "react-slick";
 import { Image } from "antd";
-import { LeftOutlined, RightOutlined } from "@ant-design/icons";
 import "./SliderComponent.css";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 const CustomPrevArrow = (props) => {
   const { className, style, onClick } = props;
   return (
-    <div
-      className={className}
-      style={{ ...style }}
-      onClick={onClick}>
+    <div className={className} style={{ ...style }} onClick={onClick}>
       {/* <LeftOutlined className="custom-arrow" /> */}
     </div>
   );
@@ -18,10 +17,7 @@ const CustomPrevArrow = (props) => {
 const CustomNextArrow = (props) => {
   const { className, style, onClick } = props;
   return (
-    <div
-      className={className}
-      style={{ ...style }}
-      onClick={onClick}>
+    <div className={className} style={{ ...style }} onClick={onClick}>
       {/* <RightOutlined className="custom-arrow" /> */}
     </div>
   );
@@ -38,8 +34,12 @@ export const SliderComponent = ({ arrImages, customClass }) => {
     prevArrow: <CustomPrevArrow />,
     nextArrow: <CustomNextArrow />,
   };
+
+  useEffect(() => {
+    AOS.refreshHard();
+  }, []);
   return (
-    <div className={`slider-container ${customClass}`}>
+    <div className={`slider-container ${customClass}`} data-aos="fade-up">
       <Slider {...settings}>
         {arrImages.map((image) => {
           return (

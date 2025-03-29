@@ -1,5 +1,6 @@
-.Dienthoai-home_page_card{
+.Dienthoai-home_page_card {
   background-color: white;
+  
 }
 .Iphone-home_page_card {
   display: flex;
@@ -10,3 +11,12 @@
   margin-bottom: 15px;
   display: flex;
 }
+.Dienthoai-noibat-nhat {
+  height: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 85%;
+  margin: 0 auto;
+}
+

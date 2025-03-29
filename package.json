@@ -12,6 +12,7 @@
   "dependencies": {
     "@ant-design/icons": "5.3.7",
     "antd": "5.18.1",
+    "aos": "^2.3.4",
     "axios": "1.7.2",
     "lucide-react": "^0.477.0",
     "react": "^19.0.0",

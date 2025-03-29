@@ -3,7 +3,8 @@ import ProductCard from "../ProductCard/ProductCard";
 import "./ProductListComponent.css";
 import { ArrowRightOutlined } from "@ant-design/icons";
 import SVGDefs from "../../../assets/svg/common-defs";
-
+import AOS from "aos";
+import "aos/dist/aos.css";
 const ProductComponent = ({ apiFunction, categoryName }) => {
   const [dataProduct, setDataProduct] = useState([]);
   const [page, setPage] = useState(1);
@@ -33,9 +34,15 @@ const ProductComponent = ({ apiFunction, categoryName }) => {
   useEffect(() => {
     fetchProduct();
   }, [apiFunction, page, limit]);
+
+  useEffect(() => {
+    if (dataProduct.length > 0) {
+      AOS.refreshHard();
+    }
+  }, [dataProduct]);
   return (
     <div className="product-list-component-card-container">
-      <SVGDefs/>
+      <SVGDefs />
       <div className="product-list-component-card">
         {loading ? (
           <p>Loading products...</p>

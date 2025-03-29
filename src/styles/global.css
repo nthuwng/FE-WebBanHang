@@ -3,15 +3,19 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  
 }
 .content-outlet {
   flex-grow: 1;
+  background-color: #F3F4F6;
 }
 
 html,
 body {
   height: 100%;
   margin: 0;
+  
+ 
 }
 
 #root {
@@ -23,3 +27,4 @@ body {
 .footer {
   margin-top: auto;
 }
+
