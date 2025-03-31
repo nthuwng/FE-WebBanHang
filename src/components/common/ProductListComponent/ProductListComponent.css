@@ -1,4 +1,5 @@
 .product-list-component-card-grid-page {
   display: flex;
   margin-left: 10px;
+  gap: 10px;
 }

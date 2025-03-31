@@ -15,6 +15,12 @@ import { SliderComponent } from "../../components/common/SliderComponent/SliderC
 import CategoryIcons from "../../components/common/CategoryIcons/CategoryIcons";
 import { Link } from "react-router-dom";
 import { FaArrowRight } from "react-icons/fa";
+import Iphone_information_product from "../../components/common/Information_product/Iphone_information_product";
+import Oppo_information_product from "../../components/common/Information_product/Oppo_information_product";
+import Samsung_information_product from "../../components/common/Information_product/Samsung_information_product";
+import Xiaomi_information_product from "../../components/common/Information_product/Xiaomi_information_product";
+import Information_product_all from "../../components/common/Information_product/Information_product_all";
+import Information_product_main from "../../components/common/Information_product/Information_product_main/Information_product_main";
 
 const ProductPage = () => {
   const [dataProduct, setDataProduct] = useState([]);
@@ -51,12 +57,14 @@ const ProductPage = () => {
   }, [category, page, limit]);
 
   const handleProductCategoryClick = (category) => {
-    if (category === "Điện thoại") {
+    if (category === "all") {
+      console.log(category);
       setCategory("all");
     } else {
       setCategory(category);
     }
   };
+
 
   return (
     <div className="product-container-page">
@@ -116,6 +124,10 @@ const ProductPage = () => {
           ))}
         </div>
       )}
+
+      <div className="text_infomation_product_to_category">
+      <Information_product_main category={category} />
+      </div>
     </div>
   );
 };
