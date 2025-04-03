@@ -65,7 +65,6 @@ const ProductPage = () => {
     }
   };
 
-
   return (
     <div className="product-container-page">
       <SliderComponent
@@ -126,7 +125,7 @@ const ProductPage = () => {
       )}
 
       <div className="text_infomation_product_to_category">
-      <Information_product_main category={category} />
+        <Information_product_main category={category} />
       </div>
     </div>
   );
