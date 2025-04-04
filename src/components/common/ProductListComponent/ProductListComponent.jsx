@@ -15,7 +15,6 @@ const ProductComponent = ({ apiFunction, categoryName }) => {
     try {
       setLoading(true);
       const res = await apiFunction(page, limit);
-      console.log(res);
       if (Array.isArray(res.data)) {
         setDataProduct(res.data);
       } else if (res.data && res.data.data && Array.isArray(res.data.data)) {

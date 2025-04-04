@@ -47,8 +47,8 @@ export const SignOutComponent = () => {
   };
   return (
     <div className="form-container sign-up-container">
-      <form action="#" class="sign-out-container-form">
-        <h1 classname="login-page-h1">Create Account</h1>
+      <form action="#" className="sign-out-container-form">
+        <h1 className="login-page-h1">Create Account</h1>
         <div className="social-container">
           <a href="#" className="">
             <FacebookOutlined />
@@ -57,7 +57,7 @@ export const SignOutComponent = () => {
             <GooglePlusOutlined />
           </a>
         </div>
-        <span classname="login-page-span" style={{ marginBottom: "10px" }}>
+        <span className="login-page-span" style={{ marginBottom: "10px" }}>
           or use your email for registration
         </span>
         {contextHolder}

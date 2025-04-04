@@ -4,16 +4,29 @@ import FooterComponent from "./components/layout/FooterComponent/FooterComponent
 import ScrollToTopButton from "./components/layout/ScrollToTopButton/ScrollToTopButton.jsx";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { useEffect } from "react";
+import { useContext, useEffect, useState } from "react";
+import { AuthContext } from "./components/context/auth.context.jsx";
+import { getAccountAPI } from "./services/api.service.js";
 
 function App() {
+  const { user, setUser } = useContext(AuthContext);
+
   useEffect(() => {
     AOS.init({
       duration: 1000,
       once: true,
       offset: 400,
     });
+    fetchUserInfor();
   }, []);
+
+  const fetchUserInfor = async () => {
+    const res = await getAccountAPI();
+    if (res.data) {
+      setUser(res.data);
+    }
+    console.log("User sum:", user.cart.sum);
+  };
 
   return (
     <>

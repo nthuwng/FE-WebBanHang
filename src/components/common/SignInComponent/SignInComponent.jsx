@@ -41,8 +41,8 @@ const SignInComponent = () => {
   };
   return (
     <div className="form-container sign-in-container">
-      <form action="#" onSubmit={onFinish} class="sign-in-container-form">
-        <h1 classname="login-page-h1">Sign in</h1>
+      <form action="#" onSubmit={onFinish} className="sign-in-container-form">
+        <h1 className="login-page-h1">Sign in</h1>
         <div className="social-container">
           <a href="#" className="">
             <FacebookOutlined />
@@ -51,7 +51,7 @@ const SignInComponent = () => {
             <GooglePlusOutlined />
           </a>
         </div>
-        <span classname="login-page-span" style={{ marginBottom: "10px" }}>
+        <span className="login-page-span" style={{ marginBottom: "10px" }}>
           or use your account
         </span>
         {contextHolder}

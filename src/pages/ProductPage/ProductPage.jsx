@@ -14,15 +14,10 @@ import { SliderComponent } from "../../components/common/SliderComponent/SliderC
 
 import CategoryIcons from "../../components/common/CategoryIcons/CategoryIcons";
 import { Link } from "react-router-dom";
-import { FaArrowRight } from "react-icons/fa";
-import Iphone_information_product from "../../components/common/Information_product/Iphone_information_product";
-import Oppo_information_product from "../../components/common/Information_product/Oppo_information_product";
-import Samsung_information_product from "../../components/common/Information_product/Samsung_information_product";
-import Xiaomi_information_product from "../../components/common/Information_product/Xiaomi_information_product";
-import Information_product_all from "../../components/common/Information_product/Information_product_all";
 import Information_product_main from "../../components/common/Information_product/Information_product_main/Information_product_main";
+import { AuthContext } from "../../components/context/auth.context";
 
-const ProductPage = () => {
+const ProductPage = (props) => {
   const [dataProduct, setDataProduct] = useState([]);
   const [page, setPage] = useState(1);
   const [limit, setLimit] = useState();
@@ -58,7 +53,7 @@ const ProductPage = () => {
 
   const handleProductCategoryClick = (category) => {
     if (category === "all") {
-      console.log(category);
+      // console.log(category);
       setCategory("all");
     } else {
       setCategory(category);
