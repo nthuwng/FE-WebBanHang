@@ -25,7 +25,6 @@ function App() {
     if (res.data) {
       setUser(res.data);
     }
-    console.log("User sum:", user.cart.sum);
   };
 
   return (

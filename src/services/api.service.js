@@ -53,6 +53,11 @@ const getCartByUserIDServices = async (userID) => {
   return axios.get(URL_BACKEND);
 };
 
+const getCart_details_ByUserId = async (userID) => {
+  const URL_BACKEND = `/cart_details/getCart_details_ByUserId?userId=${userID}`;
+  return axios.get(URL_BACKEND);
+};
+
 export {
   fetchProductAPI,
   loginApi,
@@ -61,4 +66,5 @@ export {
   getAccountAPI,
   handleAddProductToCartAPI,
   getCartByUserIDServices,
+  getCart_details_ByUserId,
 };

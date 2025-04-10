@@ -1,5 +1,6 @@
 import { Button } from "antd";
 import React, { useState } from "react";
+import "./Xiaomi_information_product.css"
 
 const Xiaomi_information_product = (props) => {
   const { category } = props;
@@ -14,19 +15,18 @@ const Xiaomi_information_product = (props) => {
     <>
       {category === "Xiaomi" && (
         <>
+        <div className="Xiaomi-info-container">
+          <div> <span className="highlight_bold"></span>
           <p>
             Điện thoại Xiaomi là một trong những dòng sản phẩm chủ lực của
             Xiaomi tại Việt Nam. Dòng máy không chỉ thu hút người dùng nhờ vẻ
             ngoài tinh tế mà còn bởi khả năng chụp ảnh tuyệt vời và hiệu năng
             vượt trội trong mọi tầm giá. Chính điều này đã khẳng định vị thế lớn
-            mạnh của điện thoại Xiaomi chính hãng khi so sánh với các thương
+            mạnh của  <span className="highlight">điện thoại Xiaomi chính hãng</span> khi so sánh với các thương
             hiệu khác trên thị trường.
           </p>
-
-          {isExpanded && (
-            <>
-              <h3>1. Đôi nét về điện thoại Xiaomi - Redmi</h3>
-              <p>
+          <h3>1. Đôi nét về điện thoại Xiaomi - Redmi</h3>
+              <p className="Xiaomi-info-container-p">
                 Xiaomi là một trong những thương hiệu điện thoại lớn tại Trung
                 Quốc và quốc tế, có trụ sở chính ở Bắc Kinh. Được mệnh danh là
                 “Apple của Trung Quốc”, Xiaomi luôn mang đến những dòng điện
@@ -35,8 +35,11 @@ const Xiaomi_information_product = (props) => {
               </p>
               <img
                 src="src/assets/images/Info_description_product/Xiaomi_Info_description/Xiaomi_1.png"
-                alt=""
+                alt="" className={`Xiaomi-info-container-img-chinh ${isExpanded ? "expanded" : ""}`}
               />
+          </div>
+          {isExpanded && (
+            <>
               <p>
                 Thương hiệu Xiaomi bắt đầu hành trình của mình vào ngày 6/4/2010
                 trong mảng thiết bị công nghệ. Sau hơn một thập kỷ đầy nỗ lực và
@@ -61,19 +64,19 @@ const Xiaomi_information_product = (props) => {
                 Thương hiệu này luôn đề cao việc tạo ra thiết kế ấn tượng và
                 hiện đại cho sản phẩm của mình. Điều này khiến người dùng không
                 thể rời mắt ngay từ lần nhìn đầu tiên. Họ không chỉ dừng lại ở
-                thiết kế nguyên khối và vuông vức mà còn quan tâm đến việc phối
-                màu sắc tinh tế hơn. Những sản phẩm mới đều sở hữu mặt lưng bóng
+                <span className="highlight_bold"> thiết kế nguyên khối</span> và vuông vức mà còn quan tâm đến việc phối
+                màu sắc tinh tế hơn. Những sản phẩm mới đều sở hữu <span className="highlight_bold">mặt lưng bóng</span> 
                 với hiệu ứng màu ấn tượng, đem lại cho người dùng những chiếc
                 smartphone táo bạo và cuốn hút.
               </p>
               <img
                 src="src/assets/images/Info_description_product/Xiaomi_Info_description/Xiaomi_2.png"
-                alt=""
+                alt="" className="Xiaomi-info-container-img"
               />
               <p>
-                Chưa hết, Xiaomi đã có những cải tiến thêm với nhiều gam màu trẻ
-                trung và các chi tiết tinh xảo như mặt lưng cong, hiệu ứng
-                gradient. Đặc biệt, cụm camera của Xiaomi - Redmi cũng được bố
+                Chưa hết, Xiaomi đã có những cải tiến thêm với <span className="highlight_bold"> nhiều gam màu trẻ
+                trung</span> và các chi tiết tinh xảo như mặt lưng cong, hiệu ứng
+                <span className="highlight_bold"> gradient</span>. Đặc biệt, cụm camera của Xiaomi - Redmi cũng được bố
                 trí hài hòa, tạo điểm nhấn cho toàn bộ thiết bị.
               </p>
               <h3>2.2. Màn hình</h3>
@@ -81,34 +84,34 @@ const Xiaomi_information_product = (props) => {
                 Màn hình của điện thoại Xiaomi luôn mang lại trải nghiệm tuyệt
                 vời nhờ vào công nghệ hiển thị cao cấp. Dù là dòng Redmi giá rẻ
                 hay Mi Series cao cấp, chúng đều được trang bị màn hình có độ
-                phân giải tối thiểu Full HD+, hỗ trợ các công nghệ như AMOLED
-                hay IPS LCD.{" "}
+                phân giải tối thiểu <span className="highlight_bold">Full HD+</span> , hỗ trợ các công nghệ như <span className="highlight_bold">AMOLED</span> 
+                hay <span className="highlight_bold">IPS LCD</span>.{" "}
               </p>
               <img
                 src="src/assets/images/Info_description_product/Xiaomi_Info_description/Xiaomi_3.png"
-                alt=""
+                alt="" className="Xiaomi-info-container-img"
               />
               <p>
                 Điều này giúp hình ảnh hiển thị trở nên sắc nét, sống động và
                 chân thực. Đối với các mẫu flagship, màn hình còn hỗ trợ tần số
-                quét cao từ 90Hz đến 120Hz, mang lại trải nghiệm mượt mà khi
+                quét cao từ <span className="highlight_bold">90Hz đến 120Hz</span>, mang lại trải nghiệm mượt mà khi
                 chơi game hoặc lướt web.
               </p>
               <h3>2.3. Hiệu năng</h3>
               <p>
                 Điện thoại Xiaomi - Redmi được đánh giá cao về hiệu năng nhờ
-                trang bị các con chip mạnh mẽ từ Qualcomm và MediaTek. Các dòng
+                trang bị các con chip mạnh mẽ từ <span className="highlight_bold"> Qualcomm và MediaTek</span> Qualcomm và MediaTek. Các dòng
                 máy thuộc Mi Series thường sử dụng chip Snapdragon cao cấp, đảm
                 bảo khả năng xử lý đa nhiệm mượt mà từ công việc đến giải trí.{" "}
               </p>
               <img
                 src="src/assets/images/Info_description_product/Xiaomi_Info_description/Xiaomi_4.png"
-                alt=""
+                alt="" className="Xiaomi-info-container-img"
               />
               <p>
                 Trong khi đó, dòng Redmi và POCO cũng không kém cạnh với các
                 chip tầm trung nhưng vẫn đảm bảo hiệu suất tốt. Đặc biệt, với
-                dung lượng RAM từ 4GB đến 16GB và bộ nhớ trong lên đến 512GB,
+                dung lượng RAM từ <span className="highlight_bold">4GB đến 16GB</span>  và bộ nhớ trong lên đến 512GB,
                 người dùng có thể thoải mái sử dụng mà không lo giật lag hay
                 thiếu không gian lưu trữ.
               </p>
@@ -128,12 +131,12 @@ const Xiaomi_information_product = (props) => {
               </p>
               <img
                 src="src/assets/images/Info_description_product/Xiaomi_Info_description/Xiaomi_5.png"
-                alt=""
+                alt="" className="Xiaomi-info-container-img"
               />
               <p>
                 Đối với dòng sản phẩm cao cấp và cận cao cấp, Xiaomi - Redmi đã
                 đưa ra một cấp độ hoàn toàn mới về chất lượng camera nhờ sự hợp
-                tác với Leica. Sự kết hợp này đã giúp điện thoại Xiaomi được
+                tác với <span className="highlight_bold">Leica</span> . Sự kết hợp này đã giúp điện thoại Xiaomi được
                 trang bị các ống kính quang học chuyên nghiệp của Leica cùng với
                 những thuật toán và phần mềm hiện đại.
               </p>
@@ -147,25 +150,26 @@ const Xiaomi_information_product = (props) => {
               <p>
                 Xiaomi - Redmi luôn tập trung mang lại thời lượng pin cao cho
                 người dùng của mình. Cụ thể, hãng đã trang bị cho các dòng điện
-                thoại các mức pin lớn từ 4000 - 5000 mAh. Điều này đảm bảo thời
+                thoại các mức pin lớn từ  <span className="highlight_bold">4000 - 5000 mAh</span>. Điều này đảm bảo thời
                 gian dùng máy lâu dài nên bạn cũng không cần lo lắng bị tụt pin
                 nhanh chóng và gây ảnh hưởng đến trải nghiệm.
               </p>
               <p>
                 Đồng thời Xiaomi - Redmi cũng không quên tối ưu hóa thời gian
-                sạc pin bằng việc tích hợp công suất sạc lớn và tính năng sạc
-                nhanh siêu tốc. Nhờ vậy mà thời gian sạc được rút ngắn, mang lại
+                sạc pin bằng việc tích hợp <span className="highlight_bold">công suất sạc lớn</span>  và <span className="highlight_bold">tính năng sạc
+                nhanh siêu tốc</span>. Nhờ vậy mà thời gian sạc được rút ngắn, mang lại
                 sự tiện lợi và hiệu quả tốt hơn cho người dùng.
               </p>
               <img
                 src="src/assets/images/Info_description_product/Xiaomi_Info_description/Xiaomi_6.png"
-                alt=""
+                alt="" className="Xiaomi-info-container-img"
               />
               <h3>2.6. Hệ điều hành</h3>
               <p>
-                Hệ điều hành MIUI (hoặc HyperOS) của điện thoại Xiaomi được đánh
+                Hệ điều hành tính năng sạc
+                nhanh siêu tốc<span className="highlight_bold"> MIUI</span> (hoặc HyperOS) của điện thoại Xiaomi được đánh
                 giá cao nhờ sở hữu giao diện thân thiện và khả năng tùy biến
-                mạnh mẽ. Dòng thiết bị dùng hệ điều hành Android trên nền tảng
+                mạnh mẽ. Dòng thiết bị dùng hệ điều hành  <span className="highlight_bold">Android</span> trên nền tảng
                 MIUI, mang đến trải nghiệm sử dụng mượt mà và dễ dàng. Xiaomi -
                 Redmi cũng liên tục cập nhật phần mềm để cải thiện hiệu năng và
                 bảo mật cho thiết bị.
@@ -179,7 +183,7 @@ const Xiaomi_information_product = (props) => {
               </p>
               <img
                 src="src/assets/images/Info_description_product/Xiaomi_Info_description/Xiaomi_7.png"
-                alt=""
+                alt="" className="Xiaomi-info-container-img"
               />
               <p>
                 Mới đây, hãng đã giới thiệu giao diện điều hành HyperOS trên một
@@ -207,14 +211,14 @@ const Xiaomi_information_product = (props) => {
               </p>
               <h3>3.1. Xiaomi series (Mi series)</h3>
               <p>
-                Mi Series là dòng flagship của điện thoại Xiaomi với thiết kế
+              <span className="highlight">Mi Series</span>  là dòng flagship của điện thoại Xiaomi với thiết kế
                 cao cấp và hiệu năng mạnh mẽ. Các sản phẩm trong dòng này thường
-                được trang bị chip Snapdragon hàng đầu của Qualcomm, camera chất
-                lượng cao và màn hình AMOLED sắc nét.{" "}
+                được trang bị chip <span className="highlight_bold">Snapdragon</span> hàng đầu của Qualcomm, camera chất
+                lượng cao và màn hình <span className="highlight_bold">AMOLED</span> sắc nét.{" "}
               </p>
               <img
                 src="src/assets/images/Info_description_product/Xiaomi_Info_description/Xiaomi_8.png"
-                alt=""
+                alt="" className="Xiaomi-info-container-img"
               />
               <p>
                 Có thể nói sản phẩm thuộc Xiaomi Mi Series hướng đến đối tượng
@@ -224,40 +228,40 @@ const Xiaomi_information_product = (props) => {
               </p>
               <p>
                 Một số gợi ý của Xiaomi Mi Series trên thị trường hiện nay: Dòng
-                Xiaomi 14, dòng Xiaomi 13,...
+                <span className="highlight">Xiaomi 14</span> , <span className="highlight_bold">dòng Xiaomi 13</span> ,...
               </p>
               <h3>3.2. Xiaomi T series</h3>
               <p>
-                Xiaomi T Series là sự lựa chọn hợp lý cho những ai muốn trải
+              <span className="highlight">Xiaomi T Series</span>  là sự lựa chọn hợp lý cho những ai muốn trải
                 nghiệm điện thoại cao cấp với mức giá phải chăng hơn. Dòng này
-                có hiệu năng mạnh mẽ, nhiều công nghệ tiên tiến như sạc nhanh,
-                màn hình tần số quét cao nhưng giá lại rẻ hơn so với Mi Series.
+                có <span className="highlight_bold">hiệu năng mạnh mẽ</span> , nhiều công nghệ tiên tiến như <span className="highlight_bold">sạc nhanh</span> ,
+                màn hình <span className="highlight_bold">tần số quét cao</span>  nhưng giá lại rẻ hơn so với Mi Series.
                 Dòng điện thoại Xiaomi T là lựa chọn phù hợp cho những người
                 dùng muốn sở hữu một chiếc smartphone hiệu suất cao mà vẫn tiết
                 kiệm chi phí.
               </p>
               <img
                 src="src/assets/images/Info_description_product/Xiaomi_Info_description/Xiaomi_9.png"
-                alt=""
+                alt="" className="Xiaomi-info-container-img"
               />
               <p>
-                Bạn có thể tham khảo một số sản phẩm đang có hiện nay như: Dòng
-                Xiaomi 14T, dòng Xiaomi 13T,
+                Bạn có thể tham khảo một số sản phẩm đang có hiện nay như:<span className="highlight"> Dòng
+                Xiaomi 14T</span>, dòng Xiaomi 13T,
               </p>
               <h3>3.3. Xiaomi Mix (Mi Mix series)</h3>
               <p>
-                Xiaomi Mi Mix Series tiếp tục là một dòng sản phẩm thuộc phân
+              <span className="highlight_bold">Xiaomi Mi Mix Series</span>  tiếp tục là một dòng sản phẩm thuộc phân
                 khúc cao cấp của điện thoại Xiaomi. Những chiếc smartphone này
-                đều sở hữu màn hình full viền, toát lên vẻ cuốn hút độc đáo và
+                đều sở hữu <span className="highlight_bold">màn hình full viền</span> , toát lên vẻ cuốn hút độc đáo và
                 tối ưu mọi trải nghiệm về giải trí.
               </p>
               <img
                 src="src/assets/images/Info_description_product/Xiaomi_Info_description/Xiaomi_10.png"
-                alt=""
+                alt="" className="Xiaomi-info-container-img"
               />
               <p>
                 Bên cạnh đó, điểm tạo nên sự khác biệt của dòng máy này chính là
-                nó sở hữu phong cách thiết kế theo dạng vỏ gốm độc lạ. Điện
+                nó sở hữu phong cách thiết kế theo dạng <span className="highlight_bold">vỏ gốm độc lạ</span> . Điện
                 thoại Xiaomi cũng trang bị những công nghệ hàng đầu cho chiếc
                 điện thoại cao cấp của hãng. Điều này nhằm mang đến hiệu năng
                 khủng đủ để cân tốt mọi nhu cầu giải trí và tác vụ nâng cao của
@@ -265,39 +269,39 @@ const Xiaomi_information_product = (props) => {
               </p>
               <p>
                 Đó là lý do sản phẩm này trở thành thiết bị lý tưởng dành cho
-                các game thủ mobile. Tuy nhiên sau khi Mi Mix 4 ra mắt vào năm
+                các game thủ mobile. Tuy nhiên sau khi <span className="highlight_bold">Mi Mix 4</span>  ra mắt vào năm
                 2021 thì hiện tại Xiaomi vẫn chưa ra mắt phiên bản điện thoại
                 mới cho dòng máy này.
               </p>
               <h3>3.4. Redmi</h3>
               <p>
-                Redmi là dòng điện thoại giá rẻ của Xiaomi hướng đến người dùng
+              <span className="highlight"> Redmi</span> là dòng điện thoại giá rẻ của Xiaomi hướng đến người dùng
                 phổ thông. Dù có giá thành phải chăng nhưng điện thoại Xiaomi
-                thuộc dòng Redmi vẫn đảm bảo được hiệu năng ổn định, màn hình
-                lớn và thời lượng pin tốt. Dòng sản phẩm này rất phù hợp cho học
+                thuộc dòng Redmi vẫn đảm bảo được <span className="highlight_bold">hiệu năng ổn định, màn hình
+                lớn và thời lượng pin tốt</span>. Dòng sản phẩm này rất phù hợp cho học
                 sinh, sinh viên hoặc những ai cần một thiết bị đủ tốt cho các
                 tác vụ hàng ngày.
               </p>
               <p>
                 Hiện dòng Redmi có nhiều sản phẩm với cấu hình khác nhau, bạn có
-                thể tham khảo như: Xiaomi Redmi 14C, Xiaomi Redmi A3,...
+                thể tham khảo như: <span className="highlight">Xiaomi Redmi 14C</span> , Xiaomi Redmi A3,...
               </p>
               <h3>3.5. Redmi Note</h3>
               <img
                 src="src/assets/images/Info_description_product/Xiaomi_Info_description/Xiaomi_11.png"
-                alt=""
+                alt="" className="Xiaomi-info-container-img"
               />
               <p>
-                Redmi Note là dòng sản phẩm tầm trung của Xiaomi kết hợp giữa
+              <span className="highlight">Redmi Note</span>  là dòng sản phẩm tầm trung của Xiaomi kết hợp giữa
                 hiệu năng mạnh mẽ và giá thành hợp lý. Các mẫu Redmi Note thường
-                có màn hình lớn, camera chất lượng và pin dung lượng cao, rất
+                có <span className="highlight_bold"> màn hình lớn, camera chất lượng và pin dung lượng cao</span>, rất
                 phù hợp với người dùng trẻ tuổi. Đây cũng là sản phẩm bán chạy
                 nhất của dòng điện thoại Xiaomi tại Việt Nam. Thế hệ mới nhất
-                hiện nay của dòng sản phẩm này là dòng Xiaomi Redmi Note 13.
+                hiện nay của dòng sản phẩm này là <span className="highlight">dòng Xiaomi Redmi Note 13.</span> 
               </p>
               <h3>4. Vì sao nên lựa chọn điện thoại Xiaomi?</h3>
               <p>
-                Xiaomi - Redmi luôn không ngừng khẳng định vị thế của hãng trong
+                Xiaomi - Redmi luôn <span className="highlight_bold">không ngừng khẳng định vị thế</span> của hãng trong
                 từng phân khúc giá. Sự đa dạng về sản phẩm giúp thương hiệu tiếp
                 cận được nhiều đối tượng người dùng hơn. Đáng chú ý là về mặt
                 hiệu năng, Xiaomi chứng minh được điện thoại Xiaomi dùng tốt nhờ
@@ -307,24 +311,24 @@ const Xiaomi_information_product = (props) => {
                 Các dòng điện thoại Xiaomi - Redmi cũng nổi bật với chất lượng
                 và độ bền cao. Máy có thể chịu đựng được nhiều loại va đập và áp
                 lực khác nhau. Xiaomi cũng không ngần ngại tích hợp các chuẩn
-                kháng nước, chống bụi cao nhất ngay cho những chiếc smartphone
+                <span className="highlight_bold">kháng nước, chống bụi cao</span>  nhất ngay cho những chiếc smartphone
                 tầm trung. Ngoài ra, hãng cũng làm hài lòng các tín đồ đam mê
                 chụp ảnh nhờ việc hợp tác với Leica trong hai năm gần đây.
               </p>
               <img
                 src="src/assets/images/Info_description_product/Xiaomi_Info_description/Xiaomi_12.png"
-                alt=""
+                alt="" className="Xiaomi-info-container-img"
               />
               <p>
                 Xiaomi - Redmi cũng tăng trải nghiệm người dùng khi mở rộng RAM
-                lên đến 16GB và bộ nhớ trong lên tới 1TB (hoặc nhỏ hơn tuỳ
+                lên đến <span className="highlight_bold">16GB</span>  và bộ nhớ trong lên tới <span className="highlight_bold">1TB</span>  (hoặc nhỏ hơn tuỳ
                 loại). Vậy nên người dùng không cần lo lắng về việc không đủ
                 không gian lưu trữ hay hiệu suất chậm trễ.
               </p>
               <p>
                 Đáng chú ý, Xiaomi - Redmi không chỉ mạnh về điện thoại mà còn
-                dần xâm nhập khắp mọi nơi trong chính ngôi nhà của bạn với đa
-                dạng thiết bị điện tử khác nhau. Các sản phẩm của Xiaomi gắn kết
+                dần xâm nhập khắp mọi nơi trong chính ngôi nhà của bạn với <span className="highlight_bold">đa
+                dạng thiết bị điện tử khác nhau</span>. Các sản phẩm của Xiaomi gắn kết
                 với nhau thông qua hệ sinh thái Mi. Điều này giúp người dùng dễ
                 dàng liên kết các thiết bị để thuận tiện trong quá trình sử dụng
                 hơn.
@@ -349,74 +353,74 @@ const Xiaomi_information_product = (props) => {
               <h3>5.1. So với Apple iPhone</h3>
               <img
                 src="src/assets/images/Info_description_product/Xiaomi_Info_description/Xiaomi_13.png"
-                alt=""
+                alt="" className="Xiaomi-info-container-img"
               />
               <p>
                 Xiaomi có lợi thế lớn về giá cả khi so với iPhone, đặc biệt là ở
-                phân khúc tầm trung và giá rẻ. Người dùng có thể sở hữu một
+                <span className="highlight_bold">phân khúc tầm trung và giá rẻ</span> . Người dùng có thể sở hữu một
                 chiếc điện thoại Xiaomi với cấu hình mạnh mẽ, pin lâu và nhiều
                 tính năng hiện đại mà không cần bỏ ra số tiền lớn.
               </p>
               <p>
                 Tuy nhiên, Apple lại vượt trội hơn về hệ sinh thái và sự tối ưu
-                của hệ điều hành iOS. Nó mang lại trải nghiệm mượt mà và liền
+                của hệ điều hành <span className="highlight_bold">iOS</span> . Nó mang lại trải nghiệm mượt mà và liền
                 mạch giữa các thiết bị. Xiaomi dù đã cải thiện MIUI nhưng được
                 đánh giá là vẫn chưa đạt đến sự ổn định và đồng bộ như iPhone.
               </p>
               <h3>5.2. So với các thương hiệu Android khác (Samsung, OPPO)</h3>
               <p>
-                Khi so với Samsung và OPPO, Xiaomi nổi trội hơn nhờ cấu hình
-                mạnh và giá thành cạnh tranh hơn, đặc biệt là ở phân khúc tầm
+                Khi so với Samsung và OPPO, Xiaomi nổi trội hơn nhờ <span className="highlight_bold">cấu hình
+                mạnh và giá thành cạnh tranh hơn</span> , đặc biệt là ở phân khúc tầm
                 trung. Xiaomi thường trang bị vi xử lý mạnh mẽ và dung lượng pin
                 cao hơn so với các đối thủ cùng giá.
               </p>
               <p>
                 Tuy nhiên, Samsung có lợi thế về màn hình hiển thị và chất lượng
-                camera còn OPPO lại sở hữu thiết kế thời trang và công nghệ sạc
-                nhanh. Về giao diện, MIUI của Xiaomi có nhiều tùy chỉnh nhưng
+                camera còn OPPO lại sở hữu <span className="highlight_bold">thiết kế thời trang và công nghệ sạc
+                nhanh</span>. Về giao diện, MIUI của Xiaomi có nhiều tùy chỉnh nhưng
                 đôi khi chưa mượt mà như ColorOS của OPPO.
               </p>
               <img
                 src="src/assets/images/Info_description_product/Xiaomi_Info_description/Xiaomi_14.png"
-                alt=""
+                alt="" className="Xiaomi-info-container-img"
               />
               <img
                 src="src/assets/images/Info_description_product/Xiaomi_Info_description/Xiaomi_15.png"
-                alt=""
+                alt="" className="Xiaomi-info-container-img"
               />
               <h3>6. Thông tin liên hệ bộ phận hỗ trợ khách hàng</h3>
               <p>
                 Khi chọn mua điện thoại Xiaomi chính hãng tại hệ thống Di Động
-                Việt, khách hàng có thể yên tâm vì sẽ được CHUYỂN GIAO GIÁ TRỊ
-                VƯỢT TRỘI tại mọi điểm chạm. Cụ thể, khi mua sắm, bạn sẽ nhận
+                Việt, khách hàng có thể yên tâm vì sẽ được <span className="highlight_bold">CHUYỂN GIAO GIÁ TRỊ VƯỢT TRỘI</span> 
+                tại mọi điểm chạm. Cụ thể, khi mua sắm, bạn sẽ nhận
                 được những đặc quyền riêng mà chỉ có Di Động Việt có như sau.
               </p>
               <h3>6.1. Khách hàng nhận được gì khi lựa chọn Di Động Việt</h3>
               <p>
-                Di Động Việt cam kết đem lại cho khách hàng SẢN PHẨM VƯỢT TRỘI.
+                Di Động Việt cam kết đem lại cho khách hàng <span className="highlight_bold">SẢN PHẨM VƯỢT TRỘI</span> .
                 Minh chứng rõ nhất đó chính là mọi sản phẩm Xiaomi mới đều là
-                hàng CHÍNH HÃNG CHÍNH THỐNG 100% cũng như được cung cấp, uỷ
-                nhiệm CHÍNH NGẠCH, CHÍNH DANH, CHÍNH THỨC mà không phải chính
+                hàng <span className="highlight_bold">CHÍNH HÃNG CHÍNH THỐNG 100%</span>  cũng như được cung cấp, uỷ
+                nhiệm <span className="highlight_bold">CHÍNH NGẠCH, CHÍNH DANH, CHÍNH THỨC</span>  mà không phải chính
                 hãng trôi nổi hay chính hãng xách tay. Ngoài ra, khách hàng còn
                 được hưởng các dịch vụ vượt trội đi kèm, điểm hình là bảo hành
                 chính hãng dài lâu,…
               </p>
               <img
                 src="src/assets/images/Info_description_product/Xiaomi_Info_description/Xiaomi_16.png"
-                alt=""
+                alt="" className="Xiaomi-info-container-img"
               />
               <p>
-                Chưa hết, khách hàng còn được hưởng QUYỀN LỢI VƯỢT TRỘI khi chọn
+                Chưa hết, khách hàng còn được hưởng <span className="highlight_bold">QUYỀN LỢI VƯỢT TRỘI</span>  khi chọn
                 mua điện thoại Xiaomi tại hệ thống Di Động Việt. Ngoài các chính
                 sách mà hãng đưa ra, Di Động Việt còn giúp cho người mua yên tâm
                 hơn với gói bảo hành mở rộng độc quyền với thời gian dài. Ngoài
-                ra, cửa hàng còn mang tới nhiều chính sách hấp dẫn khác như:
-                dùng thử miễn phí, 1 đổi 1, trả góp 0% lãi suất,…
+                ra, cửa hàng còn mang tới nhiều <span className="highlight_bold">chính sách hấp dẫn khác như:
+                dùng thử miễn phí, 1 đổi 1, trả góp 0% lãi suất,…</span>
               </p>
               <p>
-                Chưa hết, TRẢI NGHIỆM VƯỢT TRỘI cũng là điều mà Di Động Việt
+                Chưa hết, <span className="highlight_bold">TRẢI NGHIỆM VƯỢT TRỘI</span>  cũng là điều mà Di Động Việt
                 mong muốn truyền tải tới các khách hàng thân yêu. Bạn sẽ được
-                đội ngũ nhân viên đầy TẬN TÂM, CAM KẾT VÀ TRÁCH NHIỆM hỗ trợ mọi
+                đội ngũ nhân viên đầy <span className="highlight_bold">TẬN TÂM, CAM KẾT VÀ TRÁCH NHIỆM</span>  hỗ trợ mọi
                 lúc mọi nơi dù là offline hay online. Chưa hết, Di Động Việt
                 cũng luôn quan tâm và chăm sóc khách hàng trong mọi giai đoạn:
                 trước, trong và sau mua hàng chu đáo nhất.
@@ -427,7 +431,7 @@ const Xiaomi_information_product = (props) => {
                 gì về điện thoại Xiaomi tại Di Động Việt, hãy liên hệ qua các
                 nguồn dưới đây:
               </p>
-              <ul style={{ listStyleType: "disc", paddingLeft: "20px" }}>
+              <ul className="Xiaomi-info-container-ulli">
                 <li>
                   <strong>Hotline:</strong> 1800.6018 (Liên hệ Kỹ thuật hoặc Mua
                   ngay).
@@ -461,8 +465,12 @@ const Xiaomi_information_product = (props) => {
                 7. Những đánh giá và nhận xét của khách hàng khi mua điện thoại
                 Xiaomi - Redmi chính hãng tại Di Động Việt
               </h3>
-              <p>
-                Chị Nhung tại Quận 10 - TP.HCM chia sẻ: “Là một tín đồ của
+              <img
+                src="src/assets/images/Info_description_product/Xiaomi_Info_description/Xiaomi_17.png"
+                alt="" className="Xiaomi-info-container-img"
+              />
+              <p className="Xiaomi-info-container-p">
+              <span className="highlight_bold ">Chị Nhung tại Quận 10 - TP.HCM chia sẻ:</span> “Là một tín đồ của
                 Xiaomi và cũng là khách hàng thân thiết của Di Động Việt, mình
                 cảm thấy rất ưng ý khi mua điện thoại Xiaomi tại đây. Điều mình
                 thích nhất chính là giá cả ở Di Động Việt luôn rẻ hơn so với các
@@ -471,8 +479,12 @@ const Xiaomi_information_product = (props) => {
                 đã luôn mang đến cho khách hàng những sản phẩm chất lượng với
                 giá cả hợp lý”.
               </p>
-              <p>
-                Chị Chi ở Mỹ Tho cũng có chung quan điểm: “Mình thực sự hài lòng
+              <img
+                src="src/assets/images/Info_description_product/Xiaomi_Info_description/Xiaomi_18.png"
+                alt="" className="Xiaomi-info-container-img"
+              />
+              <p className="Xiaomi-info-container-p">
+              <span className="highlight_bold ">Chị Chi ở Mỹ Tho cũng có chung quan điểm:</span> “Mình thực sự hài lòng
                 khi mua điện thoại Xiaomi tại Di Động Việt. Không chỉ sở hữu mức
                 giá cạnh tranh, Di Động Việt còn mang đến cho khách hàng nhiều
                 ưu đãi hấp dẫn như thu cũ đổi mới, trả góp 0% lãi suất và bảo
@@ -481,8 +493,12 @@ const Xiaomi_information_product = (props) => {
                 về chất lượng sản phẩm và dịch vụ hậu mãi. Cảm ơn Di Động Việt
                 đã luôn đồng hành cùng khách hàng”.
               </p>
-              <p>
-                Bạn Tín - Sinh viên Đại học HUFLIT cũng chia sẻ: “Là một sinh
+              <img
+                src="src/assets/images/Info_description_product/Xiaomi_Info_description/Xiaomi_19.png"
+                alt="" className="Xiaomi-info-container-img"
+              />
+              <p className="Xiaomi-info-container-p">
+              <span className="highlight_bold ">Bạn Tín - Sinh viên Đại học HUFLIT cũng chia sẻ:</span> “Là một sinh
                 viên, mình luôn ưu tiên lựa chọn những sản phẩm có giá cả hợp
                 lý. Và may mắn thay, khi mua điện thoại Xiaomi tại Di Động Việt,
                 mình đã thực sự hài lòng với mức giá ưu đãi hơn so với các cửa
@@ -491,24 +507,12 @@ const Xiaomi_information_product = (props) => {
                 đáo, luôn sẵn sàng giải đáp mọi thắc mắc của mình. Nhờ vậy, mình
                 đã có thể chọn được chiếc điện thoại ưng ý nhất”.
               </p>
-              <img
-                src="src/assets/images/Info_description_product/Xiaomi_Info_description/Xiaomi_17.png"
-                alt=""
-              />
-              <img
-                src="src/assets/images/Info_description_product/Xiaomi_Info_description/Xiaomi_18.png"
-                alt=""
-              />
-              <img
-                src="src/assets/images/Info_description_product/Xiaomi_Info_description/Xiaomi_19.png"
-                alt=""
-              />
             </>
           )}
-
           <Button onClick={toggleExpanded}>
             {isExpanded ? "Thu gọn" : "Xem thêm"}
           </Button>
+          </div>
         </>
       )}
     </>

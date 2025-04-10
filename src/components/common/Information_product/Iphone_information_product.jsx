@@ -1,5 +1,6 @@
 import { Button } from "antd";
 import { useState } from "react";
+import "./Iphone_information_product.css"
 
 const Iphone_information_product = ({ category }) => {
   const [isExpanded, setIsExpanded] = useState(false);
@@ -12,47 +13,37 @@ const Iphone_information_product = ({ category }) => {
       {category === "Apple" && (
         <>
           <div className="iphone-info-container">
-            <p>
-              Điện thoại iPhone là một dòng điện thoại cao cấp chạy hệ điều hành
-              iOS với chip Bionic. Thiết kế tinh tế và sang trọng với màn hình
-              tai thỏ và viên thuốc Dynamic Island độc đáo của sản phẩm đã chiếm
-              trọn sự chú ý của người dùng. Hơn nữa, máy còn có hiệu năng ấn
-              tượng và dung lượng bộ nhớ đa dạng từ 64GB, 128GB, 256GB đến 1TB.
-            </p>
+            <div>
+              <p>Điện thoại iPhone là một dòng điện thoại cao cấp chạy hệ điều hành iOS với chip Bionic. Thiết kế tinh tế và sang trọng với màn hìnhtai thỏ và viên thuốc Dynamic Island độc đáo của sản phẩm đã chiếmtrọn sự chú ý của người dùng. Hơn nữa, máy còn có hiệu năng ấn tượng và dung lượng bộ nhớ đa dạng từ 64GB, 128GB, 256GB đến 1TB.</p>
+              <h3>1. Giới thiệu về điện thoại iPhone</h3>
+              <p>
+                Điện thoại iPhone của Apple ra mắt lần đầu vào năm <span className="highlight_bold">2007</span>. Dòng
+                sả phẩm đã thay đổi hoàn toàn cách chúng ta sử dụng điện thoại
+                di động lúc bấy giờ cho tới nay. Công ty có sở chính tại
+                <span className="highlight_bold"> Cupertino, California</span>. Ở hiện tại, Apple không chỉ là một
+                thương hiệu mà còn là biểu tượng của sự đổi mới và chất lượng
+                qua bao năm tháng.
+              </p>
+              <p>
+                Điểm mạnh của dòng điện thoại nằm ở thiết kế tinh tế, hệ điều
+                hành iOS mượt mà và hệ sinh thái ứng dụng phong phú. Ngoài ra,
+                chất lượng camera, tính bảo mật cao và hiệu năng vượt trội là
+                điểm sáng. Chúng đã biến dòng smartphone này trở thành lựa
+                chọn hàng đầu của người tiêu dùng toàn cầu.
+              </p>
+              <p className="iphone-info-container-p">
+                Apple không ngừng đổi mới để đáp ứng nhu cầu ngày càng cao của
+                người dùng bởi họ có tầm nhìn về lâu dài rất tốt. Từ công nghệ
+                thực tế ảo tăng cường đến phát triển mạng 5G, <span className="highlight">điện thoại
+                iPhone chính hãng</span> sẽ tiếp tục dẫn đầu xu hướng công nghệ.
+                Ngoài ra, dòng điện thoại cũng định hình tương lai của toàn
+                ngành di động trong cả tương lai gần và xa.
+              </p>
+              <img src="src/assets/images/Info_description_product/Apple_Info_description/Apple_1.png" alt="" className={`iphone-info-container-img-chinh ${isExpanded ? "expanded" : ""}`} />
+            </div>
             {isExpanded && (
               <>
-                <h3>1. Giới thiệu về điện thoại iPhone</h3>
-                <p>
-                  Điện thoại iPhone của Apple ra mắt lần đầu vào năm 2007. Dòng
-                  sả phẩm đã thay đổi hoàn toàn cách chúng ta sử dụng điện thoại
-                  di động lúc bấy giờ cho tới nay. Công ty có sở chính tại
-                  Cupertino, California. Ở hiện tại, Apple không chỉ là một
-                  thương hiệu mà còn là biểu tượng của sự đổi mới và chất lượng
-                  qua bao năm tháng.
-                </p>
-                <p>
-                  Điểm mạnh của dòng điện thoại nằm ở thiết kế tinh tế, hệ điều
-                  hành iOS mượt mà và hệ sinh thái ứng dụng phong phú. Ngoài ra,
-                  chất lượng camera, tính bảo mật cao và hiệu năng vượt trội là
-                  điểm sáng. Chúng đã biến dòng smartphone này trở thành lựa
-                  chọn hàng đầu của người tiêu dùng toàn cầu.
-                </p>
-                <p>
-                  Apple không ngừng đổi mới để đáp ứng nhu cầu ngày càng cao của
-                  người dùng bởi họ có tầm nhìn về lâu dài rất tốt. Từ công nghệ
-                  thực tế ảo tăng cường đến phát triển mạng 5G, điện thoại
-                  iPhone chính hãng sẽ tiếp tục dẫn đầu xu hướng công nghệ.
-                  Ngoài ra, dòng điện thoại cũng định hình tương lai của toàn
-                  ngành di động trong cả tương lai gần và xa.
-                </p>
-                <img
-                  src="src/assets/images/Info_description_product/Apple_Info_description/Apple_1.png"
-                  alt=""
-                  className="iphone-image"
-                />
-                <h3>
-                  2. Những điểm đặc trưng nổi bật của điện thoại Apple iPhone
-                </h3>
+                <h3> 2. Những điểm đặc trưng nổi bật của điện thoại Apple iPhone</h3>
                 <p>
                   Điện thoại iPhone là sản phẩm độc quyền của thương hiệu Apple
                   với những đặc điểm riêng mà gần như bạn không thể tìm thấy ở
@@ -76,11 +67,11 @@ const Iphone_information_product = ({ category }) => {
                 <img
                   src="src/assets/images/Info_description_product/Apple_Info_description/Apple_2.png"
                   alt=""
-                  className="iphone-image"
+                  className="iphone-info-container-img"
                 />
                 <h3>2.2. Màn hình</h3>
                 <p>
-                  Nhờ sở hữu màn hình Retina chất lượng, điện thoại vượt trội
+                  Nhờ sở hữu màn hình <span className="highlight_bold"> Retina</span> chất lượng, điện thoại vượt trội
                   hơn hẳn so với các loại màn hình IPS, AMOLED hay OLED thông
                   thường. Điều này giúp mang lại hình ảnh sắc nét, độ tương phản
                   cao để người dùng có được trải nghiệm hình ảnh sống động và
@@ -89,7 +80,7 @@ const Iphone_information_product = ({ category }) => {
                 <img
                   src="src/assets/images/Info_description_product/Apple_Info_description/Apple_3.png"
                   alt=""
-                  className="iphone-image"
+                  className="iphone-info-container-img"
                 />
                 <h3>2.3. Hiệu năng</h3>
                 <p>
@@ -101,7 +92,7 @@ const Iphone_information_product = ({ category }) => {
                 </p>
                 <p>
                   Hiện tại, chip A18 Pro là thế hệ chip mới nhất của dòng sản
-                  phẩm. Đây là con chip 3nm xịn sò, hỗ trợ CPU nhanh hơn tới
+                  phẩm. Đây là con chip <span className="highlight_bold"> 3nm </span> xịn sò, hỗ trợ CPU nhanh hơn tới
                   10%, GPU chuyên nghiệp nhanh hơn tới 20% đời trước, mở ra
                   nhiều trải nghiệm hoàn toàn mới. Từ chơi game, ứng dụng AR đến
                   đồ hoạ, chip này đều mang lại hiệu suất mượt mà và sống động
@@ -110,7 +101,7 @@ const Iphone_information_product = ({ category }) => {
                 <img
                   src="src/assets/images/Info_description_product/Apple_Info_description/Apple_4.png"
                   alt=""
-                  className="iphone-image"
+                  className="iphone-info-container-img"
                 />
                 <h3>2.4. Camera</h3>
                 <p>
@@ -125,7 +116,7 @@ const Iphone_information_product = ({ category }) => {
                 <img
                   src="src/assets/images/Info_description_product/Apple_Info_description/Apple_5.png"
                   alt=""
-                  className="iphone-image"
+                  className="iphone-info-container-img"
                 />
                 <h3>2.5. Thời lượng pin</h3>
                 <p>
@@ -135,14 +126,14 @@ const Iphone_information_product = ({ category }) => {
                   dòng sản phẩm của mình.
                 </p>
                 <p>
-                  Nhờ đó, dù chỉ sử dụng pin khoảng 4000 mAh, điện thoại iPhone
+                  Nhờ đó, dù chỉ sử dụng pin khoảng <span className="highlight_bold"> 4000 mAh</span> , điện thoại iPhone
                   vẫn có thời lượng sử dụng tốt, không hề kém cạnh so với những
                   sản phẩm có pin dung lượng lên đến 5000 mAh.
                 </p>
                 <img
                   src="src/assets/images/Info_description_product/Apple_Info_description/Apple_6.png"
                   alt=""
-                  className="iphone-image"
+                  className="iphone-info-container-img"
                 />
                 <h3>2.6. Hệ điều hành</h3>
                 <p>
@@ -155,7 +146,7 @@ const Iphone_information_product = ({ category }) => {
                 <img
                   src="src/assets/images/Info_description_product/Apple_Info_description/Apple_7.png"
                   alt=""
-                  className="iphone-image"
+                  className="iphone-info-container-img"
                 />
                 <h3>3. Tất cả các dòng điện thoại iPhone mới nhất</h3>
                 <p>
@@ -164,20 +155,14 @@ const Iphone_information_product = ({ category }) => {
                   bạn là iFan chân chính thì chắc chắn không nên bỏ qua phần
                   này.
                 </p>
-                <h4>3.1. iPhone 16 series</h4>
+                <h3>3.1. iPhone 16 series</h3>
                 <p>
-                  Ngày 9 tháng 9 năm 2024, dòng iPhone 16 chính thức được ra mắt
+                  <span className="highlight_bold"> Ngày 9 tháng 9 năm 2024</span>,<span className="highlight"> dòng iPhone 16</span> chính thức được ra mắt
                   tại sự kiện "It's Glowtime". Vào ngày 27/9, các model của dòng
                   thiết bị đã chính thức được mở bán tại thị trường Việt Nam.
                   Các đặc điểm nổi bật:
                 </p>
-                <ul
-                  style={{
-                    listStyleType: "disc",
-                    paddingLeft: "20px",
-                    fontSize: "16px",
-                    lineHeight: "1.6",
-                  }}>
+                <ul className="iphone-info-container-ulli" >
                   <li>
                     <strong>Apple Intelligence:</strong> Được xây dựng để mang
                     đến những trải nghiệm cá nhân, riêng tư và mạnh mẽ.
@@ -194,11 +179,11 @@ const Iphone_information_product = ({ category }) => {
                 <img
                   src="src/assets/images/Info_description_product/Apple_Info_description/Apple_8.png"
                   alt=""
-                  className="iphone-image"
+                  className="iphone-info-container-img"
                 />
                 <h3>3.2. iPhone 15 series</h3>
                 <p>
-                  Năm 2023 đánh dấu sự ra đời của dòng iPhone 15, siêu phẩm
+                  Năm 2023 đánh dấu sự ra đời của dòng <span className="highlight">iPhone 15</span>, siêu phẩm
                   Flagship của nhà Apple. Với thiết kế có nhiều thay đổi đồng
                   nhất, sang trọng, cùng với chất lượng màn hình tiên tiến và
                   nâng cấp vượt trội về mặt hiệu năng.{" "}
@@ -213,18 +198,12 @@ const Iphone_information_product = ({ category }) => {
                 <img
                   src="src/assets/images/Info_description_product/Apple_Info_description/Apple_9.png"
                   alt=""
-                  className="iphone-image"
+                  className="iphone-info-container-img"
                 />
                 <h3>
                   iPhone 14 series "mới ra lò" với những nâng cấp hấp dẫn:
                 </h3>
-                <ul
-                  style={{
-                    listStyleType: "disc",
-                    paddingLeft: "20px",
-                    fontSize: "16px",
-                    lineHeight: "1.6",
-                  }}>
+                <ul className="iphone-info-container-ulli" >
                   <li>
                     <strong>Trang bị màn hình viên thuốc hoàn toàn mới:</strong>{" "}
                     Mang đến trải nghiệm tuyệt vời.
@@ -257,7 +236,7 @@ const Iphone_information_product = ({ category }) => {
                 <img
                   src="src/assets/images/Info_description_product/Apple_Info_description/Apple_10.png"
                   alt=""
-                  className="iphone-image"
+                  className="iphone-info-container-img"
                 />
                 <p>
                   Mang trong mình con chip Apple A15 Bionic có hiệu năng khủng,
@@ -278,7 +257,7 @@ const Iphone_information_product = ({ category }) => {
                 <img
                   src="src/assets/images/Info_description_product/Apple_Info_description/Apple_11.png"
                   alt=""
-                  className="iphone-image"
+                  className="iphone-info-container-img"
                 />
                 <p>
                   Bên cạnh đó, máy còn có thiết kế khá đẹp mắt khi kể từ thế hệ
@@ -296,7 +275,7 @@ const Iphone_information_product = ({ category }) => {
                 <img
                   src="src/assets/images/Info_description_product/Apple_Info_description/Apple_12.png"
                   alt=""
-                  className="iphone-image"
+                  className="iphone-info-container-img"
                 />
                 <p>
                   Bên trong điện thoại iPhone 11 là “quả tim” Apple A13 Bionic
@@ -317,7 +296,7 @@ const Iphone_information_product = ({ category }) => {
                 <img
                   src="src/assets/images/Info_description_product/Apple_Info_description/Apple_13.png"
                   alt=""
-                  className="iphone-image"
+                  className="iphone-info-container-img"
                 />
                 <p>
                   Với hiệu năng mạnh mẽ từ con chip Apple A12 Bionic gồm 6 nhân,
@@ -328,7 +307,7 @@ const Iphone_information_product = ({ category }) => {
                 </p>
                 <h3>3.8. iPhone X</h3>
                 <p>
-                  Ra mắt vào tháng 9 năm 2017, điện thoại iPhone X đánh dấu một
+                  Ra mắt vào <span className="highlight_bold"> tháng 9 năm 2017</span> , điện thoại iPhone X đánh dấu một
                   kỷ nguyên mới với thiết kế không viền và màn hình Super Retina
                   OLED ấn tượng. Với công nghệ nhận diện khuôn mặt Face ID, điện
                   thoại mang đến sự bảo mật tiên tiến và trải nghiệm người dùng
@@ -337,7 +316,7 @@ const Iphone_information_product = ({ category }) => {
                 <img
                   src="src/assets/images/Info_description_product/Apple_Info_description/Apple_14.png"
                   alt=""
-                  className="iphone-image"
+                  className="iphone-info-container-img"
                 />
                 <p>
                   Con chip A11 Bionic mạnh mẽ và tính năng sạc không dây cũng là
@@ -346,7 +325,7 @@ const Iphone_information_product = ({ category }) => {
                 </p>
                 <h3>3.9. iPhone 8 series</h3>
                 <p>
-                  iPhone 8 series ra mắt vào tháng 9 năm 2017, mang đến sự kết
+                  iPhone 8 series ra mắt vào<span className="highlight_bold"> tháng 9 năm 2017</span> , mang đến sự kết
                   hợp hoàn hảo giữa thiết kế truyền thống và công nghệ tiên
                   tiến. Các thiết bị có mặt lưng bằng kính hỗ trợ sạc không dây,
                   con chip A11 Bionic mạnh mẽ và khả năng chụp ảnh chân thực với
@@ -362,11 +341,11 @@ const Iphone_information_product = ({ category }) => {
                 <img
                   src="src/assets/images/Info_description_product/Apple_Info_description/Apple_15.png"
                   alt=""
-                  className="iphone-image"
+                  className="iphone-info-container-img"
                 />
                 <h3>3.10. iPhone 7 Series</h3>
                 <p>
-                  Ra mắt vào tháng 9 năm 2016, dòng điện thoại iPhone 7 đã ghi
+                  Ra mắt vào <span className="highlight_bold"> tháng 9 năm 2016</span> , dòng điện thoại iPhone 7 đã ghi
                   dấu ấn với thiết kế chống nước và chống bụi chuẩn IP67. Với sự
                   xuất hiện của nút Home cảm ứng lực và bỏ đi jack cắm tai nghe,
                   dòng máy mở ra một trang mới trong thiết kế điện thoại thông
@@ -381,11 +360,11 @@ const Iphone_information_product = ({ category }) => {
                 <img
                   src="src/assets/images/Info_description_product/Apple_Info_description/Apple_16.png"
                   alt=""
-                  className="iphone-image"
+                  className="iphone-info-container-img"
                 />
                 <h3>3.11. iPhone SE (2016)</h3>
                 <p>
-                  Điện thoại iPhone SE (2016) ra mắt vào tháng 3 năm 2016. Đây
+                  Điện thoại iPhone SE (2016) ra mắt vào <span className="highlight_bold"> tháng 3 năm 2016</span>. Đây
                   là phiên bản kết hợp giữa hiệu suất mạnh mẽ và thiết kế nhỏ
                   gọn. Với con chip A9 giống như iPhone 6s, iPhone SE cung cấp
                   sức mạnh đáng kinh ngạc trong kích thước vừa vặn trong lòng
@@ -400,7 +379,7 @@ const Iphone_information_product = ({ category }) => {
                 </p>
                 <h3>3.12. iPhone 6s series</h3>
                 <p>
-                  Dòng điện thoại iPhone 6sra mắt vào tháng 9 năm 2015. Dòng sản
+                  Dòng điện thoại iPhone 6sra mắt vào <span className="highlight_bold"> tháng 9 năm 2015</span>. Dòng sản
                   phẩm đã mang đến một làn gió mới với nhiều cải tiến đáng chú
                   ý. Điểm nổi bật của dòng này là công nghệ cảm ứng lực 3D
                   Touch, cho phép người dùng thực hiện các thao tác nhanh chóng
@@ -416,11 +395,11 @@ const Iphone_information_product = ({ category }) => {
                 <img
                   src="src/assets/images/Info_description_product/Apple_Info_description/Apple_17.png"
                   alt=""
-                  className="iphone-image"
+                  className="iphone-info-container-img"
                 />
                 <h3>3.13. iPhone 6 series</h3>
                 <p>
-                  Dòng điện thoại iPhone 6 được giới thiệu vào tháng 9 năm 2014.
+                  Dòng điện thoại iPhone 6 được giới thiệu vào<span className="highlight_bold"> tháng 9 năm 2014</span> .
                   Chúng đã tạo nên cơn sốt với thiết kế mỏng hơn, màn hình lớn
                   hơn và các tính năng đột phá. Điểm nhấn của dòng này là màn
                   hình Retina HD với kích thước 4.7 inch và 5.5 inch (bản Plus),
@@ -434,7 +413,7 @@ const Iphone_information_product = ({ category }) => {
                 </p>
                 <h3>3.14. iPhone 5C, 5s</h3>
                 <p>
-                  Ra mắt vào tháng 9 năm 2013, cặp đôi điện thoại iPhone 5C và
+                  Ra mắt vào <span className="highlight_bold"> tháng 9 năm 2013</span>, cặp đôi điện thoại iPhone 5C và
                   5s đã mang đến làn gió mới cho thị trường di động. iPhone 5C
                   sở hữu vỏ nhựa nhiều màu sắc tươi sáng đã phá vỡ quy chuẩn
                   thiết kế truyền thống của Apple, mang đến sự lựa chọn đa dạng
@@ -450,11 +429,11 @@ const Iphone_information_product = ({ category }) => {
                 <img
                   src="src/assets/images/Info_description_product/Apple_Info_description/Apple_18.png"
                   alt=""
-                  className="iphone-image"
+                  className="iphone-info-container-img"
                 />
                 <h3>3.15. iPhone 5</h3>
                 <p>
-                  Điện thoại iPhone 5 ra mắt vào tháng 9 năm 2012 và đã ghi dấu
+                  Điện thoại iPhone 5 ra mắt vào<span className="highlight_bold"> tháng 9 năm 2012</span>  và đã ghi dấu
                   ấn với thiết kế mỏng hơn, nhẹ hơn, màn hình lớn hơn 4 inch.
                   Chip A6 mạnh mẽ giúp tăng cường hiệu suất và tiết kiệm năng
                   lượng.
@@ -468,7 +447,7 @@ const Iphone_information_product = ({ category }) => {
                 </p>
                 <h3>3.16. iPhone 4s</h3>
                 <p>
-                  Điện thoại iPhone 4s ra mắt vào tháng 10 năm 2011, đánh dấu
+                  Điện thoại iPhone 4s ra mắt vào <span className="highlight_bold"> tháng 10 năm 2011</span> , đánh dấu
                   một bước tiến lớn với Siri, trợ lý ảo thông minh đầu tiên của
                   Apple. Điện thoại được trang bị chip A5 mạnh mẽ, camera 8MP
                   cải tiến với khả năng quay video 1080p, mang lại hiệu suất và
@@ -482,7 +461,7 @@ const Iphone_information_product = ({ category }) => {
                 </p>
                 <h3>3.17. iPhone 4</h3>
                 <p>
-                  Điện thoại iPhone 4 được giới thiệu vào tháng 6 năm 2010. Đây
+                  Điện thoại iPhone 4 được giới thiệu vào<span className="highlight_bold"> tháng 6 năm 2010</span> . Đây
                   là một bước cách mạng về thiết kế với khung kim loại và mặt
                   kính trước sau. Điểm nhấn lớn nhất là màn hình Retina, mang
                   lại độ phân giải cao và hình ảnh sắc nét chưa từng có.
@@ -497,11 +476,11 @@ const Iphone_information_product = ({ category }) => {
                 <img
                   src="src/assets/images/Info_description_product/Apple_Info_description/Apple_19.png"
                   alt=""
-                  className="iphone-image"
+                  className="iphone-info-container-img"
                 />
                 <h3>3.18. iPhone 3GS</h3>
                 <p>
-                  Điện thoại iPhone 3GS ra mắt vào tháng 6 năm 2009, đánh dấu
+                  Điện thoại iPhone 3GS ra mắt vào <span className="highlight_bold"> tháng 6 năm 2009</span> , đánh dấu
                   bước phát triển lớn với hiệu năng cải thiện và khả năng đồ họa
                   vượt trội. Chip xử lý nhanh hơn gấp đôi, camera 3MP với khả
                   năng quay video và tính năng điều khiển bằng giọng nói là
@@ -515,14 +494,14 @@ const Iphone_information_product = ({ category }) => {
                 </p>
                 <h3>3.19. iPhone 3G</h3>
                 <p>
-                  Điện thoại iPhone 3G được giới thiệu vào tháng 7 năm 2008. Sản
+                  Điện thoại iPhone 3G được giới thiệu vào <span className="highlight_bold"> tháng 7 năm 2008</span>. Sản
                   phẩm đã mang lại bước đột phá với tốc độ kết nối mạng 3G nhanh
                   hơn và khả năng định vị GPS tích hợp.
                 </p>
                 <img
                   src="src/assets/images/Info_description_product/Apple_Info_description/Apple_20.png"
                   alt=""
-                  className="iphone-image"
+                  className="iphone-info-container-img"
                 />
                 <p>
                   Thiết kế mới với mặt lưng bằng nhựa sáng bóng, cùng với sự ra
@@ -533,7 +512,7 @@ const Iphone_information_product = ({ category }) => {
                 </p>
                 <h3>3.20. iPhone 2G</h3>
                 <p>
-                  Ra mắt vào tháng 6 năm 2007, điện thoại iPhone 2G là khởi đầu
+                  Ra mắt vào<span className="highlight_bold"> tháng 6 năm 2007</span> , điện thoại iPhone 2G là khởi đầu
                   của cuộc cách mạng di động. Với thiết kế đột phá và màn hình
                   cảm ứng hoàn toàn, thiết bị đã làm thay đổi cách chúng ta
                   tương tác với điện thoại.
@@ -541,7 +520,7 @@ const Iphone_information_product = ({ category }) => {
                 <img
                   src="src/assets/images/Info_description_product/Apple_Info_description/Apple_21.png"
                   alt=""
-                  className="iphone-image"
+                  className="iphone-info-container-img"
                 />
                 <p>
                   Hệ điều hành iOS đầu tiên và tính năng đa chạm mang đến trải
@@ -554,13 +533,7 @@ const Iphone_information_product = ({ category }) => {
                   trở thành chiếc điện thoại quốc dân mà nhà nhà người người đều
                   mê ở ngay dưới đây:
                 </p>
-                <ul
-                  style={{
-                    listStyleType: "disc",
-                    paddingLeft: "20px",
-                    fontSize: "16px",
-                    lineHeight: "1.6",
-                  }}>
+                <ul className="iphone-info-container-ulli">
                   <li>
                     <strong>Hiệu suất mạnh mẽ:</strong> Với mỗi thế hệ, điện
                     thoại iPhone được trang bị các con chip tiên tiến như
@@ -617,33 +590,33 @@ const Iphone_information_product = ({ category }) => {
                 <img
                   src="src/assets/images/Info_description_product/Apple_Info_description/Apple_22.png"
                   alt=""
-                  className="iphone-image"
+                  className="iphone-info-container-img"
                 />
                 <h3>
                   5. Mua điện thoại iPhone mới chính hãng, đến Di Động Việt
                 </h3>
-                <p>
+                <p className="iphone-info-container-p">
                   Để sở hữu chiếc iPhone mới chính hãng, hãy đến Di Động Việt.
-                  Tại đây, chúng tôi cam kết "CHUYỂN GIAO GIÁ TRỊ VƯỢT TRỘI" và
+                  Tại đây, chúng tôi cam kết <span className="highlight_bold">"CHUYỂN GIAO GIÁ TRỊ VƯỢT TRỘI"</span> và
                   đem lại cho bạn những trải nghiệm mua sắm hoàn hảo. Đặc biệt
-                  là đừng quên câu nói: “Mua sản phẩm, chọn sản phẩm. Mua ở đâu,
-                  chọn Di Động Việt”.
+                  là đừng quên câu nói:<span className="highlight_bold">“Mua sản phẩm, chọn sản phẩm. Mua ở đâu,
+                  chọn Di Động Việt”.</span> 
                 </p>
-                <h4>5.1. Khách hàng nhận được gì khi lựa chọn Di Động Việt</h4>
+                <h3>5.1. Khách hàng nhận được gì khi lựa chọn Di Động Việt</h3>
                 <p>
-                  Sản phẩm vượt trội: Tại Di Động Việt, bạn sẽ tìm thấy những
+                <span className="highlight_bold">Sản phẩm vượt trội:</span> Tại Di Động Việt, bạn sẽ tìm thấy những
                   sản phẩm công nghệ Apple hàng đầu, đảm bảo chính hãng và chất
-                  lượng cao. Đây là một Đại lý Ủy quyền chính thức của Apple tại
-                  Việt Nam (AAR) thì độ uy tín không cần bàn cãi nhiều.
+                  lượng cao. Đây là một <span className="highlight_bold"> Đại lý Ủy quyền chính thức của Apple tại
+                  Việt Nam (AAR)</span> thì độ uy tín không cần bàn cãi nhiều.
                 </p>
                 <p>
-                  Quyền lợi vượt trội: Khi mua sắm tại Di Động Việt, bạn sẽ được
+                <span className="highlight_bold">Quyền lợi vượt trội:</span> Khi mua sắm tại Di Động Việt, bạn sẽ được
                   hưởng các chính sách bảo hành, đổi trả và hỗ trợ kỹ thuật tốt
                   nhất. Những chương trình khuyến mãi và ưu đãi hấp dẫn luôn chờ
                   đón bạn, giúp bạn tiết kiệm tối đa chi phí khi chọn mua.
                 </p>
                 <p>
-                  Trải nghiệm vượt trội: Di Động Việt mang đến cho bạn một môi
+                <span className="highlight_bold">Trải nghiệm vượt trội:</span> Di Động Việt mang đến cho bạn một môi
                   trường mua sắm hiện đại, thân thiện và tiện nghi. Đội ngũ nhân
                   viên chuyên nghiệp, tận tâm sẽ luôn sẵn sàng hỗ trợ và tư vấn,
                   đảm bảo bạn có trải nghiệm mua sắm tuyệt vời.
@@ -651,15 +624,15 @@ const Iphone_information_product = ({ category }) => {
                 <img
                   src="src/assets/images/Info_description_product/Apple_Info_description/Apple_23.png"
                   alt=""
-                  className="iphone-image"
+                  className="iphone-info-container-img"
                 />
-                <h4>5.2. Thông tin liên hệ bộ phận hỗ trợ khách hàng</h4>
+                <h3>5.2. Thông tin liên hệ bộ phận hỗ trợ khách hàng</h3>
                 <p>
                   Nếu bạn cần biết thêm thông tin về dòng điện thoại iPhone hoặc
                   các điện thoại khác, hãy liên hệ với cửa hàng qua các kênh
                   sau:
                 </p>
-                <ul style={{ listStyleType: "disc", paddingLeft: "20px" }}>
+                <ul className="iphone-info-container-ulli">
                   <li>
                     <strong>Hotline Kỹ thuật, mua hàng:</strong> 1800.6018
                   </li>
@@ -689,31 +662,31 @@ const Iphone_information_product = ({ category }) => {
                   6. Những đánh giá và nhận xét của khách hàng khi mua điện
                   thoại iPhone tại Di Động Việt
                 </h3>
-                <p>
-                  Chị Nguyễn Minh Anh - Hà Nội: "Mua chiếc iPhone 14 tại Di Động
+                <img
+                  src="src/assets/images/Info_description_product/Apple_Info_description/Apple_24.png"
+                  alt=""
+                  className="iphone-info-container-img"
+                />
+                <p className="iphone-info-container-p">
+                <span className="highlight_bold">Chị Nguyễn Minh Anh - Hà Nội:</span> "Mua chiếc iPhone 14 tại Di Động
                   Việt là một trải nghiệm tuyệt vời. Nhân viên nhiệt tình, tư
                   vấn rất chi tiết giúp mình chọn được sản phẩm ưng ý nhất. Chưa
                   kể đến các chương trình khuyến mãi cực hấp dẫn, tiết kiệm được
                   không ít chi phí. Chắc chắn sẽ quay lại đây mua sắm."
                 </p>
                 <img
-                  src="src/assets/images/Info_description_product/Apple_Info_description/Apple_24.png"
+                  src="src/assets/images/Info_description_product/Apple_Info_description/Apple_25.png"
                   alt=""
-                  className="iphone-image"
+                  className="iphone-info-container-img"
                 />
-                <p>
-                  Anh Lê Hoàng Phong - TP. Hồ Chí Minh: "Di Động Việt thực sự là
+                <p className="iphone-info-container-p">
+                <span className="highlight_bold">Anh Lê Hoàng Phong - TP. Hồ Chí Minh:</span>  "Di Động Việt thực sự là
                   lựa chọn hoàn hảo khi mình cần mua iPhone mới. Sản phẩm chính
                   hãng, bảo hành đầy đủ nên mình rất yên tâm. Đội ngũ nhân viên
                   thân thiện, không gian cửa hàng thoải mái, đúng với tiêu chí
                   'Chuyển giao giá trị vượt trội'. Rất hài lòng và sẽ giới thiệu
                   cho bạn bè."
                 </p>
-                <img
-                  src="src/assets/images/Info_description_product/Apple_Info_description/Apple_25.png"
-                  alt=""
-                  className="iphone-image"
-                />
               </>
             )}
             <Button onClick={toggleExpanded}>

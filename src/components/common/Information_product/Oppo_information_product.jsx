@@ -1,5 +1,6 @@
 import { Button } from "antd";
 import { useState } from "react";
+import "./Oppo_information_product.css"
 
 const Oppo_information_product = ({ category }) => {
   const [isExpanded, setIsExpanded] = useState(false);
@@ -12,6 +13,7 @@ const Oppo_information_product = ({ category }) => {
       {category === "Oppo" && (
         <>
           <div className="Oppo-info-container">
+            <div>
             <p>
               Điện thoại OPPO là một trong những thương hiệu smartphone quen
               thuộc tại Việt Nam. Với thiết kế đẹp mắt, camera sắc nét và hiệu
@@ -20,36 +22,37 @@ const Oppo_information_product = ({ category }) => {
               không thua kém bất kỳ đối thủ nào trên thị trường, đặc biệt là
               trong phân khúc tầm trung - giá rẻ.
             </p>
-            {isExpanded && (
-              <>
-                <h3>1. Thông tin chung về điện thoại OPPO</h3>
-                <p>
-                  OPPO do Duan Yongping sáng lập (người sáng lập và là chủ tịch
-                  của BBK Electronics) cùng với CEO Tony Chen vào năm 2003. Với
-                  trụ sở tại thành phố Đông Hoản, tỉnh Quảng Đông, Trung Quốc,
+            <h3>1. Thông tin chung về điện thoại OPPO</h3>
+                <p> <span className="highlight_bold "></span>
+                  OPPO do <span className="highlight_bold "> Duan Yongping</span> sáng lập (người sáng lập và là chủ tịch
+                  của BBK Electronics) cùng với CEO <span className="highlight_bold "> Tony Chen</span>  vào năm 2003. Với
+                  trụ sở tại thành phố <span className="highlight_bold "> Đông Hoản, tỉnh Quảng Đông, Trung Quốc</span>,
                   OPPO đã nhanh chóng phát triển thành một thương hiệu quốc tế.
-                  Đến năm 2013, thương hiệu điện tử công nghệ này chính thức có
+                  Đến năm <span className="highlight_bold "> 2013</span> , thương hiệu điện tử công nghệ này chính thức có
                   mặt tại thị trường Việt Nam.
                 </p>
                 <p>
                   Với vị trí top 5 nhà sản xuất điện thoại hàng đầu toàn cầu và
                   thị phần đạt 8,1% vào đầu năm 2019, OPPO chắc chắn đã tạo nên
                   một ấn tượng mạnh mẽ trong lĩnh vực. Tại Việt Nam, thị phần
-                  của điện thoại OPPO tăng lên đến25,2% vào cuối năm 2019. Điều
+                  của điện thoại OPPO tăng lên đến <span className="highlight_bold "> 25,2%</span> vào cuối năm 2019. Điều
                   đó giúp hãng vững vàng ở vị trí thứ 2 trong danh sách các nhà
                   sản xuất điện thoại di động hàng đầu.
                 </p>
-                <p>
+                <p className="Oppo-info-container-p">
                   Sản phẩm chủ lực của thương hiệu tập trung vào điện thoại
                   thông minh trong phân khúc tầm trung và cận cao cấp.. Một số
-                  dòng điện thoại OPPO chính hãng đặc trưng là OPPO Reno, OPPO
+                  dòng <span className="highlight "> điện thoại OPPO chính hãng</span>  đặc trưng là OPPO Reno, OPPO
                   Find và OPPO A. Chúng đều đã và đang tiếp tục khẳng định vị
                   thế và uy tín của OPPO trên toàn cầu.
                 </p>
                 <img
                   src="src/assets/images/Info_description_product/Oppo_Info_description/Oppo_1.png"
-                  alt=""
+                  alt="" className={`Samsung-info-container-img-chinh ${isExpanded ? "expanded" : ""}`}
                 />
+                </div>
+            {isExpanded && (
+              <>
                 <h3>2. Những điểm đặc trưng nổi bật của điện thoại OPPO</h3>
                 <p>
                   Những chiếc điện thoại OPPO ra mắt trên thị trường đều nhanh
@@ -70,7 +73,7 @@ const Oppo_information_product = ({ category }) => {
                 </p>
                 <img
                   src="src/assets/images/Info_description_product/Oppo_Info_description/Oppo_2.png"
-                  alt=""
+                  alt="" className="Oppo-info-container-img"
                 />
                 <p>
                   Đồng thời hãng cũng luôn tiên phong hướng tới các xu hướng
@@ -91,7 +94,7 @@ const Oppo_information_product = ({ category }) => {
                 </p>
                 <img
                   src="src/assets/images/Info_description_product/Oppo_Info_description/Oppo_3.png"
-                  alt=""
+                  alt="" className="Oppo-info-container-img"
                 />
                 <h3>2.3. Hiệu năng ổn định, mượt mà</h3>
                 <p>
@@ -101,7 +104,7 @@ const Oppo_information_product = ({ category }) => {
                 </p>
                 <img
                   src="src/assets/images/Info_description_product/Oppo_Info_description/Oppo_4.png"
-                  alt=""
+                  alt="" className="Oppo-info-container-img"
                 />
                 <p>
                   Các thiết bị này hoàn toàn đủ sức để đáp ứng nhu cầu học tập,
@@ -115,7 +118,7 @@ const Oppo_information_product = ({ category }) => {
                   Khi nói về thương hiệu này, không thể bỏ qua khả năng chụp ảnh
                   của dòng sản phẩm này, đặc biệt là khi chụp chân dung. Các
                   dòng điện thoại OPPO về sau nay vẫn kế thừa thành công danh
-                  hiệu "Chuyên gia selfie" từ những ngày đầu bước chân vào thị
+                  hiệu <span className="highlight_bold "> "Chuyên gia selfie"</span>từ những ngày đầu bước chân vào thị
                   trường. Điều này mang đến cho người dùng trải nghiệm chụp ảnh
                   liền mạch trên cả camera trước và sau.
                 </p>
@@ -128,12 +131,12 @@ const Oppo_information_product = ({ category }) => {
                   Trong đó, mỗi thế hệ đều mang đến những cải tiến mới, liên tục
                   được hoàn thiện hệ thống camera chân dung hàng đầu trên thị
                   trường. Các tính năng chụp chân dung nổi bật trên dòng Reno
-                  bao gồm chụp chân dung xóa phông Bokeh Flare, chụp chân dung
-                  màu AI,...
+                  bao gồm <span className="highlight_bold "> chụp chân dung xóa phông Bokeh Flare, chụp chân dung
+                  màu AI,...</span> 
                 </p>
                 <img
                   src="src/assets/images/Info_description_product/Oppo_Info_description/Oppo_5.png"
-                  alt=""
+                  alt="" className="Oppo-info-container-img"
                 />
                 <p>
                   Camera của điện thoại OPPO luôn tập trung vào cải thiện hiệu
@@ -159,11 +162,11 @@ const Oppo_information_product = ({ category }) => {
                 </p>
                 <img
                   src="src/assets/images/Info_description_product/Oppo_Info_description/Oppo_6.png"
-                  alt=""
+                  alt="" className="Oppo-info-container-img"
                 />
                 <p>
                   Thông số sạc nhanh mà bạn thường thấy trên các mẫu điện thoại
-                  OPPO bao gồm 33W, 67W, 80W. Công nghệ này không chỉ giúp người
+                  OPPO bao gồm<span className="highlight_bold "> 33W, 67W, 80W</span> . Công nghệ này không chỉ giúp người
                   dùng nhanh chóng nạp đầy năng lượng cho thiết bị mà còn đảm
                   bảo rằng có thể sử dụng thiết bị mà không cần lo lắng.
                 </p>
@@ -177,7 +180,7 @@ const Oppo_information_product = ({ category }) => {
                 </p>
                 <img
                   src="src/assets/images/Info_description_product/Oppo_Info_description/Oppo_7.png"
-                  alt=""
+                  alt="" className="Oppo-info-container-img"
                 />
                 <h3>3. Các dòng điện thoại OPPO hiện có trên thị trường</h3>
                 <p>
@@ -189,7 +192,7 @@ const Oppo_information_product = ({ category }) => {
                 </p>
                 <h3>3.1. OPPO A Series</h3>
                 <p>
-                  OPPO ra mắt dòng OPPO A nằm trong phân khúc giá rẻ, bình dân
+                  OPPO ra mắt <span className="highlight"> dòng OPPO A </span> nằm trong phân khúc giá rẻ, bình dân
                   cho đến tầm trung nhưng vẫn đảm bảo cấu hình ổn định. Chiến
                   lược này là để cung cấp đầy đủ các tính năng cần thiết của một
                   chiếc smartphone.
@@ -203,7 +206,7 @@ const Oppo_information_product = ({ category }) => {
                 </p>
                 <img
                   src="src/assets/images/Info_description_product/Oppo_Info_description/Oppo_8.png"
-                  alt=""
+                  alt="" className="Oppo-info-container-img"
                 />
                 <p>
                   OPPO A Series là sự kết hợp hoàn hảo giữa thiết kế đẹp mắt,
@@ -223,7 +226,7 @@ const Oppo_information_product = ({ category }) => {
                 </p>
                 <h3>3.2. OPPO Reno Series</h3>
                 <p>
-                  Có thể nói dòng OPPO Reno không còn là cái tên quá xa lạ đối
+                  Có thể nói <span className="highlight "> dòng OPPO Reno</span>  không còn là cái tên quá xa lạ đối
                   với những người yêu công nghệ. Đây là dòng sản phẩm nằm trong
                   phân khúc tầm trung và cận cao cấp của điện thoại OPPO. Điểm
                   mạnh của các thiết bị này là tích hợp những công nghệ cao cấp,
@@ -231,7 +234,7 @@ const Oppo_information_product = ({ category }) => {
                 </p>
                 <img
                   src="src/assets/images/Info_description_product/Oppo_Info_description/Oppo_9.png"
-                  alt=""
+                  alt="" className="Oppo-info-container-img"
                 />
                 <p>
                   Ngoài ra, các sản phẩm thuộc OPPO Reno Series đều có thiết kế
@@ -255,7 +258,8 @@ const Oppo_information_product = ({ category }) => {
                 </p>
                 <h3>3.3. OPPO Find N Series</h3>
                 <p>
-                  OPPO chính thức gia nhập thị trường điện thoại gập với dòng
+                  OPPO chính thức gia nhập thị trường điện thoại gập với <span className="highlight">dòng
+                  OPPO Find N</span> dòng
                   OPPO Find N từ cuối năm 2021. Với công nghệ màn hình gập đỉnh
                   cao và tính năng hiện đại, OPPO Find N Series đang trở thành
                   một đối thủ đáng gờm trong thị trường điện thoại gập nội địa
@@ -263,7 +267,7 @@ const Oppo_information_product = ({ category }) => {
                 </p>
                 <img
                   src="src/assets/images/Info_description_product/Oppo_Info_description/Oppo_10.png"
-                  alt=""
+                  alt="" className="Oppo-info-container-img"
                 />
                 <p>
                   Hai thiết kế quen thuộc của dòng điện thoại gập chính là gập
@@ -329,12 +333,12 @@ const Oppo_information_product = ({ category }) => {
                 </p>
                 <img
                   src="src/assets/images/Info_description_product/Oppo_Info_description/Oppo_11.png"
-                  alt=""
+                  alt="" className="Oppo-info-container-img"
                 />
                 <p>
                   Bên cạnh việc chú trọng vào phần cứng, OPPO còn cải tiến mạnh
-                  mẽ về phần mềm. Với RAM lên đến 16GB và bộ nhớ trong lên tới
-                  1TB, người dùng không cần phải lo lắng về không gian lưu trữ
+                  mẽ về phần mềm. Với RAM lên đến <span className="highlight_bold "> 16GB</span>  và bộ nhớ trong lên tới
+                  <span className="highlight_bold "> 1TB</span> , người dùng không cần phải lo lắng về không gian lưu trữ
                   hạn chế hay tốc độ chậm chạp.
                 </p>
                 <p>
@@ -369,7 +373,7 @@ const Oppo_information_product = ({ category }) => {
                 </p>
                 <img
                   src="src/assets/images/Info_description_product/Oppo_Info_description/Oppo_12.png"
-                  alt=""
+                  alt="" className="Oppo-info-container-img"
                 />
                 <p>
                   Cả hai đều có điểm mạnh riêng. Bạn nên chọn máy tùy thuộc vào
@@ -400,23 +404,23 @@ const Oppo_information_product = ({ category }) => {
                 </p>
                 <img
                   src="src/assets/images/Info_description_product/Oppo_Info_description/Oppo_13.png"
-                  alt=""
+                  alt="" className="Oppo-info-container-img"
                 />
                 <img
                   src="src/assets/images/Info_description_product/Oppo_Info_description/Oppo_14.png"
-                  alt=""
+                  alt="" className="Oppo-info-container-img"
                 />
                 <img
                   src="src/assets/images/Info_description_product/Oppo_Info_description/Oppo_15.png"
-                  alt=""
+                  alt="" className="Oppo-info-container-img"
                 />
                 <img
                   src="src/assets/images/Info_description_product/Oppo_Info_description/Oppo_16.png"
-                  alt=""
+                  alt="" className="Oppo-info-container-img"
                 />
                 <img
                   src="src/assets/images/Info_description_product/Oppo_Info_description/Oppo_17.png"
-                  alt=""
+                  alt="" className="Oppo-info-container-img"
                 />
                 <h3>
                   6. Lý do nên mua điện thoại OPPO mới chính hãng tại Di Động
@@ -424,24 +428,24 @@ const Oppo_information_product = ({ category }) => {
                 </h3>
                 <p>
                   Khi mua điện thoại OPPO tại Di Động Việt, khách hàng sẽ được
-                  CHUYỂN GIAO GIÁ TRỊ VƯỢT TRỘI tại mọi điểm chạm. Do đó, đừng
+                  <span className="highlight_bold "> CHUYỂN GIAO GIÁ TRỊ VƯỢT TRỘI</span>CHUYỂN GIAO GIÁ TRỊ VƯỢT TRỘI tại mọi điểm chạm. Do đó, đừng
                   quên "Mua sản phẩm, chọn sản phẩm. Mua ở đâu, chọn Di Động
                   Việt" nhé.
                 </p>
                 <h3>6.1. Khách hàng nhận được gì khi lựa chọn Di Động Việt </h3>
                 <p>
                   Di Động Việt tự hào là điểm đến lý tưởng cho mỗi khách hàng
-                  với lời cam kết SẢN PHẨM VƯỢT TRỘI. Chắc chắn từng sản phẩm
-                  OPPO tại đây đều là hàng CHÍNH HÃNG, CHÍNH THỐNG 100%, được ủy
-                  nhiệm CHÍNH DANH, CHÍNH THỨC bởi hãng điện thoại mà không phải
+                  với lời cam kết <span className="highlight_bold "> SẢN PHẨM VƯỢT TRỘI</span> . Chắc chắn từng sản phẩm
+                  OPPO tại đây đều là hàng <span className="highlight_bold "> CHÍNH HÃNG, CHÍNH THỐNG 100%</span> , được ủy
+                  nhiệm <span className="highlight_bold "> CHÍNH DANH, CHÍNH THỨC </span> bởi hãng điện thoại mà không phải
                   hàng xách tay trôi nổi trên thị trường.
                 </p>
                 <img
                   src="src/assets/images/Info_description_product/Oppo_Info_description/Oppo_18.png"
-                  alt=""
+                  alt="" className="Oppo-info-container-img"
                 />
                 <p>
-                  Không những vậy, QUYỀN LỢI KHÁCH HÀNG là ưu tiên hàng đầu khi
+                  Không những vậy,<span className="highlight_bold "> QUYỀN LỢI KHÁCH HÀNG</span>  là ưu tiên hàng đầu khi
                   mua sắm tại Di Động Việt. Bạn không chỉ nhận được những ưu đãi
                   từ hãng OPPO mà còn có thêm gói bảo hành mở rộng riêng biệt.
                   Những chính sách bán hàng đắt giá khác như dùng thử không mất
@@ -449,9 +453,9 @@ const Oppo_information_product = ({ category }) => {
                   lãi suất cũng được áp dụng, đem lại sự thuận lợi tối ưu.
                 </p>
                 <p>
-                  Và không thể không nhắc đến TRẢI NGHIỆM VƯỢT TRỘI khi mua sắm
+                  Và không thể không nhắc đến <span className="highlight_bold "> TRẢI NGHIỆM VƯỢT TRỘI</span>  khi mua sắm
                   tại Di Động Việt. Tại đây, đội ngũ nhân viên tại Di Động Việt
-                  – những người luôn KIÊN NHẪN, TẬN TÂM VÀ TRÁCH NHIỆM sẽ hỗ trợ
+                  – những người luôn <span className="highlight_bold "> KIÊN NHẪN, TẬN TÂM VÀ TRÁCH NHIỆM</span>  sẽ hỗ trợ
                   bạn bất cứ lúc nào, không phân biệt dịch vụ ngoại tuyến hay
                   trực tuyến. Sự quan tâm khách hàng không chỉ dừng lại ở việc
                   mua và bán mà Di Động Việt còn đồng hành cùng quý khách trên
@@ -463,7 +467,7 @@ const Oppo_information_product = ({ category }) => {
                   gì về điện thoại OPPO tại Di Động Việt, hãy liên hệ qua các
                   nguồn dưới đây:
                 </p>
-                <ul style={{ listStyleType: "disc", paddingLeft: "20px" }}>
+                <ul className="Oppo-info-container-ulli">
                   <li>
                     <strong>Hotline:</strong> 1800.6018 (Liên hệ Kỹ thuật hoặc
                     Mua ngay).
@@ -495,14 +499,22 @@ const Oppo_information_product = ({ category }) => {
                 </ul>
                 <img
                   src="src/assets/images/Info_description_product/Oppo_Info_description/Oppo_19.png"
-                  alt=""
+                  alt="" className="Oppo-info-container-img"
                 />
                 <h3>
                   7. Những đánh giá và nhận xét của khách hàng khi mua điện
                   thoại OPPO chính hãng tại Di Động Việt
                 </h3>
-                <p>
-                  Anh Thọ tại Quận 1 - TP.HCM chia sẻ: “Đây là lần đầu tiên tôi
+                <img
+                  src="src/assets/images/Info_description_product/Oppo_Info_description/Oppo_20.png"
+                  alt="" className="Oppo-info-container-img"
+                />
+                <img
+                  src="src/assets/images/Info_description_product/Oppo_Info_description/Oppo_21.png"
+                  alt="" className="Oppo-info-container-img"
+                />
+                <p className="Oppo-info-container-p">
+                <span className="highlight_bold ">Anh Thọ tại Quận 1 - TP.HCM chia sẻ:</span>  “Đây là lần đầu tiên tôi
                   mua điện thoại tại Di Động Việt và cảm thấy rất hài lòng. Tôi
                   đã sử dụng điện thoại OPPO gần mười năm nên sau khi thấy dòng
                   Reno mới đã ra mắt ở Việt Nam, tôi quyết định đổi điện thoại
@@ -511,8 +523,12 @@ const Oppo_information_product = ({ category }) => {
                   đổi mới khá hấp dẫn. Nhờ Di Động Việt mà tôi đã sở hữu một
                   chiếc máy mới chất lượng với giá rẻ hơn nhiều so mong đợi.”
                 </p>
-                <p>
-                  Bạn Hồng - Sinh viên Kinh tế chia sẻ: “Khi mua điện thoại thì
+                <img
+                  src="src/assets/images/Info_description_product/Oppo_Info_description/Oppo_22.png"
+                  alt="" className="Oppo-info-container-img"
+                />
+                <p className="Oppo-info-container-p">
+                <span className="highlight_bold ">Bạn Hồng - Sinh viên Kinh tế chia sẻ:</span> Bạn Hồng - Sinh viên Kinh tế chia sẻ: “Khi mua điện thoại thì
                   mình quan tâm chất lượng máy lẫn trải nghiệm mua sắm, và Di
                   Động Việt đáp ứng tốt cả hai nhu cầu này của mình. Chiếc OPPO
                   mình vừa mua ở đây chạy mượt mà và tạm thời không có bất kỳ
@@ -521,18 +537,6 @@ const Oppo_information_product = ({ category }) => {
                   sách bảo hành mà họ cung cấp. Sẽ luôn quay lại Di Động Việt
                   mỗi khi cần mua điện thoại mới!"
                 </p>
-                <img
-                  src="src/assets/images/Info_description_product/Oppo_Info_description/Oppo_20.png"
-                  alt=""
-                />
-                <img
-                  src="src/assets/images/Info_description_product/Oppo_Info_description/Oppo_21.png"
-                  alt=""
-                />
-                <img
-                  src="src/assets/images/Info_description_product/Oppo_Info_description/Oppo_22.png"
-                  alt=""
-                />
               </>
             )}
             <Button onClick={toggleExpanded}>

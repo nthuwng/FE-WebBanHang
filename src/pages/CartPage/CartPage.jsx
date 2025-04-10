@@ -1,26 +1,49 @@
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import "./CartPage.css";
+import { AuthContext } from "../../components/context/auth.context";
+import { getCart_details_ByUserId } from "../../services/api.service";
 
 const CartPage = () => {
-  const [cart, setCart] = useState([
-    { id: 1, name: "LCD Monitor", price: 650, quantity: 1 },
-    { id: 2, name: "HI Gamepad", price: 550, quantity: 2 },
-  ]);
+  const { user } = useContext(AuthContext); // Lấy user từ context
+  const [cart, setCart] = useState([]);
+  const [loading, setLoading] = useState(true);
 
+  // Lấy cart details khi component được render
+  useEffect(() => {
+    const fetchCartDetails = async () => {
+      try {
+        const response = await getCart_details_ByUserId(user._id);
+        console.log("Cart details:", response);
+        setCart(response.data); // Lưu dữ liệu giỏ hàng vào state
+      } catch (error) {
+        console.error("Error fetching cart details:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    if (user) {
+      fetchCartDetails(); // Gọi API khi có user
+    }
+  }, [user]);
+
+  // Cập nhật số lượng sản phẩm
   const updateQuantity = (id, quantity) => {
     const updatedCart = cart.map((item) =>
-      item.id === id ? { ...item, quantity } : item
+      item._id === id ? { ...item, quantity } : item
     );
     setCart(updatedCart);
   };
 
   const subtotal = cart.reduce(
-    (total, item) => total + item.price * item.quantity,
+    (total, item) => total + item.product.price * item.quantity,
     0
   );
 
-  
+  if (loading) {
+    return <div>Loading...</div>;
+  }
 
   return (
     <div className="cart-page">
@@ -45,21 +68,28 @@ const CartPage = () => {
           </thead>
           <tbody>
             {cart.map((item) => (
-              <tr key={item.id}>
-                <td>{item.name}</td>
-                <td>${item.price}</td>
+              <tr key={item._id}>
+                <td>
+                  <img
+                    src={item.product.image}
+                    alt={item.product.name}
+                    className="product-image"
+                  />
+                  {item.product.name}
+                </td>
+                <td>${item.product.price}</td>
                 <td>
                   <input
                     className="Quantity-number"
                     type="number"
                     value={item.quantity}
                     onChange={(e) =>
-                      updateQuantity(item.id, parseInt(e.target.value))
+                      updateQuantity(item._id, parseInt(e.target.value))
                     }
                     min="1"
                   />
                 </td>
-                <td>${item.price * item.quantity}</td>
+                <td>${item.product.price * item.quantity}</td>
               </tr>
             ))}
           </tbody>
