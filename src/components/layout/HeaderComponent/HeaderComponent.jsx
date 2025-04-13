@@ -5,9 +5,11 @@ import { LogoutOutlined, UserOutlined } from "@ant-design/icons";
 import { Badge, Tooltip, message } from "antd";
 import "./HeaderComponent.css";
 import { AuthContext } from "../../context/auth.context";
+import { CartContext } from "../../context/cart.context";
 
 const HeaderComponent = () => {
-  const { user, setUser } = useContext(AuthContext);
+  const { user, setUser, logout } = useContext(AuthContext);
+  const { cart, setCart, clearCart } = useContext(CartContext);
 
   const navigate = useNavigate();
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -17,6 +19,8 @@ const HeaderComponent = () => {
   }, []);
 
   const handleLogout = () => {
+    logout();
+    clearCart();
     localStorage.removeItem("accessToken");
     localStorage.removeItem("user");
     setIsLoggedIn(false);
@@ -73,7 +77,7 @@ const HeaderComponent = () => {
             <ShoppingCart
               size={30}
               className="icon"
-              style={{ cursor: "pointer", color: "white" }}
+              style={{ cursor: "pointer" }}
               onClick={() => {
                 navigate("/carts");
               }}
@@ -88,7 +92,7 @@ const HeaderComponent = () => {
               size={30}
               className="icon-login"
               onClick={handleLogout}
-              style={{ color: "white" }}
+              // style={{ color: "white" }}
             />
           </Tooltip>
         ) : (
@@ -96,7 +100,7 @@ const HeaderComponent = () => {
             <UserOutlined
               className="icon-login"
               onClick={() => navigate("/login")}
-              style={{ color: "white" }}
+              // style={{ color: "white" }}
             />
           </Tooltip>
         )}

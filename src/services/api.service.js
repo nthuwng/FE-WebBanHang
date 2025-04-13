@@ -58,6 +58,32 @@ const getCart_details_ByUserId = async (userID) => {
   return axios.get(URL_BACKEND);
 };
 
+const putUpdateCart_detailsServices = async (
+  cart_detailsID,
+  productId,
+  quantity
+) => {
+  const URL_BACKEND = `/cart_details/updateCart_details/${cart_detailsID}`;
+
+  const data = {
+    productId: productId,
+    quantity: quantity,
+  };
+  return axios.put(URL_BACKEND, data);
+};
+
+const deleteCart_details = async (id, userId) => {
+  const URL_BACKEND = `/cart_details/deleteCart_details`;
+
+  const config = {
+    data: {
+      id: id,
+      userId: userId,
+    },
+  };
+  return axios.delete(URL_BACKEND, config);
+};
+
 export {
   fetchProductAPI,
   loginApi,
@@ -67,4 +93,6 @@ export {
   handleAddProductToCartAPI,
   getCartByUserIDServices,
   getCart_details_ByUserId,
+  putUpdateCart_detailsServices,
+  deleteCart_details,
 };

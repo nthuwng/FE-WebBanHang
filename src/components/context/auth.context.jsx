@@ -21,8 +21,13 @@ export const AuthWrapper = (props) => {
     cart: "",
   });
 
+  const logout = () => {
+    localStorage.removeItem("accessToken");
+    localStorage.removeItem("user");
+    setUser(null);
+  };
   return (
-    <AuthContext.Provider value={{ user, setUser }}>
+    <AuthContext.Provider value={{ user, setUser, logout }}>
       {props.children}
     </AuthContext.Provider>
   );
