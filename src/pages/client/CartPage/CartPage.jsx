@@ -1,16 +1,16 @@
 import { Link } from "react-router-dom";
 import { useContext, useEffect, useState } from "react";
 import "./CartPage.css";
-import { AuthContext } from "../../components/context/auth.context";
+import { AuthContext } from "../../../components/context/auth.context";
 import {
   deleteCart_details,
   getCartByUserIDServices,
   getCart_details_ByUserId,
   putUpdateCart_detailsServices,
-} from "../../services/api.service";
+} from "../../../services/api.service";
 import { Button, InputNumber, notification } from "antd";
 import { RiDeleteBin6Line } from "react-icons/ri";
-import { CartContext } from "../../components/context/cart.context";
+import { CartContext } from "../../../components/context/cart.context";
 
 const CartPage = () => {
   const { user, setUser } = useContext(AuthContext);

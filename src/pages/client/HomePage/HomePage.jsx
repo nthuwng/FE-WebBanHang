@@ -1,9 +1,9 @@
-import slider1 from "../../assets/images/Sliders/slider1.png";
-import slider2 from "../../assets/images/Sliders/slider2.png";
-import slider3 from "../../assets/images/Sliders/slider3.png";
-import { SliderComponent } from "../../components/common/SliderComponent/SliderComponent.jsx";
-import ProductListComponent from "../../components/common/ProductListComponent/ProductListComponent.jsx";
-import { fetchProduct_Name_API } from "../../services/api.service";
+import slider1 from "../../../assets/images/Sliders/slider1.png";
+import slider2 from "../../../assets/images/Sliders/slider2.png";
+import slider3 from "../../../assets/images/Sliders/slider3.png";
+import { SliderComponent } from "../../../components/common/SliderComponent/SliderComponent.jsx";
+import ProductListComponent from "../../../components/common/ProductListComponent/ProductListComponent.jsx";
+import { fetchProduct_Name_API } from "../../../services/api.service";
 
 import "./HomePage.css";
 import {
@@ -11,7 +11,7 @@ import {
   ProductCategorySamsungComponent,
   ProductCategoryXiaomiComponent,
   ProductCategoryOppoComponent,
-} from "../../components/common/ProductCategoryComponent/ProductCategoryComponent.jsx";
+} from "../../../components/common/ProductCategoryComponent/ProductCategoryComponent.jsx";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
@@ -42,8 +42,11 @@ const HomePage = () => {
             </Button>
           </div>
         </div>
-        <div >
-          <div className="Dienthoai-home_page_card " data-aos="fade-up" style={{backgroundColor: "#F3F4F6"}}>
+        <div>
+          <div
+            className="Dienthoai-home_page_card "
+            data-aos="fade-up"
+            style={{ backgroundColor: "#F3F4F6" }}>
             <div className="Iphone-home_page_card">
               <ProductCategoryIphoneComponent />
               <ProductListComponent
