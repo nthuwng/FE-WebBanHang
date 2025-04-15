@@ -1,21 +1,21 @@
-import product_page_slider1 from "../../assets/images/Sliders/product_page_slider1.png";
-import product_page_slider2 from "../../assets/images/Sliders/product_page_slider2.png";
-import product_page_slider3 from "../../assets/images/Sliders/product_page_slider3.png";
-import product_page_slider4 from "../../assets/images/Sliders/product_page_slider4.png";
+import product_page_slider1 from "../../../assets/images/Sliders/product_page_slider1.png";
+import product_page_slider2 from "../../../assets/images/Sliders/product_page_slider2.png";
+import product_page_slider3 from "../../../assets/images/Sliders/product_page_slider3.png";
+import product_page_slider4 from "../../../assets/images/Sliders/product_page_slider4.png";
 
 import { useEffect, useState } from "react";
 import {
   fetchProductAPI,
   fetchProduct_Name_API,
-} from "../../services/api.service";
-import ProductCard from "../../components/common/ProductCard/ProductCard"; // Import component mới
+} from "../../../services/api.service.js";
+import ProductCard from "../../../components/common/client/ProductCard/ProductCard.jsx"; // Import component mới
 import "./ProductPage.css"; // CSS cho ProductPage
-import { SliderComponent } from "../../components/common/SliderComponent/SliderComponent";
+import { SliderComponent } from "../../../components/common/client/SliderComponent/SliderComponent.jsx";
 
-import CategoryIcons from "../../components/common/CategoryIcons/CategoryIcons";
+import CategoryIcons from "../../../components/common/client/CategoryIcons/CategoryIcons.jsx";
 import { Link } from "react-router-dom";
-import Information_product_main from "../../components/common/Information_product/Information_product_main/Information_product_main";
-import { AuthContext } from "../../components/context/auth.context";
+import Information_product_main from "../../../components/common/client/Information_product/Information_product_main/Information_product_main.jsx";
+import { AuthContext } from "../../../components/context/auth.context.jsx";
 
 const ProductPage = (props) => {
   const [dataProduct, setDataProduct] = useState([]);

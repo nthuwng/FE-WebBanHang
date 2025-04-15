@@ -1,11 +1,11 @@
 import { createBrowserRouter } from "react-router-dom";
 import App from "../App.jsx";
-import ProductPage from "../pages/ProductPage/ProductPage.jsx";
-import HomePage from "../pages/HomePage/HomePage.jsx";
-import LoginPage from "../pages/LoginPage/LoginPage.jsx";
-import CartPage from "../pages/CartPage/CartPage.jsx";
-import Iphone_information_product from "../components/common/Information_product/Iphone_information_product.jsx";
-
+import ProductPage from "../pages/client/ProductPage/ProductPage.jsx";
+import HomePage from "../pages/client/HomePage/HomePage.jsx";
+import LoginPage from "../pages/client/LoginPage/LoginPage.jsx";
+import CartPage from "../pages/client/CartPage/CartPage.jsx";
+import Iphone_information_product from "../components/common/client/Information_product/Iphone_information_product.jsx";
+import AdminDashboardPage from "../pages/admin/AdminDashboardPage/AdminDashboardPage.jsx";
 
 const router = createBrowserRouter([
   {
@@ -25,6 +25,10 @@ const router = createBrowserRouter([
         element: <CartPage />,
       },
     ],
+  },
+  {
+    path: "/admin",
+    element: <AdminDashboardPage />,
   },
   {
     path: "/login",

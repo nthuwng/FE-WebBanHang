@@ -1,16 +1,17 @@
 import { Outlet } from "react-router-dom";
-import HeaderComponent from "./components/layout/HeaderComponent/HeaderComponent.jsx";
-import FooterComponent from "./components/layout/FooterComponent/FooterComponent.jsx";
-import ScrollToTopButton from "./components/layout/ScrollToTopButton/ScrollToTopButton.jsx";
+import HeaderComponent from "./components/layout/client/HeaderComponent/HeaderComponent.jsx";
+import FooterComponent from "./components/layout/client/FooterComponent/FooterComponent.jsx";
+import ScrollToTopButton from "./components/layout/client/ScrollToTopButton/ScrollToTopButton.jsx";
 import AOS from "aos";
 import "aos/dist/aos.css";
+
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "./components/context/auth.context.jsx";
 import { getAccountAPI } from "./services/api.service.js";
 
 function App() {
   const { user, setUser } = useContext(AuthContext);
-
+  console.log("user", user);
   useEffect(() => {
     AOS.init({
       duration: 1000,

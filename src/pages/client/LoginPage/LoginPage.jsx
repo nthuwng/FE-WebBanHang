@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import "./LoginPage.css";
 import { Link, useNavigate } from "react-router-dom";
 import { ArrowRightOutlined } from "@ant-design/icons";
-import SignInComponent from "../../components/common/SignInComponent/SignInComponent";
-import SignOutComponent from "../../components/common/SignOutComponent/SignOutComponent";
+import SignInComponent from "../../../components/common/SignInComponent/SignInComponent";
+import SignOutComponent from "../../../components/common/SignOutComponent/SignOutComponent";
 import { Button, Divider, Form, Input, notification } from "antd";
 
 const Login = () => {

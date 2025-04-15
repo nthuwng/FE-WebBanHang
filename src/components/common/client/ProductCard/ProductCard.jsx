@@ -1,10 +1,10 @@
 import React, { useContext, useState } from "react";
 import "./ProductCard.css"; // CSS riêng cho product card
-import { AuthContext } from "../../context/auth.context";
+import { AuthContext } from "../../../context/auth.context";
 import {
   getCartByUserIDServices,
   handleAddProductToCartAPI,
-} from "../../../services/api.service";
+} from "../../../../services/api.service";
 const backendURL = "http://localhost:8081";
 import { notification } from "antd";
 

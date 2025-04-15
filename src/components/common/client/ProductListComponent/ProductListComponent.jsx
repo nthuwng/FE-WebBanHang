@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import ProductCard from "../ProductCard/ProductCard";
 import "./ProductListComponent.css";
 import { ArrowRightOutlined } from "@ant-design/icons";
-import SVGDefs from "../../../assets/svg/common-defs";
+import SVGDefs from "../../../../assets/svg/common-defs";
 import AOS from "aos";
 import "aos/dist/aos.css";
 const ProductComponent = ({ apiFunction, categoryName }) => {

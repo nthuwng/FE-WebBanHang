@@ -4,8 +4,8 @@ import { Search, Heart, ShoppingCart } from "lucide-react";
 import { LogoutOutlined, UserOutlined } from "@ant-design/icons";
 import { Badge, Tooltip, message } from "antd";
 import "./HeaderComponent.css";
-import { AuthContext } from "../../context/auth.context";
-import { CartContext } from "../../context/cart.context";
+import { AuthContext } from "../../../context/auth.context";
+import { CartContext } from "../../../context/cart.context";
 
 const HeaderComponent = () => {
   const { user, setUser, logout } = useContext(AuthContext);
