@@ -9,6 +9,7 @@ import AdminDashboardPage from "../pages/admin/AdminDashboardPage/AdminDashboard
 import ProtectedRoute from "../components/common/admin/ProtectedRoute/ProtectedRoute.jsx";
 import AdminLayout from "../components/layout/admin/AdminLayout/AdminLayout.jsx";
 import AdminProductPage from "../pages/admin/AdminProductPage/AdminProductPage.jsx";
+import AdminUsersPage from "../pages/admin/AdminUsersPage/AdminUsersPage.jsx";
 
 const router = createBrowserRouter([
   {
@@ -44,6 +45,10 @@ const router = createBrowserRouter([
       {
         path: "/admin/products",
         element: <AdminProductPage />,
+      },
+      {
+        path: "/admin/users",
+        element: <AdminUsersPage />,
       },
     ],
   },
