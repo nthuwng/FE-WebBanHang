@@ -28,6 +28,7 @@ const SignInComponent = () => {
 
       navigate("/login");
     } else {
+      localStorage.setItem("user", JSON.stringify(res.data.user));
       localStorage.setItem("accessToken", res.data.access_token);
       api.success({
         message: "Đăng nhập thành công",
