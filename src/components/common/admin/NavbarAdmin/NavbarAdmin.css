@@ -10,6 +10,7 @@
   z-index: 1000;
   box-shadow: 3px 0 10px rgba(0, 0, 0, 0.2);
   overflow: hidden;
+  overflow-x: hidden;
 }
 
 .admin-logo {
@@ -32,6 +33,7 @@
   flex-direction: column;
   overflow-y: auto;
   flex-grow: 1;
+  overflow-x: hidden;
 }
 
 .admin-navbar-item {
@@ -46,6 +48,7 @@
   transition: all 0.3s ease;
   border-left: 4px solid transparent;
   position: relative;
+  overflow-x: hidden;
 }
 
 .admin-navbar-item:hover {
@@ -62,7 +65,7 @@
 }
 
 .admin-navbar-item.active::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   right: 0;
@@ -74,9 +77,15 @@
 }
 
 @keyframes pulse {
-  0% { opacity: 0.2; }
-  50% { opacity: 0.8; }
-  100% { opacity: 0.2; }
+  0% {
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 0.2;
+  }
 }
 
 .menu-icon-container {
@@ -89,7 +98,7 @@
   transition: all 0.3s;
 }
 
-.admin-navbar-item:hover .menu-icon-container, 
+.admin-navbar-item:hover .menu-icon-container,
 .admin-navbar-item.active .menu-icon-container {
   background-color: rgba(255, 255, 255, 0.2);
   transform: rotate(5deg);
@@ -140,35 +149,35 @@
     width: 70px;
     overflow: visible;
   }
-  
+
   .admin-navbar-item span {
     display: none;
   }
-  
+
   .admin-logo h2 {
     font-size: 0;
   }
-  
+
   .admin-logo:after {
     content: "L";
     font-size: 24px;
     font-weight: bold;
   }
-  
+
   .menu-icon-container {
     margin: 0 auto;
   }
-  
+
   .admin-navbar-item {
     justify-content: center;
     padding: 15px 0;
   }
-  
+
   .admin-navbar-item:hover {
     width: 200px;
     position: relative;
   }
-  
+
   .admin-navbar-item:hover span {
     display: block;
     position: absolute;
@@ -179,5 +188,4 @@
     border-radius: 0 4px 4px 0;
     box-shadow: 5px 0 15px rgba(0, 0, 0, 0.1);
   }
-  
 }
