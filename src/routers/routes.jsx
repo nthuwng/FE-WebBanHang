@@ -7,7 +7,8 @@ import CartPage from "../pages/client/CartPage/CartPage.jsx";
 import Iphone_information_product from "../components/common/client/Information_product/Iphone_information_product.jsx";
 import AdminDashboardPage from "../pages/admin/AdminDashboardPage/AdminDashboardPage.jsx";
 import ProtectedRoute from "../components/common/admin/ProtectedRoute/ProtectedRoute.jsx";
-import AdminLayout from "../components/layout/admin/AdminLayout.jsx";
+import AdminLayout from "../components/layout/admin/AdminLayout/AdminLayout.jsx";
+import AdminProductPage from "../pages/admin/AdminProductPage/AdminProductPage.jsx";
 
 const router = createBrowserRouter([
   {
@@ -39,6 +40,10 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <AdminDashboardPage />,
+      },
+      {
+        path: "/admin/products",
+        element: <AdminProductPage />,
       },
     ],
   },
