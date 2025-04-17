@@ -1,12 +1,7 @@
-import React from 'react'
-import ProtectedRoute from '../../../components/common/admin/ProtectedRoute/ProtectedRoute'
+import React from "react";
 
 const AdminDashboardPage = () => {
-  return (
-    <div>AdminDashboardPage
-      <ProtectedRoute/>
-    </div>
-  )
-}
+  return <div>AdminDashboardPage</div>;
+};
 
-export default AdminDashboardPage
+export default AdminDashboardPage;

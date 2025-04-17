@@ -7,6 +7,7 @@ import CartPage from "../pages/client/CartPage/CartPage.jsx";
 import Iphone_information_product from "../components/common/client/Information_product/Iphone_information_product.jsx";
 import AdminDashboardPage from "../pages/admin/AdminDashboardPage/AdminDashboardPage.jsx";
 import ProtectedRoute from "../components/common/admin/ProtectedRoute/ProtectedRoute.jsx";
+import AdminLayout from "../components/layout/admin/AdminLayout.jsx";
 
 const router = createBrowserRouter([
   {
@@ -31,9 +32,15 @@ const router = createBrowserRouter([
     path: "/admin",
     element: (
       <ProtectedRoute requiredRole="admin">
-        <AdminDashboardPage />
+        <AdminLayout />
       </ProtectedRoute>
     ),
+    children: [
+      {
+        index: true,
+        element: <AdminDashboardPage />,
+      },
+    ],
   },
   {
     path: "/login",
