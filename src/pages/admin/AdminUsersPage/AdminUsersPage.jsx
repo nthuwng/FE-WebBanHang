@@ -108,6 +108,7 @@ const AdminUsersPage = (props) => {
         dataupload={selectedUser}
         searchTerm={searchTerm}
         onSearchChange={setSearchTerm}
+        setSelectedUser={setSelectedUser}
       />
 
       <Table
