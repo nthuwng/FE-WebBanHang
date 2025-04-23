@@ -15,7 +15,6 @@ import { SliderComponent } from "../../../components/common/client/SliderCompone
 import CategoryIcons from "../../../components/common/client/CategoryIcons/CategoryIcons.jsx";
 import { Link } from "react-router-dom";
 import Information_product_main from "../../../components/common/client/Information_product/Information_product_main/Information_product_main.jsx";
-import { AuthContext } from "../../../components/context/auth.context.jsx";
 
 const ProductPage = (props) => {
   const [dataProduct, setDataProduct] = useState([]);

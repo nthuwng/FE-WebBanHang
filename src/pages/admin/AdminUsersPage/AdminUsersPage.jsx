@@ -1,42 +1,13 @@
-import React, { useState } from "react";
+import React, { use, useEffect, useState } from "react";
 
 import "./AdminUsersPage.css";
 import UsersHeader from "../../../components/common/admin/AdminUsers/UsersHeader/UsersHeader";
 import UserTableAdmin from "../../../components/common/admin/AdminUsers/UserTableAdmin/UserTableAdmin";
 import UserFormModal from "../../../components/common/admin/AdminUsers/UserFormModal/UserFormModal";
-
+import { getUserAPI } from "../../../services/api.service";
 const AdminUsersPage = () => {
   // State quản lý danh sách users
-  const [users, setUsers] = useState([
-    {
-      id: 1,
-      username: "admin1",
-      email: "admin1@example.com",
-      role: "admin",
-      status: "active",
-    },
-    {
-      id: 2,
-      username: "user1",
-      email: "user1@example.com",
-      role: "user",
-      status: "active",
-    },
-    {
-      id: 3,
-      username: "user2",
-      email: "user2@example.com",
-      role: "user",
-      status: "inactive",
-    },
-    {
-      id: 4,
-      username: "manager1",
-      email: "manager1@example.com",
-      role: "admin",
-      status: "active",
-    },
-  ]);
+  const [users, setUsers] = useState([]);
 
   // State cho chức năng tìm kiếm
   const [searchTerm, setSearchTerm] = useState("");
@@ -53,12 +24,26 @@ const AdminUsersPage = () => {
     status: "active",
   });
 
+  useEffect(() => {
+    fetchUserAPI();
+  }, []);
+
+  const fetchUserAPI = async () => {
+    try {
+      const res = await getUserAPI();
+      console.log("Danh sách người dùng:", res.data);
+      setUsers(res.data);
+    } catch (error) {
+      console.error("Lỗi khi lấy danh sách người dùng:", error);
+    }
+  };
+
   // Lọc danh sách users theo từ khóa tìm kiếm
   const filteredUsers = users.filter(
     (user) =>
-      user.username.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      user.full_name.toLowerCase().includes(searchTerm.toLowerCase()) ||
       user.email.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      user.role.toLowerCase().includes(searchTerm.toLowerCase())
+      user.role.name.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
   // Mở modal thêm user mới

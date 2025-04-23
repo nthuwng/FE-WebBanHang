@@ -55,7 +55,9 @@ const ProductCard = ({ product }) => {
         className="product-image-component"
       />
       <h3 className="product-name-component">{product.name}</h3>
-      <p className="product-price-component">${product.price}</p>
+      <p className="product-price-component">
+        {product.price.toLocaleString()}₫
+      </p>
       <button className="product-add-to-cart" onClick={() => handleAddToCart()}>
         Add To Cart
       </button>

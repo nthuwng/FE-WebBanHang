@@ -55,22 +55,11 @@ const UserFormModal = ({
             <label>Quyền:</label>
             <select 
               name="role" 
-              value={currentUser.role} 
+              value={currentUser.role.name} 
               onChange={onInputChange}
             >
               <option value="admin">Admin</option>
               <option value="user">User</option>
-            </select>
-          </div>
-          <div className="form-group">
-            <label>Trạng thái:</label>
-            <select 
-              name="status" 
-              value={currentUser.status} 
-              onChange={onInputChange}
-            >
-              <option value="active">Hoạt động</option>
-              <option value="inactive">Không hoạt động</option>
             </select>
           </div>
           <div className="modal-footer">

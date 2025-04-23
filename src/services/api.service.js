@@ -84,6 +84,37 @@ const deleteCart_details = async (id, userId) => {
   return axios.delete(URL_BACKEND, config);
 };
 
+const getUserAPI = async () => {
+  const URL_BACKEND = `/user/allUser?populate=role`;
+  return axios.get(URL_BACKEND);
+};
+const getOrderAPI = async () => {
+  const URL_BACKEND = `/order/getOrder?populate=user,payment_method`;
+  return axios.get(URL_BACKEND);
+};
+
+const postCreateOrder = async (
+  userID,
+  payment_method_id,
+  total_price,
+  products,
+  shipping_address,
+  email,
+  phone
+) => {
+  const URL_BACKEND = `/order/createOrder`;
+  const data = {
+    userID: userID,
+    payment_method_id: payment_method_id,
+    total_price: total_price,
+    products: products,
+    shipping_address: shipping_address,
+    email: email,
+    phone: phone,
+  };
+  return axios.post(URL_BACKEND, data);
+};
+
 export {
   fetchProductAPI,
   loginApi,
@@ -95,4 +126,7 @@ export {
   getCart_details_ByUserId,
   putUpdateCart_detailsServices,
   deleteCart_details,
+  getUserAPI,
+  getOrderAPI,
+  postCreateOrder,
 };

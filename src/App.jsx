@@ -11,7 +11,6 @@ import { getAccountAPI } from "./services/api.service.js";
 
 function App() {
   const { user, setUser } = useContext(AuthContext);
-  console.log("user", user);
   useEffect(() => {
     AOS.init({
       duration: 1000,

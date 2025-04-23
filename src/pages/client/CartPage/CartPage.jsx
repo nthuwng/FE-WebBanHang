@@ -20,7 +20,6 @@ const CartPage = () => {
 
   // const [cart, setCart] = useState([]);
   const [loading, setLoading] = useState(true);
-
   // Lấy cart details khi component được render
   useEffect(() => {
     if (user && user._id) {
@@ -212,7 +211,7 @@ const CartPage = () => {
             {cart.map((item) => (
               <tr key={item._id}>
                 <td>{item.product.name}</td>
-                <td>${item.product.price}</td>
+                <td>{item.product.price.toLocaleString()}₫</td>
                 <td>
                   <InputNumber
                     value={item.quantity}
@@ -223,7 +222,9 @@ const CartPage = () => {
                     parser={(value) => parseInt(value.replace(/\D/g, ""), 10)}
                   />
                 </td>
-                <td>${item.product.price * item.quantity}</td>
+                <td>
+                  {(item.product.price * item.quantity).toLocaleString()}₫
+                </td>
                 <td>
                   <Button onClick={() => handleDelete(item._id)}>
                     <RiDeleteBin6Line fontSize={16} />
@@ -234,32 +235,45 @@ const CartPage = () => {
           </tbody>
         </table>
       </div>
-      <div className="Home-and-Update">
-        <button className="Return-To-Home">
-          <Link to="/" className="Return-To-Home-text">
-            Return To Home
-          </Link>
-        </button>
-        <button
-          className="Update-Cart"
-          onClick={() => {
-            handleUpdateCartDetail();
-          }}>
-          Update Cart
-        </button>
-      </div>
-      <div className="total">
-        <div className="Cart-Total">Cart Total</div>
-        <p>
-          <span>Subtotal:</span> <span>${subtotal}</span>
-        </p>
-        <p>
-          <span>Shipping:</span> <span>Free</span>
-        </p>
-        <div className="total-Totalmoney">
-          <span>Total:</span> <span>${subtotal}</span>
+      <div className="cart-summary-container">
+        <div className="Home-and-Update">
+          <button className="Return-To-Home">
+            <Link to="/" className="Return-To-Home-text">
+              Return To Home
+            </Link>
+          </button>
+          <button
+            className="Update-Cart"
+            onClick={() => {
+              handleUpdateCartDetail();
+            }}>
+            Update Cart
+          </button>
         </div>
-        <button className="checkout-button">Proceed to checkout</button>
+
+        <div className="total">
+          <div className="Cart-Total">Cart Total</div>
+
+          <p className="summary-row">
+            <span className="summary-label">Subtotal:</span>
+            <span className="summary-value">{subtotal.toLocaleString()}₫</span>
+          </p>
+
+          <p className="summary-row">
+            <span className="summary-label">Shipping:</span>
+            <span className="summary-value">Free</span>
+          </p>
+
+          <div className="total-Totalmoney">
+            <span className="total-label">Total:</span>
+            <span className="total-value">{subtotal.toLocaleString()}₫</span>
+          </div>
+          <Link to="/checkout" style={{ textDecoration: "none" }}>
+            <button className="checkout-button">
+              <span className="checkout-text">Proceed to checkout</span>
+            </button>
+          </Link>
+        </div>
       </div>
     </div>
   );

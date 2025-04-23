@@ -11,24 +11,18 @@ const UserTableAdmin = ({ users, onEditUser, onDeleteUser }) => {
             <th>Tên đăng nhập</th>
             <th>Email</th>
             <th>Quyền</th>
-            <th>Trạng thái</th>
             <th>Thao tác</th>
           </tr>
         </thead>
         <tbody>
           {users.map(user => (
             <tr key={user.id}>
-              <td>{user.id}</td>
-              <td>{user.username}</td>
+              <td>{user._id}</td>
+              <td>{user.full_name}</td>
               <td>{user.email}</td>
               <td>
                 <span className={`role-badge ${user.role}`}>
-                  {user.role}
-                </span>
-              </td>
-              <td>
-                <span className={`status-badge ${user.status}`}>
-                  {user.status === 'active' ? 'Hoạt động' : 'Không hoạt động'}
+                  {user.role.name}
                 </span>
               </td>
               <td className="actions-cell">

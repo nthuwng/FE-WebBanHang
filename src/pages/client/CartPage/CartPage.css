@@ -36,7 +36,8 @@
 
 .cart-summary {
   margin-top: -30px;
-  margin-left: 1130px;
+  display: flex;
+  flex-direction: row-reverse;
 }
 
 .cart-page-items th:nth-child(1),
@@ -78,134 +79,94 @@
   padding-left: 20px;
 }
 
-/*cái trả về*/
-.Home-and-Update {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  max-width: 1500px;
-  margin: auto;
-  margin-top: 20px;
-}
-
-.Return-To-Home:hover > .Return-To-Home-text {
-  color: white;
-  transition: all 0.2s ease-in-out;
-}
-
-.Return-To-Home,
-.Update-Cart {
-  padding: 15px 30px;
-  background: white;
-  color: black;
-  font-weight: bold;
-  cursor: pointer;
-  transition: all 0.2s ease-in-out;
-  border-radius: 10px;
-  border: 2px solid transparent;
-  background-image: linear-gradient(white, white),
-    linear-gradient(to right, #d62976 22%, #962fbf 62%, #4f5bd5 97%);
-  background-origin: border-box;
-  background-clip: padding-box, border-box;
-}
-
-.Return-To-Home-text {
-  text-decoration: none;
-  color: black;
-}
-
-.Return-To-Home-text:hover {
-  color: white;
-}
-
-.Return-To-Home:hover,
-.Update-Cart:hover {
-  background: linear-gradient(to right, #d62976 22%, #962fbf 62%, #4f5bd5 97%);
-  color: white;
-}
-
 .coupon-section {
-  flex: 1;
   display: flex;
   align-items: center;
+  gap: 12px;
+  margin: 20px 0;
+  max-width: 450px;
 }
 
 .coupon-section input {
-  padding: 8px;
-  margin-right: 10px;
+  flex: 1;
+  padding: 12px 16px;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  outline: none;
 }
 
-/*bảng apply*/
+.coupon-section input:focus {
+  border-color: #4f5bd5;
+  box-shadow: 0 0 0 2px rgba(79, 91, 213, 0.1);
+}
+
+.coupon-section input::placeholder {
+  color: #9e9e9e;
+}
+
 .apply-coupon {
-  padding: 8px;
-  color: #0b0b0b;
-  font-weight: bold;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 14px;
   cursor: pointer;
-  border: 2px solid transparent;
-  transition: all 0.3s ease-in-out;
-  background-image: linear-gradient(#faf5f5, #f70000),
-    linear-gradient(to right, #d62976 22%, #962fbf 62%, #4f5bd5 97%);
-  background-origin: border-box;
-  background-clip: padding-box, border-box;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+  color: white;
+  border: none;
+  box-shadow: 0 4px 10px rgba(123, 97, 255, 0.2);
+  white-space: nowrap;
+}
+
+.apply-coupon:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.2) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transition: all 0.6s ease;
+  z-index: 1;
 }
 
 .apply-coupon:hover {
-  background: linear-gradient(to right, #d62976 22%, #962fbf 62%, #4f5bd5 97%);
-  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(123, 97, 255, 0.3);
 }
 
-/*cái bảng dưới*/
-.total {
-  width: 350px;
-  border: 1px solid black;
-  padding: 25px;
-  border-radius: 5px;
-  background-color: white;
-  font-family: Arial, sans-serif;
-  margin-left: 1090px;
-  margin-top: 30px;
+.apply-coupon:hover:before {
+  left: 100%;
 }
 
-.Cart-Total {
-  font-weight: bold;
-  font-size: 25px;
-  margin-bottom: 30px;
-  text-align: center;
-  border-radius: 10px;
-  background: linear-gradient(to right, #d62976 22%, #962fbf 62%, #4f5bd5 97%);
+.apply-coupon:active {
+  transform: translateY(1px);
 }
 
-.total p {
-  display: flex;
-  justify-content: space-between;
-  font-size: 16px;
-  margin: 15px 0;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-  padding-bottom: 5px;
-}
+/* Responsive styling */
+@media (max-width: 480px) {
+  .coupon-section {
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+  }
 
-.checkout-button {
-  width: 100%;
-  padding: 10px;
-  background-color: #e63946;
-  color: white;
-  font-size: 16px;
-  border: none;
-  cursor: pointer;
-  border-radius: 5px;
-  margin-top: 10px;
+  .coupon-section input {
+    width: 100%;
+  }
 }
+/*cái trả về*/
 
-.checkout-button:hover {
-  background-color: #f60515;
-}
-
-.total-Totalmoney {
-  margin-top: 10px;
-  margin-bottom: 20px;
-  font-weight: bold;
-}
 
 .empty-cart-container {
   display: flex;
@@ -345,4 +306,219 @@
     width: 100%;
     justify-content: center;
   }
+}
+
+
+/* Phần Home và Update */
+.Home-and-Update {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.Return-To-Home,
+.Update-Cart {
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  background: white;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid #e0e0e0;
+  color: #333;
+}
+
+.Return-To-Home:hover,
+.Update-Cart:hover {
+  background: #f5f5f5;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.Return-To-Home:active,
+.Update-Cart:active {
+  transform: translateY(1px);
+}
+
+.Return-To-Home-text {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Phần tổng giỏ hàng */
+.total {
+  max-width: 450px;
+  margin-left: auto;
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.Cart-Total {
+  text-align: center;
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid;
+  border-image: linear-gradient(to right, #e91e63, #7c4dff) 1;
+  color: #333;
+}
+
+.total p {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #eee;
+  font-size: 15px;
+  color: #555;
+}
+
+.total-Totalmoney {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 700;
+  font-size: 18px;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #eee;
+  color: #333;
+}
+
+.checkout-button {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(to right, #e91e63, #7c4dff);
+  color: white;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(231, 30, 99, 0.3);
+}
+
+.checkout-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(231, 30, 99, 0.4);
+}
+
+.checkout-button:active {
+  transform: translateY(1px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .Home-and-Update {
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .Return-To-Home,
+  .Update-Cart {
+    width: 100%;
+  }
+  
+  .total {
+    max-width: 100%;
+    margin-top: 20px;
+  }
+}
+/* Container tổng thể */
+.cart-summary-container {
+  margin: 30px 0;
+}
+
+/* Thêm CSS cho icon trong nút checkout */
+.checkout-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  position: relative;
+}
+
+.checkout-icon {
+  transition: transform 0.3s ease;
+}
+
+.checkout-button:hover .checkout-icon {
+  transform: translateX(5px);
+}
+
+/* Phong cách nút với gradient border */
+.Return-To-Home {
+  background: linear-gradient(white, white) padding-box,
+    linear-gradient(to right, #e91e63, #7c4dff) border-box;
+  border: 1px solid transparent;
+}
+
+.Update-Cart {
+  background: linear-gradient(white, white) padding-box,
+    linear-gradient(to right, #7c4dff, #00bcd4) border-box;
+  border: 1px solid transparent;
+}
+
+/* Hiệu ứng nhấp nháy cho nút checkout */
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(231, 30, 99, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(231, 30, 99, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(231, 30, 99, 0);
+  }
+}
+
+.checkout-button {
+  animation: pulse 2s infinite;
+}
+
+/* Nâng cao trải nghiệm trên thiết bị di động */
+@media (max-width: 480px) {
+  .total {
+    padding: 20px 16px;
+  }
+  
+  .Cart-Total {
+    font-size: 18px;
+  }
+  
+  .total p {
+    font-size: 14px;
+  }
+  
+  .total-Totalmoney {
+    font-size: 16px;
+  }
+  
+  .checkout-button {
+    padding: 12px;
+    font-size: 15px;
+  }
+}
+
+/* Hiển thị giá trị tiền đậm và nổi bật */
+.summary-value, .total-value {
+  font-weight: 600;
+  color: #333;
+}
+
+.total-value {
+  color: #e91e63;
+}
+
+/* Thêm hiệu ứng hover cho các hàng trong bảng tổng */
+.summary-row:hover {
+  background-color: #f9f9f9;
+  transform: translateX(5px);
+  transition: all 0.3s ease;
 }
