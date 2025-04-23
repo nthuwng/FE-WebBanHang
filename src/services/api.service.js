@@ -83,6 +83,103 @@ const deleteCart_details = async (id, userId) => {
   };
   return axios.delete(URL_BACKEND, config);
 };
+const fetchProductManagementAPI = async (current, pageSize) => {
+  const URL_BACKEND = `product/getProduct?page=${current}&limit=${pageSize}&populate=category`;
+
+  return axios.get(URL_BACKEND);
+};
+const ProductCreateAPI = (
+  name,
+  description,
+  price,
+  quantity,
+  factory,
+  category,
+  image
+) => {
+  const URL_BACKEND = "/product/createProduct";
+  const data = {
+    name: name,
+    description: description,
+    price: price,
+    quantity: quantity,
+    factory: factory,
+    category: category,
+    image: image,
+  };
+  return axios.post(URL_BACKEND, data);
+};
+const handleUploadFile = (file, folder, id) => {
+  const URL_BACKEND = `/product/addImgProduct?id=${id}`; // Sửa dấu '=' thay vì dấu '?id'
+
+  let config = {
+    headers: {
+      "upload-type": folder,
+      "Content-Type": "multipart/form-data",
+    },
+  };
+
+  const bodyFormData = new FormData();
+  bodyFormData.append("image", file);
+
+  return axios.post(URL_BACKEND, bodyFormData, config);
+};
+
+const ProductUpdateAPI = (name, description, price, id) => {
+  const URL_BACKEND = `/product/updateProduct/${id}`;
+  const data = {
+    name: name,
+    description: description,
+    price: price,
+  };
+  return axios.put(URL_BACKEND, data);
+};
+
+const deleteProductAPI = (id) => {
+  const URL_BACKEND = `/product/deleteProduct/${id}`;
+  return axios.delete(URL_BACKEND);
+};
+const fetchUsertAPI = async () => {
+  const URL_BACKEND = "/user/allUser?populate=role";
+
+  return axios.get(URL_BACKEND);
+};
+
+const updateUserAPI = (id, full_name, phone, password, address, email) => {
+  const URL_BACKEND = "/user/updateUser";
+  const data = {
+    id: id,
+    email: email,
+    full_name: full_name,
+    password: password,
+    phone: phone,
+    address: address,
+  };
+  return axios.put(URL_BACKEND, data);
+};
+const deleteUserAPI = (id) => {
+  const URL_BACKEND = "/user/deleteUser";
+  const config = {
+    data: {
+      id: id,
+    },
+  };
+
+  return axios.delete(URL_BACKEND, config);
+};
+
+const createUserAPI = (full_name, phone, password, address, email, role) => {
+  const URL_BACKEND = "/user/CreateUser";
+  const data = {
+    email: email,
+    full_name: full_name,
+    password: password,
+    phone: phone,
+    address: address,
+    role: role,
+  };
+  return axios.post(URL_BACKEND, data);
+};
 
 const getUserAPI = async () => {
   const URL_BACKEND = `/user/allUser?populate=role`;
@@ -114,7 +211,6 @@ const postCreateOrder = async (
   };
   return axios.post(URL_BACKEND, data);
 };
-
 export {
   fetchProductAPI,
   loginApi,
@@ -126,6 +222,15 @@ export {
   getCart_details_ByUserId,
   putUpdateCart_detailsServices,
   deleteCart_details,
+  fetchProductManagementAPI,
+  deleteProductAPI,
+  ProductUpdateAPI,
+  handleUploadFile,
+  ProductCreateAPI,
+  fetchUsertAPI,
+  updateUserAPI,
+  deleteUserAPI,
+  createUserAPI,
   getUserAPI,
   getOrderAPI,
   postCreateOrder,

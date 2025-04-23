@@ -1,130 +1,148 @@
-import React, { use, useEffect, useState } from "react";
+import { Popconfirm, Space, Table, Tag, Tooltip } from 'antd';
+import { useEffect, useState } from 'react';
+import React from 'react';
+import { DeleteOutlined, EditOutlined } from "@ant-design/icons";
+import UpdateUserModal from '../../../components/common/admin/AdminUsers/UserUpdate/AdminUpdate';
+import DeleteUserModal from '../../../components/common/admin/AdminUsers/UserDelete/AdminDelete';
+import UserCreate from '../../../components/common/admin/AdminUsers/UserCreate/UserCreate';
+import { fetchUsertAPI } from '../../../services/api.service';
 
-import "./AdminUsersPage.css";
-import UsersHeader from "../../../components/common/admin/AdminUsers/UsersHeader/UsersHeader";
-import UserTableAdmin from "../../../components/common/admin/AdminUsers/UserTableAdmin/UserTableAdmin";
-import UserFormModal from "../../../components/common/admin/AdminUsers/UserFormModal/UserFormModal";
-import { getUserAPI } from "../../../services/api.service";
-const AdminUsersPage = () => {
-  // State quản lý danh sách users
-  const [users, setUsers] = useState([]);
+const AdminUsersPage = (props) => {
+  const { current, pageSize, setCurrent, setPageSize, total } = props;
 
-  // State cho chức năng tìm kiếm
   const [searchTerm, setSearchTerm] = useState("");
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isModalUpdateOpen, setIsModalUpdateOpen] = useState(false);
+  const [dataUpdate, setDataUpdate] = useState(null);
+  const [dataDelete, setDataDelete] = useState(null);
+  const [isModalDeleteOpen, setIsModalDeleteOpen] = useState(false);
+  const [selectedUser, setSelectedUser] = useState(null);
+  const [dataUsers, setDataUsers] = useState([]);
 
-  // State cho modal form thêm/sửa user
-  const [showModal, setShowModal] = useState(false);
-  const [editMode, setEditMode] = useState(false);
-  const [currentUser, setCurrentUser] = useState({
-    id: null,
-    username: "",
-    email: "",
-    password: "",
-    role: "user",
-    status: "active",
-  });
+  const onChange = (pagination) => {
+    if (pagination?.current && +pagination.current !== +current) {
+      setCurrent(+pagination.current);
+    }
+    if (pagination?.pageSize && +pagination.pageSize !== +pageSize) {
+      setPageSize(+pagination.pageSize);
+    }
+  };
+
+  const loadUser = async () => {
+    const res = await fetchUsertAPI();
+    console.log("test api ", res.data);
+    setDataUsers(res.data);
+  };
 
   useEffect(() => {
-    fetchUserAPI();
+    loadUser();
   }, []);
 
-  const fetchUserAPI = async () => {
-    try {
-      const res = await getUserAPI();
-      console.log("Danh sách người dùng:", res.data);
-      setUsers(res.data);
-    } catch (error) {
-      console.error("Lỗi khi lấy danh sách người dùng:", error);
+  const filteredUsers = dataUsers.filter((user) => {
+    const keyword = searchTerm.toLowerCase();
+    return (
+      (user?.full_name || "").toLowerCase().includes(keyword)
+    );
+  });
+
+  const columns = [
+    {
+      title: 'Id',
+      key: '_id',
+      render: (_, record) => <a href="#">{record._id}</a>,
+    },
+    {
+      title: 'Tên đăng nhập',
+      key: 'full_name',
+      dataIndex: 'full_name',
+    },
+    {
+      title: 'Địa chỉ',
+      key: 'address',
+      dataIndex: 'address',
+    },
+    {
+      title: 'Phone',
+      key: 'phone',
+      dataIndex: 'phone',
+    },
+    {
+      title: 'Quyền',
+      key: 'Quyền',
+      render: (_, record) => <div>{record?.role?.name}</div>,
+    },
+    {
+      title: 'Action',
+      key: 'action',
+      render: (record) => (
+        <div style={{ display: "flex", gap: "20px" }}>
+          <Tooltip title="Cập nhật">
+            <EditOutlined
+              onClick={() => {
+                setDataUpdate(record);
+                setIsModalUpdateOpen(true);
+              }}
+              style={{ cursor: 'pointer', color: "blue" }}
+            />
+          </Tooltip>
+          <Tooltip title="Xóa dữ liệu">
+            <DeleteOutlined
+              onClick={() => {
+                setDataDelete(record);
+                setIsModalDeleteOpen(true);
+              }}
+              style={{ cursor: 'pointer', color: "red" }}
+            />
+          </Tooltip>
+        </div>
+      ),
     }
-  };
-
-  // Lọc danh sách users theo từ khóa tìm kiếm
-  const filteredUsers = users.filter(
-    (user) =>
-      user.full_name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      user.email.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      user.role.name.toLowerCase().includes(searchTerm.toLowerCase())
-  );
-
-  // Mở modal thêm user mới
-  const handleAddUser = () => {
-    setEditMode(false);
-    setCurrentUser({
-      id: null,
-      username: "",
-      email: "",
-      password: "",
-      role: "user",
-      status: "active",
-    });
-    setShowModal(true);
-  };
-
-  // Mở modal chỉnh sửa user
-  const handleEditUser = (user) => {
-    setEditMode(true);
-    setCurrentUser({ ...user, password: "" });
-    setShowModal(true);
-  };
-
-  // Xử lý xóa user
-  const handleDeleteUser = (userId) => {
-    if (window.confirm("Bạn có chắc chắn muốn xóa người dùng này không?")) {
-      setUsers(users.filter((user) => user.id !== userId));
-    }
-  };
-
-  // Xử lý thay đổi trường input trong form
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setCurrentUser({ ...currentUser, [name]: value });
-  };
-
-  // Xử lý lưu user (thêm mới hoặc cập nhật)
-  const handleSaveUser = (e) => {
-    e.preventDefault();
-
-    if (editMode) {
-      // Cập nhật user hiện có
-      setUsers(
-        users.map((user) => (user.id === currentUser.id ? currentUser : user))
-      );
-    } else {
-      // Thêm user mới
-      const newUser = {
-        ...currentUser,
-        id:
-          users.length > 0 ? Math.max(...users.map((user) => user.id)) + 1 : 1,
-      };
-      setUsers([...users, newUser]);
-    }
-
-    setShowModal(false);
-  };
+  ];
 
   return (
-    <div className="admin-users-page">
-      <UsersHeader
+    <>
+      <UserCreate
+        isModalOpen={isModalOpen}
+        setIsModalOpen={setIsModalOpen}
+        loadUser={loadUser}
+        dataupload={selectedUser}
         searchTerm={searchTerm}
         onSearchChange={setSearchTerm}
-        onAddUser={handleAddUser}
+        setSelectedUser={setSelectedUser}
       />
 
-      <UserTableAdmin
-        users={filteredUsers}
-        onEditUser={handleEditUser}
-        onDeleteUser={handleDeleteUser}
+      <Table
+        columns={columns}
+        dataSource={filteredUsers}
+        rowKey="_id"
+        pagination={{
+          current: current,
+          pageSize: pageSize,
+          showSizeChanger: true,
+          total: total,
+          showTotal: (total, range) => (
+            <div>{range[0]}-{range[1]} trên {total} rows</div>
+          ),
+        }}
+        onChange={onChange}
       />
 
-      <UserFormModal
-        showModal={showModal}
-        editMode={editMode}
-        currentUser={currentUser}
-        onClose={() => setShowModal(false)}
-        onInputChange={handleInputChange}
-        onSave={handleSaveUser}
+      <UpdateUserModal
+        isModalUpdateOpen={isModalUpdateOpen}
+        setIsModalUpdateOpen={setIsModalUpdateOpen}
+        dataUpdate={dataUpdate}
+        setDataUpdate={setDataUpdate}
+        loadUser={loadUser}
       />
-    </div>
+
+      <DeleteUserModal
+        isModalDeleteOpen={isModalDeleteOpen}
+        setIsModalDeleteOpen={setIsModalDeleteOpen}
+        dataDelete={dataDelete}
+        setDataDelete={setDataDelete}
+        loadUser={loadUser}
+      />
+    </>
   );
 };
 

@@ -2,8 +2,6 @@ import React, { useState, useEffect } from "react";
 import "./AdminOrdersPage.css";
 import { getOrderAPI } from "../../../services/api.service";
 
-// Hàm gọi API để lấy đơn hàng
-
 const AdminOrdersPage = () => {
   const [orders, setOrders] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -15,15 +13,15 @@ const AdminOrdersPage = () => {
   }, []);
 
   const fetchOrders = async () => {
-    setLoading(true); // Bật chế độ loading
+    setLoading(true);
     try {
       const response = await getOrderAPI();
       console.log("Danh sách đơn hàng:", response.data);
-      setOrders(response.data); // Gán kết quả từ API vào state
+      setOrders(response.data);
     } catch (error) {
       console.error("Lỗi khi lấy đơn hàng:", error);
     } finally {
-      setLoading(false); // Tắt chế độ loading khi kết thúc
+      setLoading(false);
     }
   };
 
