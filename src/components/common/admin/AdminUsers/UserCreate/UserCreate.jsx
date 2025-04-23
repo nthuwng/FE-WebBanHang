@@ -1,36 +1,35 @@
 import { Input, Button, notification, Modal, Select } from "antd";
-import "./ProductCreate.css";
 import { useState } from "react";
-import { ProductCreateAPI } from "../../../../../services/api.service";
+import { createUserAPI, ProductCreateAPI } from "../../../../../services/api.service";
 
-const ProductCreate = ({
-  loadProduct,
+const UserCreate = ({
+  loadUser,
   isModalOpen,
   setIsModalOpen,
   searchTerm,
   onSearchChange
 }) => {
-  const [name, setName] = useState("");
-  const [description, setDescription] = useState("");
-  const [price, setPrice] = useState("");
-  const [quantity, setQuantity] = useState("");
-  const [factory, setFactory] = useState("");
-  const [category, setCategory] = useState("");
+  const [full_name, setFull_name] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [phone, setPhone] = useState("");
+  const [address, setAddress] = useState("");
+  const [role, setRole] = useState("");
   const [loading, setLoading] = useState(false);
 
   const handleSubmitBtn = async () => {
     setLoading(true);
     try {
-      const res = await ProductCreateAPI(name, description, price, quantity, factory, category);
+      const res = await createUserAPI( full_name, phone, password, address, email, role);
       if (res.data) {
         resetAndCloseModal();
-        await loadProduct();
+        await loadUser();
         notification.success({
           message: "Create Product",
-          description: "Tạo mới sản phẩm thành công!"
+          description: "Tạo mới user thành công!"
         });
       } else {
-        throw new Error(res.message || "Không thể tạo sản phẩm");
+        throw new Error(res.message || "Không thể tạo user");
       }
     } catch (error) {
       notification.error({
@@ -44,12 +43,13 @@ const ProductCreate = ({
 
   const resetAndCloseModal = () => {
     setIsModalOpen(false);
-    setName("");
-    setDescription("");
-    setPrice("");
-    setQuantity("");
-    setFactory("");
-    setCategory("");
+ 
+    setFull_name("");
+    setEmail("");
+    setPassword("");
+    setPhone("");
+    setAddress("");
+    setRole("");
   };
 
   return (
@@ -71,52 +71,51 @@ const ProductCreate = ({
             onClick={() => setIsModalOpen(true)}
             type="primary"
           >
-            + Thêm sản phẩm
+            + Thêm Users
           </Button>
         </div>
       </div>
 
-      <Modal 
-        title="Create Product" 
-        open={isModalOpen} 
+      <Modal
+        title="Create Product"
+        open={isModalOpen}
         onOk={handleSubmitBtn}
         onCancel={resetAndCloseModal}
-        maskClosable={false} 
+        maskClosable={false}
         okText={loading ? "Uploading..." : "CREATE"}
         confirmLoading={loading}
       >
         <div className="input">
+          
           <div>
-            <span>Name</span>
-            <Input value={name} onChange={(e) => setName(e.target.value)} />
+            <span>Email</span>
+            <Input value={email} onChange={(event) => setEmail(event.target.value)} />
           </div>
           <div>
-            <span>Description</span>
-            <Input value={description} onChange={(e) => setDescription(e.target.value)} />
+            <span>FullName</span>
+            <Input value={full_name} onChange={(event) => setFull_name(event.target.value)} />
           </div>
           <div>
-            <span>Price</span>
-            <Input type="number" value={price} onChange={(e) => setPrice(e.target.value)} />
+            <span>Password</span>
+            <Input onChange={(event) => setPassword(event.target.value)} />
           </div>
           <div>
-            <span>Quantity</span>
-            <Input type="number" value={quantity} onChange={(e) => setQuantity(e.target.value)} />
+            <span>Phone number</span>
+            <Input value={phone} onChange={(event) => setPhone(event.target.value)} />
           </div>
           <div>
-            <span>Factory</span>
-            <Input value={factory} onChange={(e) => setFactory(e.target.value)} />
+            <span>Address</span>
+            <Input value={address} onChange={(event) => setAddress(event.target.value)} />
           </div>
           <div>
-            <span>Category</span>
+            <span>Role</span>
             <Select
               style={{ width: "100%" }}
-              value={category}
-              onChange={setCategory}
+              value={role}
+              onChange={(value) => setRole(value)}
               options={[
-                { value: '67bf34c5aeb7bee632c4013a', label: 'Iphone' },
-                { value: '67bf34daaeb7bee632c4013c', label: 'Samsung' },
-                { value: '67bf34f8aeb7bee632c40140', label: 'Oppo' },
-                { value: '67bf34eaaeb7bee632c4013e', label: 'Xiaomi' }
+                { value: '67bf253b864117b1d4b914df', label: 'Admin' },
+                { value: '67bf2560864117b1d4b914e1', label: 'Client' }
               ]}
             />
           </div>
@@ -126,4 +125,4 @@ const ProductCreate = ({
   );
 };
 
-export default ProductCreate;
+export default UserCreate;

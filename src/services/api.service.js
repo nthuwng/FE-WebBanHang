@@ -4,11 +4,7 @@ const fetchProductAPI = async (page, limit) => {
   const URL_BACKEND = `/product/getProduct/?page=${page}&limit=${limit}`;
   return axios.get(URL_BACKEND);
 };
-const fetchUsertAPI = async () => {
-  const URL_BACKEND = "/user/allUser";
 
-  return axios.get(URL_BACKEND);
-};
 
 const loginApi = async (email, password) => {
   const URL_BACKEND = "/user/sign-in";
@@ -33,7 +29,6 @@ const registerAPI = (full_name, email, password, phone, address) => {
   return axios.post(URL_BACKEND, data);
 };
 
-<<<<<<< HEAD
 const fetchProduct_Name_API = async (category, page, limit) => {
   const URL_BACKEND = `product/getProductByName/${category}?page=${page}&limit=${limit}`;
   return axios.get(URL_BACKEND);
@@ -155,11 +150,48 @@ const deleteProductAPI = (id) => {
   return axios.delete(URL_BACKEND);
 };
 const fetchUsertAPI = async () => {
-  const URL_BACKEND = "/user/allUser";
+  const URL_BACKEND = "/user/allUser?populate=role";
 
   return axios.get(URL_BACKEND);
 };
 
+
+const updateUserAPI = (id, full_name, phone, password, address, email) => {
+  const URL_BACKEND = "/user/updateUser";
+  const data = {
+    id: id,
+    email: email,
+    full_name: full_name,
+    password: password,
+    phone: phone,
+    address: address,
+  };
+  return axios.put(URL_BACKEND, data);
+};
+const deleteUserAPI = (id) => {
+  const URL_BACKEND = "/user/deleteUser";
+  const config = {
+    data: {
+      id: id,
+    },
+  };
+
+  return axios.delete(URL_BACKEND, config);
+};
+
+const createUserAPI = ( full_name, phone, password, address, email,role) => {
+  const URL_BACKEND = "/user/CreateUser";
+  const data = {
+
+    email: email,
+    full_name: full_name,
+    password: password,
+    phone: phone,
+    address: address,
+    role: role
+  };
+  return axios.post(URL_BACKEND, data);
+};
 export {
   fetchProductAPI,
   loginApi,
@@ -176,10 +208,8 @@ export {
   ProductUpdateAPI,
   handleUploadFile,
   ProductCreateAPI,
-  fetchUsertAPI
+  fetchUsertAPI,
+  updateUserAPI,
+  deleteUserAPI,
+  createUserAPI
 };
-=======
-export { fetchProductAPI, loginApi, registerAPI,fetchUsertAPI
-
- };
->>>>>>> ced4914ffc15eee44bbd42ee98e48a21de826ab5

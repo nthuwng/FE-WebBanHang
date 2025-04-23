@@ -1,5 +1,4 @@
 import { Space, Table, Tag, Tooltip } from 'antd';
-
 import { useEffect, useState } from 'react';
 import React from "react";
 
@@ -7,21 +6,24 @@ import {
   DeleteOutlined,
   EditOutlined,
   FileImageOutlined,
-  LogoutOutlined,
 } from "@ant-design/icons";
-import { fetchProductManagementAPI  } from '../../../services/api.service';
+
+import { fetchProductManagementAPI } from '../../../services/api.service';
 import ProductCreate from '../../../components/common/admin/AdminProduct/ProductCreate/ProductCreate';
 import UploadImg from '../../../components/common/admin/AdminProduct/uploadImg/Img';
 import DeleteProduct from '../../../components/common/admin/AdminProduct/ProductDelete/ProductDelete';
 import ProductUpdate from '../../../components/common/admin/AdminProduct/ProductUpdate/ProductUpdate';
-import ProductHeader from '../../../components/common/admin/AdminProduct/ProductHeader/ProductHeader';
-
-
-
 
 const AdminProductPage = (props) => {
-  const { current, pageSize, setCurrent, setPageSize, total } = props;
+  const {
+    current,
+    pageSize,
+    setCurrent,
+    setPageSize,
+    total
+  } = props;
 
+  const [searchTerm, setSearchTerm] = useState("");
   const [isModalUploadOpen, setIsModalUploadOpen] = useState(false);
   const [uploadImg, setUploadImg] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -30,10 +32,15 @@ const AdminProductPage = (props) => {
   const [selectedProduct, setSelectedProduct] = useState(null);
 
   const [dataProduct, setDataProduct] = useState([]);
-   
+
   useEffect(() => {
     loadProduct();
   }, []);
+
+  const loadProduct = async () => {
+    const res = await fetchProductManagementAPI();
+    setDataProduct(res.data);
+  };
 
   const onChange = (pagination) => {
     if (pagination && pagination.current) {
@@ -47,6 +54,11 @@ const AdminProductPage = (props) => {
       }
     }
   };
+
+
+  const filteredProducts = dataProduct.filter((product) =>
+    product.name.toLowerCase().includes(searchTerm.toLowerCase())
+  );
 
   const columns = [
     {
@@ -77,18 +89,17 @@ const AdminProductPage = (props) => {
           <Tooltip title="Thêm hình ảnh">
             <FileImageOutlined
               onClick={() => {
-                setSelectedProduct(record); 
-          
-                setIsModalUploadOpen(true); 
+                setSelectedProduct(record);
+                setIsModalUploadOpen(true);
               }}
-              style={{ cursor: 'pointer', color:"green" }}
+              style={{ cursor: 'pointer', color: "green" }}
             />
           </Tooltip>
 
           <Tooltip title="Cập nhật sản phẩm">
             <EditOutlined
               onClick={() => {
-                setSelectedProduct(record); 
+                setSelectedProduct(record);
                 setIsModalUpdateOpen(true);
               }}
               style={{ cursor: 'pointer', color: "blue" }}
@@ -98,7 +109,7 @@ const AdminProductPage = (props) => {
           <Tooltip title="Xoá sản phẩm">
             <DeleteOutlined
               onClick={() => {
-                setSelectedProduct(record); 
+                setSelectedProduct(record);
                 setIsModalDeleteOpen(true);
               }}
               style={{ cursor: 'pointer', color: "red" }}
@@ -109,24 +120,22 @@ const AdminProductPage = (props) => {
     },
   ];
 
-  const loadProduct = async () => {
-    const res = await fetchProductManagementAPI();
-    setDataProduct(res.data);
-  };
-
   return (
     <>
-
+      {/* Create product component + search term truyền vào */}
       <ProductCreate
         isModalOpen={isModalOpen}
         setIsModalOpen={setIsModalOpen}
         loadProduct={loadProduct}
         dataupload={selectedProduct}
+        searchTerm={searchTerm}
+        onSearchChange={setSearchTerm}
       />
 
+      {/* Bảng sản phẩm đã lọc */}
       <Table
         columns={columns}
-        dataSource={dataProduct}
+        dataSource={filteredProducts}
         rowKey="_id"
         pagination={{
           current: current,
@@ -145,21 +154,22 @@ const AdminProductPage = (props) => {
         setIsModalUploadOpen={setIsModalUploadOpen}
         setUploadImg={setUploadImg}
         uploadImg={uploadImg}
-        loadProduct={loadProduct} 
+        loadProduct={loadProduct}
         dataupload={selectedProduct}
       />
+
       <ProductUpdate
-      setIsModalUpdateOpen={setIsModalUpdateOpen}
-      isModalUpdateOpen={isModalUpdateOpen}
-      dataupload={selectedProduct}
-      loadProduct={loadProduct} 
-  />
+        setIsModalUpdateOpen={setIsModalUpdateOpen}
+        isModalUpdateOpen={isModalUpdateOpen}
+        dataupload={selectedProduct}
+        loadProduct={loadProduct}
+      />
+
       <DeleteProduct
-      isModalDeleteOpen={isModalDeleteOpen}
-      setIsModalDeleteOpen={setIsModalDeleteOpen}
-      dataupload={selectedProduct}
-      loadProduct={loadProduct} 
-     
+        isModalDeleteOpen={isModalDeleteOpen}
+        setIsModalDeleteOpen={setIsModalDeleteOpen}
+        dataupload={selectedProduct}
+        loadProduct={loadProduct}
       />
     </>
   );
