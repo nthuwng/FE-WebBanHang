@@ -1,0 +1,20 @@
+.admin-product-container {
+    padding: 16px;
+  }
+  
+  .admin-breadcrumb {
+    margin-bottom: 16px;
+  }
+  
+  .admin-content-card {
+    background: #fff;
+    border-radius: 8px;
+  }
+  
+  .filter-card {
+    margin-bottom: 0;
+  }
+  
+  .table-card {
+    margin-bottom: 0;
+  }

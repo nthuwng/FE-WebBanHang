@@ -78,8 +78,8 @@ const CheckoutPage = () => {
       setCart([]);
 
       api.success({
-        message: "Success",
-        description: "Đơn hàng của bạn đã được tạo thành công!",
+        message: "Bạn đã tạo đơn hàng",
+        description: "Bạn đã thanh toán thành công!",
       });
     } catch (error) {
       api.error({

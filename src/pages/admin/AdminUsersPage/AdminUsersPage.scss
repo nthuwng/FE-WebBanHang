@@ -1,0 +1,42 @@
+.admin-users-page {
+  padding: 16px;
+  background-color: #f0f2f5;
+  min-height: 100vh;
+
+  .page-header-card {
+    border-radius: 8px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
+
+    h2 {
+      margin-bottom: 4px;
+    }
+  }
+
+  .tools-card,
+  .table-card {
+    border-radius: 8px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
+  }
+
+  .ant-table {
+    background: white;
+    border-radius: 8px;
+
+    .ant-table-thead > tr > th {
+      background-color: #fafafa;
+      font-weight: 600;
+    }
+  }
+
+  .admin-action-button {
+    &.edit-button {
+      color: #1890ff;
+      border-color: #1890ff;
+    }
+
+    &.delete-button {
+      color: #ff4d4f;
+      border-color: #ff4d4f;
+    }
+  }
+}

@@ -1,53 +1,63 @@
-
-import { Modal, notification } from "antd";
-
 import React, { useEffect, useState } from "react";
+import {
+  Modal,
+  notification,
+  Typography,
+  Button,
+  Space,
+  Alert,
+  Spin,
+} from "antd";
+import {
+  DeleteOutlined,
+  ExclamationCircleOutlined,
+  QuestionCircleOutlined,
+} from "@ant-design/icons";
 import { deleteProductAPI } from "../../../../../services/api.service";
 
+const { Title, Text } = Typography;
 
-const DeleteProduct= (props) => {
-  const {
-    isModalDeleteOpen,
-    setIsModalDeleteOpen,
-    dataupload,
-    loadProduct,
-  } = props;
- const [id,setId]= useState("");
- const [loading, setLoading] = useState(false);
-   useEffect(()=> {
-   
-      if(dataupload){
-          setId (dataupload._id);
-       
-       
-       
-      }
-  
-  } ,[dataupload])
-  const handleSubmitBtn = async () => {
+const DeleteProduct = (props) => {
+  const { isModalDeleteOpen, setIsModalDeleteOpen, dataupload, loadProduct } =
+    props;
+
+  const [id, setId] = useState("");
+  const [productName, setProductName] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [api, contextHolder] = notification.useNotification(); // dùng để hiển thị thông báo
+
+  useEffect(() => {
+    if (dataupload) {
+      setId(dataupload._id);
+      setProductName(dataupload.name || "this product");
+    }
+  }, [dataupload]);
+
+  const handleDelete = async () => {
     setLoading(true);
     try {
-      const res = await deleteProductAPI(id); 
-
-      if (res.status === 200) {
-        notification.success({
-          message: "Xóa thành công",
-          description: "Sản phẩm đã được xóa.",
+      const res = await deleteProductAPI(id);
+      console.log("resdelete", res);
+      if (res.errorCode === 0) {
+        api.success({
+          message: "Deletion Successful",
+          description: `"${productName}" has been successfully deleted.`,
+          placement: "topRight",
         });
         resetAndCloseModal();
-        await loadProduct(); 
+        await loadProduct();
       } else {
-        throw new Error("Xóa thất bại");
+        throw new Error("Deletion failed");
       }
     } catch (error) {
-      notification.error({
-        message: "Lỗi",
-        description: error.message || "Không thể xóa sản phẩm",
+      api.error({
+        message: "Deletion Error",
+        description: error.message || "Unable to delete the product",
+        placement: "topRight",
       });
-    
-    }setLoading(false);
-    resetAndCloseModal();
-    await loadProduct(); 
+    } finally {
+      setLoading(false);
+    }
   };
 
   const resetAndCloseModal = () => {
@@ -55,18 +65,51 @@ const DeleteProduct= (props) => {
   };
 
   return (
-    <Modal
-      title="Bạn có chắc muốn xóa sản phẩm này không?"
-      open={isModalDeleteOpen}
-      onOk={handleSubmitBtn}
-      onCancel={resetAndCloseModal}
-      maskClosable={false}
-      okText="Yes"
-      cancelText="No"
-      confirmLoading={loading}
-    >
-  
-    </Modal>
+    <>
+      {contextHolder}
+      <Modal
+        title={
+          <Space>
+            <ExclamationCircleOutlined style={{ color: "#ff4d4f" }} />
+            <Title level={4} style={{ margin: 0 }}>
+              Confirm Deletion
+            </Title>
+          </Space>
+        }
+        open={isModalDeleteOpen}
+        onCancel={resetAndCloseModal}
+        maskClosable={false}
+        confirmLoading={loading}
+        footer={[
+          <Button key="cancel" onClick={resetAndCloseModal}>
+            Cancel
+          </Button>,
+          <Button
+            key="delete"
+            danger
+            type="primary"
+            loading={loading}
+            icon={<DeleteOutlined />}
+            onClick={handleDelete}>
+            Delete
+          </Button>,
+        ]}>
+        <Spin spinning={loading}>
+          <Alert
+            message="Warning: This action cannot be undone"
+            description="Deleting this product will permanently remove it from the database."
+            type="warning"
+            showIcon
+            style={{ marginBottom: 16 }}
+          />
+
+          <Text>
+            Are you sure you want to delete the product{" "}
+            <strong>"{productName}"</strong>?
+          </Text>
+        </Spin>
+      </Modal>
+    </>
   );
 };
 

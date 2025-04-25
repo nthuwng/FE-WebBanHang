@@ -186,8 +186,13 @@ const getUserAPI = async () => {
   return axios.get(URL_BACKEND);
 };
 const getOrderAPI = async () => {
-  const URL_BACKEND = `/order/getOrder?populate=user,payment_method`;
+  const URL_BACKEND = `/order/getOrder?populate=user,payment_method,shipping_address`;
   return axios.get(URL_BACKEND);
+};
+
+const deleteOrderAPI = (id) => {
+  const URL_BACKEND = `/order/deleteOrder/${id}`;
+  return axios.delete(URL_BACKEND);
 };
 
 const postCreateOrder = async (
@@ -234,4 +239,5 @@ export {
   getUserAPI,
   getOrderAPI,
   postCreateOrder,
+  deleteOrderAPI,
 };
