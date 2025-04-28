@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Link, NavLink, useNavigate } from "react-router-dom";
-import { Search, Heart, ShoppingCart } from "lucide-react";
+import { Search, ShoppingCart, MapPin } from "lucide-react";
 import { LogoutOutlined, UserOutlined } from "@ant-design/icons";
 import { Badge, Tooltip, message } from "antd";
 import "./HeaderComponent.css";
@@ -68,7 +68,17 @@ const HeaderComponent = () => {
             <Search size={25} />
           </button>
         </div>
-        <Heart size={30} className="icon" />
+        <Tooltip title="Theo dõi đơn hàng">
+          <MapPin
+            size={30}
+            className="icon"
+            onClick={() => {
+              navigate("/follow-order");
+            }}
+            style={{ cursor: "pointer" }}
+          />
+        </Tooltip>
+
         <Tooltip title="Giỏ hàng">
           <Badge
             count={user?.cart?.sum || 0}

@@ -54,29 +54,33 @@ const HeaderComponent = () => {
             <Search size={18} />
           </button>
         </div>
-        <Heart size={20} className="icon" />
-        <Tooltip placement="top" title="Giỏ Hàng" >
-        <ShoppingCart size={20} className="icon" />
+        <Tooltip placement="top" title="Theo dõi đơn hàng">
+          <Heart size={20} className="icon" />
         </Tooltip>
-        <Tooltip placement="top" title="Đăng Nhập" >
-        <UserOutlined
-          size={20}
-          className="iconLogin"
-          onClick={() => {
-            navigate("/sign-in");
-          }}
-        />
-          </Tooltip>
-          <Tooltip placement="top" title="Admin" >
-        <AndroidOutlined 
-          size={20}
-          className="iconLogin"
-          onClick={() => {
-            navigate("/login-admin");
-          }}
-        />
-          </Tooltip>
-     
+
+        <Tooltip placement="top" title="Giỏ Hàng">
+          <ShoppingCart size={20} className="icon" />
+        </Tooltip>
+
+        <Tooltip placement="top" title="Đăng Nhập">
+          <UserOutlined
+            size={20}
+            className="iconLogin"
+            onClick={() => {
+              navigate("/sign-in");
+            }}
+          />
+        </Tooltip>
+
+        <Tooltip placement="top" title="Admin">
+          <AndroidOutlined
+            size={20}
+            className="iconLogin"
+            onClick={() => {
+              navigate("/login-admin");
+            }}
+          />
+        </Tooltip>
       </div>
     </header>
   );

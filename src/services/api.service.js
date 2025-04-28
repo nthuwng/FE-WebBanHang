@@ -216,6 +216,17 @@ const postCreateOrder = async (
   };
   return axios.post(URL_BACKEND, data);
 };
+
+const getOrderByUserIDAPI = async (userID) => {
+  const URL_BACKEND = `/order/getOrderByUserID/${userID}?populate=shipping_address,payment_method,user`;
+  
+  return axios.get(URL_BACKEND);
+};
+
+const getOrderDetailByOrderID = async (orderId) => {
+  const URL_BACKEND = `/order_details/getOrder_details/${orderId}?populate=product`;
+  return axios.get(URL_BACKEND);
+};
 export {
   fetchProductAPI,
   loginApi,
@@ -240,4 +251,6 @@ export {
   getOrderAPI,
   postCreateOrder,
   deleteOrderAPI,
+  getOrderByUserIDAPI,
+  getOrderDetailByOrderID,
 };

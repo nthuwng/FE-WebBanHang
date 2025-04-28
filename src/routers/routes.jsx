@@ -11,6 +11,7 @@ import AdminProductPage from "../pages/admin/AdminProductPage/AdminProductPage.j
 import AdminUsersPage from "../pages/admin/AdminUsersPage/AdminUsersPage.jsx";
 import AdminOrdersPage from "../pages/admin/AdminOrdersPage/AdminOrdersPage.jsx";
 import CheckoutPage from "../pages/client/CheckOutPage/CheckOutPage.jsx";
+import FollowOrder from "../pages/client/FollowOrder/FollowOrder.jsx";
 
 const router = createBrowserRouter([
   {
@@ -32,6 +33,10 @@ const router = createBrowserRouter([
       {
         path: "/checkout",
         element: <CheckoutPage />,
+      },
+      {
+        path: "/follow-order",
+        element: <FollowOrder />,
       },
     ],
   },

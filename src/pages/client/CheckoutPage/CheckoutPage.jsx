@@ -6,7 +6,10 @@ import "./Checkout.css";
 import { AuthContext } from "../../../components/context/auth.context";
 import { CartContext } from "../../../components/context/cart.context";
 import { Select, notification } from "antd";
-import { postCreateOrder } from "../../../services/api.service";
+import {
+  getCartByUserIDServices,
+  postCreateOrder,
+} from "../../../services/api.service";
 
 const CheckoutPage = () => {
   const navigate = useNavigate();
@@ -20,7 +23,7 @@ const CheckoutPage = () => {
   });
 
   const [paymentMethods, setPaymentMethods] = useState(
-    "67bf305ddbf43749193f3238"
+    "67bf3077dbf43749193f323a"
   );
   const [selectedPayment, setSelectedPayment] = useState("");
   const [loading, setLoading] = useState(false);
@@ -30,7 +33,6 @@ const CheckoutPage = () => {
     0
   );
   useEffect(() => {}, [user, cart, navigate]);
-
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({
@@ -76,10 +78,15 @@ const CheckoutPage = () => {
         formData.phone
       );
       setCart([]);
-
+      const cartRes = await getCartByUserIDServices(user._id);
+      setUser((prevUser) => ({
+        ...prevUser,
+        cart: cartRes.data,
+      }));
       api.success({
         message: "Bạn đã tạo đơn hàng",
         description: "Bạn đã thanh toán thành công!",
+        placement: "top",
       });
     } catch (error) {
       api.error({
@@ -158,8 +165,8 @@ const CheckoutPage = () => {
                   value={paymentMethods}
                   onChange={setPaymentMethods}
                   options={[
-                    { value: "67bf305ddbf43749193f3238", label: "Cash" },
-                    { value: "67bf3077dbf43749193f323a", label: "Credit Card" },
+                    { value: "67bf3077dbf43749193f323a", label: "Cash" },
+                    { value: "67bf305ddbf43749193f3238", label: "Credit Card" },
                   ]}
                 />
               </div>
