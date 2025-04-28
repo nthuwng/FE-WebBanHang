@@ -12,6 +12,9 @@ import {
 import { Button, InputNumber, notification } from "antd";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import { ShoppingCartOutlined } from "@ant-design/icons";
+import CartPageItems from "../../../components/common/client/CartPageComponent/CartPageItems/CartPageItems";
+import CartSummaryContainer from "../../../components/common/client/CartPageComponent/CartSummaryContainer/CartSummaryContainer";
+import CartPageCoupon from "../../../components/common/client/CartPageComponent/CartPageCoupon/CartPageCoupon";
 
 const CartPage = () => {
   const { user, setUser } = useContext(AuthContext);
@@ -187,94 +190,16 @@ const CartPage = () => {
   return (
     <div className="cart-page">
       {contextHolder}
-      <div className="cart-page-breadcrumb">
-        <Link to="/">Home</Link> / <Link to="/carts">Cart</Link>
-        <div className="cart-summary">
-          <div className="coupon-section">
-            <input type="text" placeholder="Coupon Code" />
-            <button className="apply-coupon">Apply Coupon</button>
-          </div>
-        </div>
-      </div>
-      <div className="cart-page-items">
-        <table>
-          <thead>
-            <tr>
-              <th>Product</th>
-              <th>Price</th>
-              <th>Quantity</th>
-              <th>Subtotal</th>
-              <th>Action</th>
-            </tr>
-          </thead>
-          <tbody>
-            {cart.map((item) => (
-              <tr key={item._id}>
-                <td>{item.product.name}</td>
-                <td>{item.product.price.toLocaleString()}₫</td>
-                <td>
-                  <InputNumber
-                    value={item.quantity}
-                    onChange={(value) => updateQuantity(item._id, value)}
-                    min={1}
-                    step={1}
-                    formatter={(value) => `${value}`}
-                    parser={(value) => parseInt(value.replace(/\D/g, ""), 10)}
-                  />
-                </td>
-                <td>
-                  {(item.product.price * item.quantity).toLocaleString()}₫
-                </td>
-                <td>
-                  <Button onClick={() => handleDelete(item._id)}>
-                    <RiDeleteBin6Line fontSize={16} />
-                  </Button>
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
-      <div className="cart-summary-container">
-        <div className="Home-and-Update">
-          <button className="Return-To-Home">
-            <Link to="/" className="Return-To-Home-text">
-              Return To Home
-            </Link>
-          </button>
-          <button
-            className="Update-Cart"
-            onClick={() => {
-              handleUpdateCartDetail();
-            }}>
-            Update Cart
-          </button>
-        </div>
-
-        <div className="total">
-          <div className="Cart-Total">Cart Total</div>
-
-          <p className="summary-row">
-            <span className="summary-label">Subtotal:</span>
-            <span className="summary-value">{subtotal.toLocaleString()}₫</span>
-          </p>
-
-          <p className="summary-row">
-            <span className="summary-label">Shipping:</span>
-            <span className="summary-value">Free</span>
-          </p>
-
-          <div className="total-Totalmoney">
-            <span className="total-label">Total:</span>
-            <span className="total-value">{subtotal.toLocaleString()}₫</span>
-          </div>
-          <Link to="/checkout" style={{ textDecoration: "none" }}>
-            <button className="checkout-button">
-              <span className="checkout-text">Proceed to checkout</span>
-            </button>
-          </Link>
-        </div>
-      </div>
+      <CartPageCoupon />
+      <CartPageItems
+        cart={cart}
+        updateQuantity={updateQuantity}
+        handleDelete={handleDelete}
+      />
+      <CartSummaryContainer
+        handleUpdateCartDetail={handleUpdateCartDetail}
+        subtotal={subtotal}
+      />
     </div>
   );
 };
