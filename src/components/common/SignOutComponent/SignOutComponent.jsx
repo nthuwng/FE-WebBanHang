@@ -17,8 +17,8 @@ export const SignOutComponent = () => {
 
   const onFinish = async (values) => {
     try {
-      const { full_name, email, password } = values;
-      const res = await registerAPI(full_name, email, password);
+      const { full_name, email, password,address ,phone} = values;
+      const res = await registerAPI(full_name, email, password,phone, address);
       if (res.data && res.data.Error) {
         api.error({
           message: "Lỗi đăng ký",
@@ -103,6 +103,26 @@ export const SignOutComponent = () => {
                 }
               }}
             />
+          </Form.Item>
+          <Form.Item
+            name="address"
+            rules={[
+              {
+                required: true,
+                message: "address không đc để trống",
+              },
+            ]}>
+            <Input placeholder="address" className="sign-in-input" />
+          </Form.Item>
+          <Form.Item
+            name="phone"
+            rules={[
+              {
+                required: true,
+                message: "phone không đc để trống",
+              },
+            ]}>
+            <Input placeholder="phone" className="sign-in-input" />
           </Form.Item>
           <div>
             <Button
