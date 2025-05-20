@@ -10,8 +10,8 @@ import AdminLayout from "../components/layout/admin/AdminLayout/AdminLayout.jsx"
 import AdminProductPage from "../pages/admin/AdminProductPage/AdminProductPage.jsx";
 import AdminUsersPage from "../pages/admin/AdminUsersPage/AdminUsersPage.jsx";
 import AdminOrdersPage from "../pages/admin/AdminOrdersPage/AdminOrdersPage.jsx";
-import CheckoutPage from "../pages/client/CheckOutPage/CheckOutPage.jsx";
 import FollowOrder from "../pages/client/FollowOrder/FollowOrder.jsx";
+import CheckoutPage from "../pages/client/CheckOutPage/CheckOutPage.jsx";
 
 const router = createBrowserRouter([
   {
