@@ -11,7 +11,7 @@ import AdminProductPage from "../pages/admin/AdminProductPage/AdminProductPage.j
 import AdminUsersPage from "../pages/admin/AdminUsersPage/AdminUsersPage.jsx";
 import AdminOrdersPage from "../pages/admin/AdminOrdersPage/AdminOrdersPage.jsx";
 import FollowOrder from "../pages/client/FollowOrder/FollowOrder.jsx";
-import CheckoutPage from "../pages/client/CheckOutPage/CheckOutPage.jsx";
+import CheckoutPage from "../pages/client/CheckoutPage/CheckoutPage.jsx";
 
 const router = createBrowserRouter([
   {

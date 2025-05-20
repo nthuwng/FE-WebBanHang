@@ -1,7 +1,6 @@
 // src/components/checkout/CheckoutPage.jsx
 import React, { useState, useEffect, useContext } from "react";
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
 import "./Checkout.css";
 import { AuthContext } from "../../../components/context/auth.context";
 import { CartContext } from "../../../components/context/cart.context";
