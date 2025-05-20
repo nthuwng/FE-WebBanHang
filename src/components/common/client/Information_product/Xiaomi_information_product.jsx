@@ -34,7 +34,7 @@ const Xiaomi_information_product = (props) => {
                 dùng.
               </p>
               <img
-                src="public/images/Info_description_product/Xiaomi_Info_description/Xiaomi_1.png"
+                src="/images/Info_description_product/Xiaomi_Info_description/Xiaomi_1.png"
                 alt="" className={`Xiaomi-info-container-img-chinh ${isExpanded ? "expanded" : ""}`}
               />
           </div>
@@ -70,7 +70,7 @@ const Xiaomi_information_product = (props) => {
                 smartphone táo bạo và cuốn hút.
               </p>
               <img
-                src="public/images/Info_description_product/Xiaomi_Info_description/Xiaomi_2.png"
+                src="/images/Info_description_product/Xiaomi_Info_description/Xiaomi_2.png"
                 alt="" className="Xiaomi-info-container-img"
               />
               <p>
@@ -88,7 +88,7 @@ const Xiaomi_information_product = (props) => {
                 hay <span className="highlight_bold">IPS LCD</span>.{" "}
               </p>
               <img
-                src="public/images/Info_description_product/Xiaomi_Info_description/Xiaomi_3.png"
+                src="/images/Info_description_product/Xiaomi_Info_description/Xiaomi_3.png"
                 alt="" className="Xiaomi-info-container-img"
               />
               <p>
@@ -105,7 +105,7 @@ const Xiaomi_information_product = (props) => {
                 bảo khả năng xử lý đa nhiệm mượt mà từ công việc đến giải trí.{" "}
               </p>
               <img
-                src="public/images/Info_description_product/Xiaomi_Info_description/Xiaomi_4.png"
+                src="/images/Info_description_product/Xiaomi_Info_description/Xiaomi_4.png"
                 alt="" className="Xiaomi-info-container-img"
               />
               <p>
@@ -130,7 +130,7 @@ const Xiaomi_information_product = (props) => {
                 được bức hình ưng ý nhất với mình.
               </p>
               <img
-                src="public/images/Info_description_product/Xiaomi_Info_description/Xiaomi_5.png"
+                src="/images/Info_description_product/Xiaomi_Info_description/Xiaomi_5.png"
                 alt="" className="Xiaomi-info-container-img"
               />
               <p>
@@ -161,7 +161,7 @@ const Xiaomi_information_product = (props) => {
                 sự tiện lợi và hiệu quả tốt hơn cho người dùng.
               </p>
               <img
-                src="public/images/Info_description_product/Xiaomi_Info_description/Xiaomi_6.png"
+                src="/images/Info_description_product/Xiaomi_Info_description/Xiaomi_6.png"
                 alt="" className="Xiaomi-info-container-img"
               />
               <h3>2.6. Hệ điều hành</h3>
@@ -182,7 +182,7 @@ const Xiaomi_information_product = (props) => {
                 dài.
               </p>
               <img
-                src="public/images/Info_description_product/Xiaomi_Info_description/Xiaomi_7.png"
+                src="/images/Info_description_product/Xiaomi_Info_description/Xiaomi_7.png"
                 alt="" className="Xiaomi-info-container-img"
               />
               <p>
@@ -217,7 +217,7 @@ const Xiaomi_information_product = (props) => {
                 lượng cao và màn hình <span className="highlight_bold">AMOLED</span> sắc nét.{" "}
               </p>
               <img
-                src="public/images/Info_description_product/Xiaomi_Info_description/Xiaomi_8.png"
+                src="/images/Info_description_product/Xiaomi_Info_description/Xiaomi_8.png"
                 alt="" className="Xiaomi-info-container-img"
               />
               <p>
@@ -241,7 +241,7 @@ const Xiaomi_information_product = (props) => {
                 kiệm chi phí.
               </p>
               <img
-                src="public/images/Info_description_product/Xiaomi_Info_description/Xiaomi_9.png"
+                src="/images/Info_description_product/Xiaomi_Info_description/Xiaomi_9.png"
                 alt="" className="Xiaomi-info-container-img"
               />
               <p>
@@ -256,7 +256,7 @@ const Xiaomi_information_product = (props) => {
                 tối ưu mọi trải nghiệm về giải trí.
               </p>
               <img
-                src="public/images/Info_description_product/Xiaomi_Info_description/Xiaomi_10.png"
+                src="/images/Info_description_product/Xiaomi_Info_description/Xiaomi_10.png"
                 alt="" className="Xiaomi-info-container-img"
               />
               <p>
@@ -288,7 +288,7 @@ const Xiaomi_information_product = (props) => {
               </p>
               <h3>3.5. Redmi Note</h3>
               <img
-                src="public/images/Info_description_product/Xiaomi_Info_description/Xiaomi_11.png"
+                src="/images/Info_description_product/Xiaomi_Info_description/Xiaomi_11.png"
                 alt="" className="Xiaomi-info-container-img"
               />
               <p>
@@ -316,7 +316,7 @@ const Xiaomi_information_product = (props) => {
                 chụp ảnh nhờ việc hợp tác với Leica trong hai năm gần đây.
               </p>
               <img
-                src="public/images/Info_description_product/Xiaomi_Info_description/Xiaomi_12.png"
+                src="/images/Info_description_product/Xiaomi_Info_description/Xiaomi_12.png"
                 alt="" className="Xiaomi-info-container-img"
               />
               <p>
@@ -352,7 +352,7 @@ const Xiaomi_information_product = (props) => {
               </p>
               <h3>5.1. So với Apple iPhone</h3>
               <img
-                src="public/images/Info_description_product/Xiaomi_Info_description/Xiaomi_13.png"
+                src="/images/Info_description_product/Xiaomi_Info_description/Xiaomi_13.png"
                 alt="" className="Xiaomi-info-container-img"
               />
               <p>
@@ -381,11 +381,11 @@ const Xiaomi_information_product = (props) => {
                 đôi khi chưa mượt mà như ColorOS của OPPO.
               </p>
               <img
-                src="public/images/Info_description_product/Xiaomi_Info_description/Xiaomi_14.png"
+                src="/images/Info_description_product/Xiaomi_Info_description/Xiaomi_14.png"
                 alt="" className="Xiaomi-info-container-img"
               />
               <img
-                src="public/images/Info_description_product/Xiaomi_Info_description/Xiaomi_15.png"
+                src="/images/Info_description_product/Xiaomi_Info_description/Xiaomi_15.png"
                 alt="" className="Xiaomi-info-container-img"
               />
               <h3>6. Thông tin liên hệ bộ phận hỗ trợ khách hàng</h3>
@@ -406,7 +406,7 @@ const Xiaomi_information_product = (props) => {
                 chính hãng dài lâu,…
               </p>
               <img
-                src="public/images/Info_description_product/Xiaomi_Info_description/Xiaomi_16.png"
+                src="/images/Info_description_product/Xiaomi_Info_description/Xiaomi_16.png"
                 alt="" className="Xiaomi-info-container-img"
               />
               <p>
@@ -466,7 +466,7 @@ const Xiaomi_information_product = (props) => {
                 Xiaomi - Redmi chính hãng tại Di Động Việt
               </h3>
               <img
-                src="public/images/Info_description_product/Xiaomi_Info_description/Xiaomi_17.png"
+                src="/images/Info_description_product/Xiaomi_Info_description/Xiaomi_17.png"
                 alt="" className="Xiaomi-info-container-img"
               />
               <p className="Xiaomi-info-container-p">
@@ -480,7 +480,7 @@ const Xiaomi_information_product = (props) => {
                 giá cả hợp lý”.
               </p>
               <img
-                src="public/images/Info_description_product/Xiaomi_Info_description/Xiaomi_18.png"
+                src="/images/Info_description_product/Xiaomi_Info_description/Xiaomi_18.png"
                 alt="" className="Xiaomi-info-container-img"
               />
               <p className="Xiaomi-info-container-p">
@@ -494,7 +494,7 @@ const Xiaomi_information_product = (props) => {
                 đã luôn đồng hành cùng khách hàng”.
               </p>
               <img
-                src="public/images/Info_description_product/Xiaomi_Info_description/Xiaomi_19.png"
+                src="/images/Info_description_product/Xiaomi_Info_description/Xiaomi_19.png"
                 alt="" className="Xiaomi-info-container-img"
               />
               <p className="Xiaomi-info-container-p">

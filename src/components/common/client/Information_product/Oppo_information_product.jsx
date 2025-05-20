@@ -47,7 +47,7 @@ const Oppo_information_product = ({ category }) => {
                   thế và uy tín của OPPO trên toàn cầu.
                 </p>
                 <img
-                  src="public/images/Info_description_product/Oppo_Info_description/Oppo_1.png"
+                  src="/images/Info_description_product/Oppo_Info_description/Oppo_1.png"
                   alt="" className={`Samsung-info-container-img-chinh ${isExpanded ? "expanded" : ""}`}
                 />
                 </div>
@@ -72,7 +72,7 @@ const Oppo_information_product = ({ category }) => {
                   cuốn hút.
                 </p>
                 <img
-                  src="public/images/Info_description_product/Oppo_Info_description/Oppo_2.png"
+                  src="/images/Info_description_product/Oppo_Info_description/Oppo_2.png"
                   alt="" className="Oppo-info-container-img"
                 />
                 <p>
@@ -93,7 +93,7 @@ const Oppo_information_product = ({ category }) => {
                   được hiển thị rõ nét.
                 </p>
                 <img
-                  src="public/images/Info_description_product/Oppo_Info_description/Oppo_3.png"
+                  src="/images/Info_description_product/Oppo_Info_description/Oppo_3.png"
                   alt="" className="Oppo-info-container-img"
                 />
                 <h3>2.3. Hiệu năng ổn định, mượt mà</h3>
@@ -103,7 +103,7 @@ const Oppo_information_product = ({ category }) => {
                   mang đến hiệu năng ổn định và mượt mà cho dòng sản phẩm.{" "}
                 </p>
                 <img
-                  src="public/images/Info_description_product/Oppo_Info_description/Oppo_4.png"
+                  src="/images/Info_description_product/Oppo_Info_description/Oppo_4.png"
                   alt="" className="Oppo-info-container-img"
                 />
                 <p>
@@ -135,7 +135,7 @@ const Oppo_information_product = ({ category }) => {
                   màu AI,...</span> 
                 </p>
                 <img
-                  src="public/images/Info_description_product/Oppo_Info_description/Oppo_5.png"
+                  src="/images/Info_description_product/Oppo_Info_description/Oppo_5.png"
                   alt="" className="Oppo-info-container-img"
                 />
                 <p>
@@ -161,7 +161,7 @@ const Oppo_information_product = ({ category }) => {
                   bị.
                 </p>
                 <img
-                  src="public/images/Info_description_product/Oppo_Info_description/Oppo_6.png"
+                  src="/images/Info_description_product/Oppo_Info_description/Oppo_6.png"
                   alt="" className="Oppo-info-container-img"
                 />
                 <p>
@@ -179,7 +179,7 @@ const Oppo_information_product = ({ category }) => {
                   năng hoạt động bền bỉ qua thời gian.
                 </p>
                 <img
-                  src="public/images/Info_description_product/Oppo_Info_description/Oppo_7.png"
+                  src="/images/Info_description_product/Oppo_Info_description/Oppo_7.png"
                   alt="" className="Oppo-info-container-img"
                 />
                 <h3>3. Các dòng điện thoại OPPO hiện có trên thị trường</h3>
@@ -205,7 +205,7 @@ const Oppo_information_product = ({ category }) => {
                   hàng trên thị trường.
                 </p>
                 <img
-                  src="public/images/Info_description_product/Oppo_Info_description/Oppo_8.png"
+                  src="/images/Info_description_product/Oppo_Info_description/Oppo_8.png"
                   alt="" className="Oppo-info-container-img"
                 />
                 <p>
@@ -233,7 +233,7 @@ const Oppo_information_product = ({ category }) => {
                   hiện đại và được cải tiến mạnh mẽ về cấu hình và tính năng.
                 </p>
                 <img
-                  src="public/images/Info_description_product/Oppo_Info_description/Oppo_9.png"
+                  src="/images/Info_description_product/Oppo_Info_description/Oppo_9.png"
                   alt="" className="Oppo-info-container-img"
                 />
                 <p>
@@ -266,7 +266,7 @@ const Oppo_information_product = ({ category }) => {
                   và quốc tế.
                 </p>
                 <img
-                  src="public/images/Info_description_product/Oppo_Info_description/Oppo_10.png"
+                  src="/images/Info_description_product/Oppo_Info_description/Oppo_10.png"
                   alt="" className="Oppo-info-container-img"
                 />
                 <p>
@@ -332,7 +332,7 @@ const Oppo_information_product = ({ category }) => {
                   lề cũng như khả năng chụp ảnh vượt trội và dung lượng pin lớn.
                 </p>
                 <img
-                  src="public/images/Info_description_product/Oppo_Info_description/Oppo_11.png"
+                  src="/images/Info_description_product/Oppo_Info_description/Oppo_11.png"
                   alt="" className="Oppo-info-container-img"
                 />
                 <p>
@@ -372,7 +372,7 @@ const Oppo_information_product = ({ category }) => {
                   OPPO.
                 </p>
                 <img
-                  src="public/images/Info_description_product/Oppo_Info_description/Oppo_12.png"
+                  src="/images/Info_description_product/Oppo_Info_description/Oppo_12.png"
                   alt="" className="Oppo-info-container-img"
                 />
                 <p>
@@ -403,23 +403,23 @@ const Oppo_information_product = ({ category }) => {
                   các thiết bị bị này lại không tinh tế và sang như OPPO.
                 </p>
                 <img
-                  src="public/images/Info_description_product/Oppo_Info_description/Oppo_13.png"
+                  src="/images/Info_description_product/Oppo_Info_description/Oppo_13.png"
                   alt="" className="Oppo-info-container-img"
                 />
                 <img
-                  src="public/images/Info_description_product/Oppo_Info_description/Oppo_14.png"
+                  src="/images/Info_description_product/Oppo_Info_description/Oppo_14.png"
                   alt="" className="Oppo-info-container-img"
                 />
                 <img
-                  src="public/images/Info_description_product/Oppo_Info_description/Oppo_15.png"
+                  src="/images/Info_description_product/Oppo_Info_description/Oppo_15.png"
                   alt="" className="Oppo-info-container-img"
                 />
                 <img
-                  src="public/images/Info_description_product/Oppo_Info_description/Oppo_16.png"
+                  src="/images/Info_description_product/Oppo_Info_description/Oppo_16.png"
                   alt="" className="Oppo-info-container-img"
                 />
                 <img
-                  src="public/images/Info_description_product/Oppo_Info_description/Oppo_17.png"
+                  src="/images/Info_description_product/Oppo_Info_description/Oppo_17.png"
                   alt="" className="Oppo-info-container-img"
                 />
                 <h3>
@@ -441,7 +441,7 @@ const Oppo_information_product = ({ category }) => {
                   hàng xách tay trôi nổi trên thị trường.
                 </p>
                 <img
-                  src="public/images/Info_description_product/Oppo_Info_description/Oppo_18.png"
+                  src="/images/Info_description_product/Oppo_Info_description/Oppo_18.png"
                   alt="" className="Oppo-info-container-img"
                 />
                 <p>
@@ -498,7 +498,7 @@ const Oppo_information_product = ({ category }) => {
                   </li>
                 </ul>
                 <img
-                  src="public/images/Info_description_product/Oppo_Info_description/Oppo_19.png"
+                  src="/images/Info_description_product/Oppo_Info_description/Oppo_19.png"
                   alt="" className="Oppo-info-container-img"
                 />
                 <h3>
@@ -506,11 +506,11 @@ const Oppo_information_product = ({ category }) => {
                   thoại OPPO chính hãng tại Di Động Việt
                 </h3>
                 <img
-                  src="public/images/Info_description_product/Oppo_Info_description/Oppo_20.png"
+                  src="/images/Info_description_product/Oppo_Info_description/Oppo_20.png"
                   alt="" className="Oppo-info-container-img"
                 />
                 <img
-                  src="public/images/Info_description_product/Oppo_Info_description/Oppo_21.png"
+                  src="/images/Info_description_product/Oppo_Info_description/Oppo_21.png"
                   alt="" className="Oppo-info-container-img"
                 />
                 <p className="Oppo-info-container-p">
@@ -524,7 +524,7 @@ const Oppo_information_product = ({ category }) => {
                   chiếc máy mới chất lượng với giá rẻ hơn nhiều so mong đợi.”
                 </p>
                 <img
-                  src="public/images/Info_description_product/Oppo_Info_description/Oppo_22.png"
+                  src="/images/Info_description_product/Oppo_Info_description/Oppo_22.png"
                   alt="" className="Oppo-info-container-img"
                 />
                 <p className="Oppo-info-container-p">

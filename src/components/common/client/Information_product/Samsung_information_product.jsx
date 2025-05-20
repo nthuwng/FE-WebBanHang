@@ -46,7 +46,7 @@ const Samsung_information_product = (props) => {
                 điều tốt đẹp mà chúng ta có thể làm”.
               </p>
               <img
-                src="public/images/Info_description_product/Samsung_Info_description/Samsung_1.png"
+                src="/images/Info_description_product/Samsung_Info_description/Samsung_1.png"
                 alt="" className={`Samsung-info-container-img-chinh ${isExpanded ? "expanded" : ""}`}
               />
             </div>
@@ -68,7 +68,7 @@ const Samsung_information_product = (props) => {
                   sắc đa dạng phù hợp với mọi phong cách khác nhau của người dùng.
                 </p>
                 <img
-                  src="public/images/Info_description_product/Samsung_Info_description/Samsung_2.png"
+                  src="/images/Info_description_product/Samsung_Info_description/Samsung_2.png"
                   alt=""
                   className="Samsung-info-container-img"
                 />
@@ -82,7 +82,7 @@ const Samsung_information_product = (props) => {
                   không gian siêu rộng.
                 </p>
                 <img
-                  src="public/images/Info_description_product/Samsung_Info_description/Samsung_3.png"
+                  src="/images/Info_description_product/Samsung_Info_description/Samsung_3.png"
                   alt=""
                   className="Samsung-info-container-img"
                 />
@@ -96,7 +96,7 @@ const Samsung_information_product = (props) => {
                   hiện công việc đa nhiệm mà không gặp bất kỳ trở ngại nào.{" "}
                 </p>
                 <img
-                  src="public/images/Info_description_product/Samsung_Info_description/Samsung_4.png"
+                  src="/images/Info_description_product/Samsung_Info_description/Samsung_4.png"
                   alt=""
                   className="Samsung-info-container-img"
                 />
@@ -119,7 +119,7 @@ const Samsung_information_product = (props) => {
                   hiệu quả sử dụng.
                 </p>
                 <img
-                  src="public/images/Info_description_product/Samsung_Info_description/Samsung_5.png"
+                  src="/images/Info_description_product/Samsung_Info_description/Samsung_5.png"
                   alt=""
                   className="Samsung-info-container-img"
                 />
@@ -138,7 +138,7 @@ const Samsung_information_product = (props) => {
                   Apple.
                 </p>
                 <img
-                  src="public/images/Info_description_product/Samsung_Info_description/Samsung_6.png"
+                  src="/images/Info_description_product/Samsung_Info_description/Samsung_6.png"
                   alt=""
                   className="Samsung-info-container-img"
                 />
@@ -158,7 +158,7 @@ const Samsung_information_product = (props) => {
                   phá.
                 </p>
                 <img
-                  src="public/images/Info_description_product/Samsung_Info_description/Samsung_7.png"
+                  src="/images/Info_description_product/Samsung_Info_description/Samsung_7.png"
                   alt=""
                   className="Samsung-info-container-img"
                 />
@@ -181,7 +181,7 @@ const Samsung_information_product = (props) => {
                   người dùng trải nghiệm đẳng cấp và khác biệt.
                 </p>
                 <img
-                  src="public/images/Info_description_product/Samsung_Info_description/Samsung_8.png"
+                  src="/images/Info_description_product/Samsung_Info_description/Samsung_8.png"
                   alt=""
                   className="Samsung-info-container-img"
                 />
@@ -203,7 +203,7 @@ const Samsung_information_product = (props) => {
                   người dùng.
                 </p>
                 <img
-                  src="public/images/Info_description_product/Samsung_Info_description/Samsung_9.png"
+                  src="/images/Info_description_product/Samsung_Info_description/Samsung_9.png"
                   alt=""
                   className="Samsung-info-container-img"
                 />
@@ -226,7 +226,7 @@ const Samsung_information_product = (props) => {
                   kèm với hiệu năng ổn áp đáp ứng cho mọi nhu cầu sử dụng.
                 </p>
                 <img
-                  src="public/images/Info_description_product/Samsung_Info_description/Samsung_10.png"
+                  src="/images/Info_description_product/Samsung_Info_description/Samsung_10.png"
                   alt=""
                   className="Samsung-info-container-img"
                 />
@@ -263,7 +263,7 @@ const Samsung_information_product = (props) => {
                   phẩm.
                 </p>
                 <img
-                  src="public/images/Info_description_product/Samsung_Info_description/Samsung_11.png"
+                  src="/images/Info_description_product/Samsung_Info_description/Samsung_11.png"
                   alt=""
                   className="Samsung-info-container-img"
                 />
@@ -302,7 +302,7 @@ const Samsung_information_product = (props) => {
                   tùy theo nhu cầu và sở thích cá nhân.
                 </p>
                 <img
-                  src="public/images/Info_description_product/Samsung_Info_description/Samsung_12.png"
+                  src="/images/Info_description_product/Samsung_Info_description/Samsung_12.png"
                   alt=""
                   className="Samsung-info-container-img"
                 />
@@ -328,7 +328,7 @@ const Samsung_information_product = (props) => {
                   dùng đang tìm kiếm sự cân bằng giữa tính năng và giá cả.
                 </p>
                 <img
-                  src="public/images/Info_description_product/Samsung_Info_description/Samsung_13.png"
+                  src="/images/Info_description_product/Samsung_Info_description/Samsung_13.png"
                   alt=""
                   className="Samsung-info-container-img"
                 />
@@ -415,7 +415,7 @@ const Samsung_information_product = (props) => {
                   </li>
                 </ul>
                 <img
-                  src="public/images/Info_description_product/Samsung_Info_description/Samsung_14.png"
+                  src="/images/Info_description_product/Samsung_Info_description/Samsung_14.png"
                   alt=""
                   className="Samsung-info-container-img"
                 />
@@ -424,22 +424,22 @@ const Samsung_information_product = (props) => {
                   Samsung chính hãng tại Di Động Việt
                 </h3>
                 <img
-                  src="public/images/Info_description_product/Samsung_Info_description/Samsung_15.png"
+                  src="/images/Info_description_product/Samsung_Info_description/Samsung_15.png"
                   alt=""
                   className="Samsung-info-container-img"
                 />
                 <img
-                  src="public/images/Info_description_product/Samsung_Info_description/Samsung_16.png"
+                  src="/images/Info_description_product/Samsung_Info_description/Samsung_16.png"
                   alt=""
                   className="Samsung-info-container-img"
                 />
                 <img
-                  src="public/images/Info_description_product/Samsung_Info_description/Samsung_17.png"
+                  src="/images/Info_description_product/Samsung_Info_description/Samsung_17.png"
                   alt=""
                   className="Samsung-info-container-img"
                 />
                 <img
-                  src="public/images/Info_description_product/Samsung_Info_description/Samsung_18.png"
+                  src="/images/Info_description_product/Samsung_Info_description/Samsung_18.png"
                   alt=""
                   className="Samsung-info-container-img"
                 />

@@ -39,7 +39,7 @@ const Iphone_information_product = ({ category }) => {
                 Ngoài ra, dòng điện thoại cũng định hình tương lai của toàn
                 ngành di động trong cả tương lai gần và xa.
               </p>
-              <img src="public/images/Info_description_product/Apple_Info_description/Apple_1.png" alt="" className={`iphone-info-container-img-chinh ${isExpanded ? "expanded" : ""}`} />
+              <img src="/images/Info_description_product/Apple_Info_description/Apple_1.png" alt="" className={`iphone-info-container-img-chinh ${isExpanded ? "expanded" : ""}`} />
             </div>
             {isExpanded && (
               <>
@@ -65,7 +65,7 @@ const Iphone_information_product = ({ category }) => {
                   luôn khiến người dùng háo hức chờ đợi qua từng năm.
                 </p>
                 <img
-                  src="public/images/Info_description_product/Apple_Info_description/Apple_2.png"
+                  src="/images/Info_description_product/Apple_Info_description/Apple_2.png"
                   alt=""
                   className="iphone-info-container-img"
                 />
@@ -78,7 +78,7 @@ const Iphone_information_product = ({ category }) => {
                   chi tiết hơn.
                 </p>
                 <img
-                  src="public/images/Info_description_product/Apple_Info_description/Apple_3.png"
+                  src="/images/Info_description_product/Apple_Info_description/Apple_3.png"
                   alt=""
                   className="iphone-info-container-img"
                 />
@@ -99,7 +99,7 @@ const Iphone_information_product = ({ category }) => {
                   hơn.
                 </p>
                 <img
-                  src="public/images/Info_description_product/Apple_Info_description/Apple_4.png"
+                  src="/images/Info_description_product/Apple_Info_description/Apple_4.png"
                   alt=""
                   className="iphone-info-container-img"
                 />
@@ -114,7 +114,7 @@ const Iphone_information_product = ({ category }) => {
                   khen ngợi.
                 </p>
                 <img
-                  src="public/images/Info_description_product/Apple_Info_description/Apple_5.png"
+                  src="/images/Info_description_product/Apple_Info_description/Apple_5.png"
                   alt=""
                   className="iphone-info-container-img"
                 />
@@ -131,7 +131,7 @@ const Iphone_information_product = ({ category }) => {
                   sản phẩm có pin dung lượng lên đến 5000 mAh.
                 </p>
                 <img
-                  src="public/images/Info_description_product/Apple_Info_description/Apple_6.png"
+                  src="/images/Info_description_product/Apple_Info_description/Apple_6.png"
                   alt=""
                   className="iphone-info-container-img"
                 />
@@ -144,7 +144,7 @@ const Iphone_information_product = ({ category }) => {
                   dùng suốt nhiều năm qua.
                 </p>
                 <img
-                  src="public/images/Info_description_product/Apple_Info_description/Apple_7.png"
+                  src="/images/Info_description_product/Apple_Info_description/Apple_7.png"
                   alt=""
                   className="iphone-info-container-img"
                 />
@@ -177,7 +177,7 @@ const Iphone_information_product = ({ category }) => {
                   </li>
                 </ul>
                 <img
-                  src="public/images/Info_description_product/Apple_Info_description/Apple_8.png"
+                  src="/images/Info_description_product/Apple_Info_description/Apple_8.png"
                   alt=""
                   className="iphone-info-container-img"
                 />
@@ -196,7 +196,7 @@ const Iphone_information_product = ({ category }) => {
                   iFan vào thời điểm đó.
                 </p>
                 <img
-                  src="public/images/Info_description_product/Apple_Info_description/Apple_9.png"
+                  src="/images/Info_description_product/Apple_Info_description/Apple_9.png"
                   alt=""
                   className="iphone-info-container-img"
                 />
@@ -234,7 +234,7 @@ const Iphone_information_product = ({ category }) => {
                   Mini cũng nhận được nhiều sự quan tâm.
                 </p>
                 <img
-                  src="public/images/Info_description_product/Apple_Info_description/Apple_10.png"
+                  src="/images/Info_description_product/Apple_Info_description/Apple_10.png"
                   alt=""
                   className="iphone-info-container-img"
                 />
@@ -255,7 +255,7 @@ const Iphone_information_product = ({ category }) => {
                   ứng được hầu hết nhu cầu cần thiết.
                 </p>
                 <img
-                  src="public/images/Info_description_product/Apple_Info_description/Apple_11.png"
+                  src="/images/Info_description_product/Apple_Info_description/Apple_11.png"
                   alt=""
                   className="iphone-info-container-img"
                 />
@@ -273,7 +273,7 @@ const Iphone_information_product = ({ category }) => {
                   iPhone 11 Pro và iPhone 11 Pro Max với độ cao cấp tăng dần
                 </p>
                 <img
-                  src="public/images/Info_description_product/Apple_Info_description/Apple_12.png"
+                  src="/images/Info_description_product/Apple_Info_description/Apple_12.png"
                   alt=""
                   className="iphone-info-container-img"
                 />
@@ -294,7 +294,7 @@ const Iphone_information_product = ({ category }) => {
                   hàng này vẫn còn có mặt trên thị trường.{" "}
                 </p>
                 <img
-                  src="public/images/Info_description_product/Apple_Info_description/Apple_13.png"
+                  src="/images/Info_description_product/Apple_Info_description/Apple_13.png"
                   alt=""
                   className="iphone-info-container-img"
                 />
@@ -314,7 +314,7 @@ const Iphone_information_product = ({ category }) => {
                   vượt trội.
                 </p>
                 <img
-                  src="public/images/Info_description_product/Apple_Info_description/Apple_14.png"
+                  src="/images/Info_description_product/Apple_Info_description/Apple_14.png"
                   alt=""
                   className="iphone-info-container-img"
                 />
@@ -339,7 +339,7 @@ const Iphone_information_product = ({ category }) => {
                   dùng yêu thích sự kết hợp giữa hiệu năng và tiện ích.
                 </p>
                 <img
-                  src="public/images/Info_description_product/Apple_Info_description/Apple_15.png"
+                  src="/images/Info_description_product/Apple_Info_description/Apple_15.png"
                   alt=""
                   className="iphone-info-container-img"
                 />
@@ -358,7 +358,7 @@ const Iphone_information_product = ({ category }) => {
                   còn được đánh giá cao nhờ hiệu suất vượt trội và độ bền cao.
                 </p>
                 <img
-                  src="public/images/Info_description_product/Apple_Info_description/Apple_16.png"
+                  src="/images/Info_description_product/Apple_Info_description/Apple_16.png"
                   alt=""
                   className="iphone-info-container-img"
                 />
@@ -393,7 +393,7 @@ const Iphone_information_product = ({ category }) => {
                   khẳng định vị thế của Apple trong làng công nghệ.
                 </p>
                 <img
-                  src="public/images/Info_description_product/Apple_Info_description/Apple_17.png"
+                  src="/images/Info_description_product/Apple_Info_description/Apple_17.png"
                   alt=""
                   className="iphone-info-container-img"
                 />
@@ -427,7 +427,7 @@ const Iphone_information_product = ({ category }) => {
                   điều hành iOS 7 tiên tiến.
                 </p>
                 <img
-                  src="public/images/Info_description_product/Apple_Info_description/Apple_18.png"
+                  src="/images/Info_description_product/Apple_Info_description/Apple_18.png"
                   alt=""
                   className="iphone-info-container-img"
                 />
@@ -474,7 +474,7 @@ const Iphone_information_product = ({ category }) => {
                   di động lúc bấy giờ.
                 </p>
                 <img
-                  src="public/images/Info_description_product/Apple_Info_description/Apple_19.png"
+                  src="/images/Info_description_product/Apple_Info_description/Apple_19.png"
                   alt=""
                   className="iphone-info-container-img"
                 />
@@ -499,7 +499,7 @@ const Iphone_information_product = ({ category }) => {
                   hơn và khả năng định vị GPS tích hợp.
                 </p>
                 <img
-                  src="public/images/Info_description_product/Apple_Info_description/Apple_20.png"
+                  src="/images/Info_description_product/Apple_Info_description/Apple_20.png"
                   alt=""
                   className="iphone-info-container-img"
                 />
@@ -518,7 +518,7 @@ const Iphone_information_product = ({ category }) => {
                   tương tác với điện thoại.
                 </p>
                 <img
-                  src="public/images/Info_description_product/Apple_Info_description/Apple_21.png"
+                  src="/images/Info_description_product/Apple_Info_description/Apple_21.png"
                   alt=""
                   className="iphone-info-container-img"
                 />
@@ -588,7 +588,7 @@ const Iphone_information_product = ({ category }) => {
                   </li>
                 </ul>
                 <img
-                  src="public/images/Info_description_product/Apple_Info_description/Apple_22.png"
+                  src="/images/Info_description_product/Apple_Info_description/Apple_22.png"
                   alt=""
                   className="iphone-info-container-img"
                 />
@@ -622,7 +622,7 @@ const Iphone_information_product = ({ category }) => {
                   đảm bảo bạn có trải nghiệm mua sắm tuyệt vời.
                 </p>
                 <img
-                  src="public/images/Info_description_product/Apple_Info_description/Apple_23.png"
+                  src="/images/Info_description_product/Apple_Info_description/Apple_23.png"
                   alt=""
                   className="iphone-info-container-img"
                 />
@@ -663,7 +663,7 @@ const Iphone_information_product = ({ category }) => {
                   thoại iPhone tại Di Động Việt
                 </h3>
                 <img
-                  src="public/images/Info_description_product/Apple_Info_description/Apple_24.png"
+                  src="/images/Info_description_product/Apple_Info_description/Apple_24.png"
                   alt=""
                   className="iphone-info-container-img"
                 />
@@ -675,7 +675,7 @@ const Iphone_information_product = ({ category }) => {
                   không ít chi phí. Chắc chắn sẽ quay lại đây mua sắm."
                 </p>
                 <img
-                  src="public/images/Info_description_product/Apple_Info_description/Apple_25.png"
+                  src="/images/Info_description_product/Apple_Info_description/Apple_25.png"
                   alt=""
                   className="iphone-info-container-img"
                 />
