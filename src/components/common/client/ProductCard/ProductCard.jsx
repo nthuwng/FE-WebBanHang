@@ -5,7 +5,9 @@ import {
   getCartByUserIDServices,
   handleAddProductToCartAPI,
 } from "../../../../services/api.service";
-const backendURL = "http://localhost:8081";
+// const backendURL = "http://localhost:8081";
+const backendURL = "https://be-webbanhang-erdq.onrender.com";
+
 import { notification } from "antd";
 
 const ProductCard = ({ product }) => {
